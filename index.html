@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simha Interactive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=DM+Sans:ital@0;1&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Outfit', 'sans-serif'],
+            accent: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            'brand-orange': '#FF5C1A',
+            'brand-dark': '#080808',
+            'brand-card': '#111111',
+            'brand-border': '#1f1f1f',
+            'brand-muted': '#5a5a5a',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'fade-in': 'fadeIn 1.2s ease forwards',
+            'scroll-bounce': 'scrollBounce 2s ease-in-out infinite',
+            'marquee': 'marquee 20s linear infinite',
+            'grain': 'grain 0.5s steps(2) infinite',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            scrollBounce: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(8px)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            grain: {
+              '0%, 100%': { backgroundPosition: '0% 0%' },
+              '25%': { backgroundPosition: '50% 25%' },
+              '50%': { backgroundPosition: '100% 50%' },
+              '75%': { backgroundPosition: '25% 75%' },
+            }
+          }
+        }
+      }
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+
+      menu.classList.toggle("-translate-y-full");
+
+      // Prevent scroll when open
+      if (!menu.classList.contains("-translate-y-full")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #080808;
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      animation: grain 0.4s steps(3) infinite;
+    }
+
+    /* Dot grid background */
+    .dot-grid {
+      background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Glow blob */
+    .glow-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+    }
+
+    /* Button hover slide effect */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s ease;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #FF5C1A;
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 0;
+    }
+    .btn-primary:hover::before { transform: translateX(0); }
+    .btn-primary span { position: relative; z-index: 1; }
+    .btn-primary:hover { color: #ffffff; border-color: #FF5C1A; }
+
+    .btn-ghost {
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s ease;
+    }
+    .btn-ghost::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 0;
+    }
+    .btn-ghost:hover::before { transform: translateX(0); }
+    .btn-ghost span { position: relative; z-index: 1; }
+    .btn-ghost:hover { color: #080808; }
+
+    /* Headline word animation stagger */
+    .word { display: inline-block; overflow: hidden; }
+    .word-inner {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100%);
+      animation: wordReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes wordReveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Delay utilities */
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
+    .delay-600 { animation-delay: 0.6s; }
+    .delay-700 { animation-delay: 0.7s; }
+    .delay-800 { animation-delay: 0.8s; }
+    .delay-900 { animation-delay: 0.9s; }
+    .delay-1000 { animation-delay: 1.0s; }
+    .delay-1100 { animation-delay: 1.1s; }
+    .delay-1200 { animation-delay: 1.2s; }
+    .delay-1400 { animation-delay: 1.4s; }
+    .delay-1600 { animation-delay: 1.6s; }
+
+    /* Navbar link hover */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #FF5C1A;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Stats fade in */
+    .stat-item {
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }    
+
+    /* Orange line accent */
+    .accent-line {
+      width: 40px;
+      height: 2px;
+      background: #FF5C1A;
+    }
+
+    /* Hero image card float */
+    .float-card {
+      animation: floatY 4s ease-in-out infinite;
+    }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* Counter number style */
+    .counter-num {
+      font-family: 'Bebas Neue', sans-serif;
+      line-height: 1;
+    }
+
+    /* Responsive headline */
+    @media (max-width: 768px) {
+      .hero-headline { font-size: clamp(2.8rem, 10vw, 5rem); }
+    }
+  </style>
+  <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
+</head>
+
+<body>
+
+  
+
+  <!-- ============================================================ -->
+  <!--  NAVBAR                                                       -->
+  <!-- ============================================================ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-5"
+       style="background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent); backdrop-filter: blur(8px);">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3 opacity-0 animate-fade-in delay-100"
+   style="animation-fill-mode: forwards;">
+  
+  <!-- Icon box -->
+  <div class="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden">
+    <img src="./images/Simha Logo Web Black Icon.png" 
+         alt="Simha Interactive Icon"
+         class="w-full h-full object-cover">
+  </div>
+
+  <!-- Text -->
+  <div class="flex flex-col leading-none">
+    <span style="font-family: 'Nexa Bold', sans-serif; letter-spacing: 0.15em;"
+          class="text-white text-sm sm:text-base uppercase tracking-widest">
+      Simha
+    </span>
+    <span style="font-family: 'Nexa Bold', sans-serif; letter-spacing: 0.35em;"
+          class="text-white text-xs uppercase tracking-[0.35em] font-light opacity-70">
+      Interactive
+    </span>
+  </div>
+
+</a>
+
+    <!-- Nav links -->
+    <div class="hidden md:flex items-center gap-10 opacity-0 animate-fade-in delay-300"
+         style="animation-fill-mode: forwards;">
+      <a href="#" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Work</a>
+      <a href="#" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
+      <a href="#" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">About</a>
+      <a href="#" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
+    </div>
+
+    <!-- CTA -->
+    <a href="#"
+       class="btn-primary hidden md:inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase opacity-0 animate-fade-in delay-500"
+       style="animation-fill-mode: forwards;">
+      <span>Start Project</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+
+    <!-- Hamburger (Mobile Only) -->
+        <button onclick="toggleMenu()" class="md:hidden text-white" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+              class="w-6 h-6">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+    <!-- Mobile hamburger -->
+    <div id="mobileMenu"
+      class="fixed top-0 left-0 w-full h-screen z-[999] flex flex-col items-center justify-center gap-8 text-white font-medium backdrop-blur-md bg-black/95 transform -translate-y-full transition-transform duration-500">
+
+      <!-- Close button -->
+      <button onclick="toggleMenu()" class="absolute top-4 right-4 text-white hover:text-brand-orange">
+        ✕
+      </button>
+
+      <a href="#" class="nav-link text-gray-400 hover:text-white uppercase">Work</a>
+      <a href="#" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
+      <a href="#" class="nav-link text-gray-400 hover:text-white uppercase">About</a>
+      <a href="#" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
+
+    
+      <div>
+        <a href="#" class="btn-primary md:hidden inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase">
+          <span>Start Project</span>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!--  HERO SECTION                                                 -->
+  <!-- ============================================================ -->
+  <section class="relative min-h-screen dot-grid flex flex-col justify-between overflow-hidden"
+           style="background-color: #080808;">
+
+    <!-- Glow blobs -->
+    <div class="glow-blob w-96 h-96 opacity-20"
+         style="background:#FF5C1A; top:-80px; left:-80px;"></div>
+    <div class="glow-blob w-80 h-80 opacity-10"
+         style="background:#ff8c42; bottom:10%; right:5%;"></div>
+    <div class="glow-blob w-64 h-64 opacity-8"
+         style="background:#ffffff; top:40%; left:40%;"></div>    
+
+    <!-- Main hero content -->
+    <div class="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-32 pb-16">
+
+      <!-- Small badge label -->
+      <div class="flex items-center gap-3 mb-8 opacity-0 animate-fade-in delay-300"
+           style="animation-fill-mode: forwards;">
+        <div class="accent-line"></div>
+        <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">
+          Full-Service Creative Agency
+        </span>
+      </div>
+
+      <!-- BIG headline -->
+      <h1 class="hero-headline font-display text-white leading-none mb-8 max-w-5xl"
+          style="font-size: clamp(3.5rem, 8vw, 8rem); letter-spacing: -0.01em;">
+
+        <!-- Line 1 -->
+        <div class="flex flex-wrap gap-x-4 mb-1">
+          <div class="word"><div class="word-inner delay-200" style="animation-fill-mode:forwards;">We</div></div>
+          <div class="word"><div class="word-inner delay-300" style="animation-fill-mode:forwards; color:#FF5C1A;">Design.</div></div>
+        </div>
+
+        <!-- Line 2 -->
+        <div class="flex flex-wrap gap-x-4 mb-1">
+          <div class="word"><div class="word-inner delay-400" style="animation-fill-mode:forwards;">We</div></div>
+          <div class="word"><div class="word-inner delay-500" style="animation-fill-mode:forwards;">Visualize.</div></div>
+        </div>
+
+        <!-- Line 3 -->
+        <div class="flex flex-wrap gap-x-4 mb-1">
+          <div class="word"><div class="word-inner delay-600" style="animation-fill-mode:forwards;">We</div></div>
+          <div class="word"><div class="word-inner delay-700" style="animation-fill-mode:forwards; color:#FF5C1A;">Market.</div></div>
+        </div>
+
+        <!-- Line 4 -->
+        <div class="flex flex-wrap gap-x-4">
+          <div class="word"><div class="word-inner delay-800" style="animation-fill-mode:forwards;">We Create</div></div>
+          <div class="word"><div class="word-inner delay-900" style="animation-fill-mode:forwards;">Experiences.</div></div>
+        </div>
+      </h1>
+
+      <!-- Sub-headline + CTA row -->
+      <div class="flex flex-col lg:flex-row lg:items-end gap-8 lg:gap-16 max-w-5xl">
+
+        <!-- Subheadline -->
+        <p class="font-body text-gray-400 leading-relaxed max-w-lg text-base lg:text-lg opacity-0 animate-fade-in delay-1000"
+           style="animation-fill-mode: forwards;">
+          A full-service creative agency delivering strategic design, high-end visualization,
+          performance marketing, and immersive engagement solutions.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in delay-1200"
+             style="animation-fill-mode: forwards; flex-shrink: 0;">
+
+          <a href="#"
+             class="btn-primary border border-white text-white px-8 py-4 font-body text-sm tracking-widest uppercase text-center">
+            <span>Explore Our Work</span>
+          </a>
+
+          <a href="#"
+             class="btn-ghost border border-white/20 text-white px-8 py-4 font-body text-sm tracking-widest uppercase text-center">
+            <span>Start Your Project</span>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>  
+
+  <!-- ============================================================ -->
+  <!--  ABOUT PREVIEW SECTION                                        -->
+  <!-- ============================================================ -->
+  <section class="relative bg-brand-dark overflow-hidden py-24 md:py-36 px-8 md:px-16 lg:px-24">
+
+    <!-- Diagonal stripes (same as hero) -->
+    <div class="diagonal-stripes"></div>
+
+    <!-- Faint background text -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-0">
+      <span class="font-display text-white opacity-[0.03]"
+            style="font-size: clamp(8rem, 20vw, 18rem); letter-spacing: -0.02em; white-space: nowrap;">
+        ABOUT
+      </span>
+    </div>
+
+    <!-- Main grid -->
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col gap-8">
+
+        <!-- Small label -->
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-px bg-brand-orange"></div>
+          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">
+            Who We Are
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h2 class="font-display text-white leading-none"
+            style="font-size: clamp(2.8rem, 6vw, 5.5rem);">
+          A Creative Force <br/>
+          <span class="text-brand-orange">Driven By</span> <br/>
+          Strategy
+        </h2>
+
+        <!-- Paragraph with left orange border -->
+        <div class="border-l-2 border-brand-orange pl-6">
+          <p class="font-body text-gray-400 leading-relaxed text-base lg:text-lg">
+            We are a multidisciplinary creative agency driven by strategy, design excellence,
+            and cutting-edge technology. From building powerful brand identities to crafting
+            immersive AR/VR experiences, we help businesses stand out, scale faster, and
+            connect deeper with their audience.
+          </p>
+        </div>
+
+        <!-- CTA text link -->
+        <a href="#"
+          class="group inline-flex items-center gap-4 w-fit mt-2"
+          style="text-decoration: none;">
+          <span class="font-body text-sm text-white tracking-[0.3em] uppercase
+                      border-b border-white/20 pb-1
+                      group-hover:border-brand-orange group-hover:text-brand-orange
+                      transition-all duration-300">
+            Learn More About Us
+          </span>
+          <span class="w-8 h-px bg-white/30 group-hover:w-14 group-hover:bg-brand-orange
+                      transition-all duration-500 inline-block"></span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-white/30 group-hover:text-brand-orange
+                      group-hover:translate-x-1 transition-all duration-300"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+
+      </div>
+
+      <!-- RIGHT COLUMN — 4 highlight cards -->
+      <div class="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+
+        <!-- Card 1 — Design -->
+        <div class="group relative border border-brand-border p-4 sm:p-5 md:p-6 flex flex-col gap-4 w-full min-h-[160px] sm:min-h-[180px] md:min-h-[220px]
+                    hover:border-brand-orange transition-all duration-400 cursor-default"
+            style="background: #0e0e0e;">
+          <!-- Top icon line -->
+          <div class="w-8 h-px bg-brand-orange"></div>
+          <div class="font-display text-white text-3xl group-hover:text-brand-orange
+                      transition-colors duration-300">
+            01
+          </div>
+          <div>
+            <h3 class="font-body text-white font-medium text-sm tracking-wider uppercase mb-2">
+              Design
+            </h3>
+            <p class="font-body text-gray-600 text-[11px] sm:text-xs md:text-sm leading-relaxed break-words">
+              Strategic branding & digital experiences that define your identity.
+            </p>
+          </div>
+          <!-- Hover corner accent -->
+          <div class="absolute bottom-0 right-0 w-0 h-0 group-hover:w-6 group-hover:h-6
+                      transition-all duration-300"
+              style="border-right: 2px solid #FF5C1A; border-bottom: 2px solid #FF5C1A;">
+          </div>
+        </div>
+
+        <!-- Card 2 — Visualization -->
+        <div class="group relative border border-brand-border p-4 sm:p-5 md:p-6 flex flex-col gap-4 transform translate-y-3 sm:translate-y-4 md:translate-y-6 w-full min-h-[160px] sm:min-h-[180px] md:min-h-[220px]
+                    hover:border-brand-orange transition-all duration-400 cursor-default"
+            style="background: #0e0e0e;">
+          <div class="w-8 h-px bg-brand-orange"></div>
+          <div class="font-display text-white text-3xl group-hover:text-brand-orange
+                      transition-colors duration-300">
+            02
+          </div>
+          <div>
+            <h3 class="font-body text-white font-medium text-sm tracking-wider uppercase mb-2">
+              Visualization
+            </h3>
+            <p class="font-body text-gray-600 text-[11px] sm:text-xs md:text-sm leading-relaxed break-words">
+              Photorealistic renders & animations that bring concepts to life.
+            </p>
+          </div>
+          <div class="absolute bottom-0 right-0 w-0 h-0 group-hover:w-6 group-hover:h-6
+                      transition-all duration-300"
+              style="border-right: 2px solid #FF5C1A; border-bottom: 2px solid #FF5C1A;">
+          </div>
+        </div>
+
+        <!-- Card 3 — Marketing -->
+        <div class="group relative border border-brand-border p-4 sm:p-5 md:p-6 flex flex-col gap-4 w-full min-h-[160px] sm:min-h-[180px] md:min-h-[220px]
+                    hover:border-brand-orange transition-all duration-400 cursor-default"
+            style="background: #0e0e0e;">
+          <div class="w-8 h-px bg-brand-orange"></div>
+          <div class="font-display text-white text-3xl group-hover:text-brand-orange
+                      transition-colors duration-300">
+            03
+          </div>
+          <div>
+            <h3 class="font-body text-white font-medium text-sm tracking-wider uppercase mb-2">
+              Marketing
+            </h3>
+            <p class="font-body text-gray-600 text-[11px] sm:text-xs md:text-sm leading-relaxed break-words">
+              Performance-driven SEO & digital campaigns for measurable growth.
+            </p>
+          </div>
+          <div class="absolute bottom-0 right-0 w-0 h-0 group-hover:w-6 group-hover:h-6
+                      transition-all duration-300"
+              style="border-right: 2px solid #FF5C1A; border-bottom: 2px solid #FF5C1A;">
+          </div>
+        </div>
+
+        <!-- Card 4 — Engagement -->
+        <div class="group relative border border-brand-border p-4 sm:p-5 md:p-6 flex flex-col gap-4 transform translate-y-3 sm:translate-y-4 md:translate-y-6 w-full min-h-[160px] sm:min-h-[180px] md:min-h-[220px]
+                    hover:border-brand-orange transition-all duration-400 cursor-default"
+            style="background: #0e0e0e;">
+          <div class="w-8 h-px bg-brand-orange"></div>
+          <div class="font-display text-white text-3xl group-hover:text-brand-orange
+                      transition-colors duration-300">
+            04
+          </div>
+          <div>
+            <h3 class="font-body text-white font-medium text-sm tracking-wider uppercase mb-2">
+              Engagement
+            </h3>
+            <p class="font-body text-gray-600 text-[11px] sm:text-xs md:text-sm leading-relaxed break-words">
+              Immersive AR, VR & holographic experiences that captivate audiences.
+            </p>
+          </div>
+          <div class="absolute bottom-0 right-0 w-0 h-0 group-hover:w-6 group-hover:h-6
+                      transition-all duration-300"
+              style="border-right: 2px solid #FF5C1A; border-bottom: 2px solid #FF5C1A;">
+          </div>
+        </div>
+
+      </div>
+      <!-- end right column -->
+
+    </div>
+    <!-- end main grid -->
+  </section>
+  
+  
+
+  <!-- ============================================================ -->
+  <!--  FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="relative bg-brand-dark border-t border-brand-border px-8 md:px-16 lg:px-24 py-16 md:py-20 overflow-hidden">
+
+    <!-- Background subtle text -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+      <span class="font-display text-white opacity-[0.03]"
+            style="font-size: clamp(6rem, 18vw, 14rem); letter-spacing: -0.02em;">
+        SIMHA
+      </span>
+    </div>
+
+    <!-- Main Footer Grid -->
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+
+      <!-- LEFT: Brand Info -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl overflow-hidden">
+            <img src="./images/Simha Logo Web Black Icon.png" alt="Simha Logo" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-white text-sm uppercase tracking-widest font-medium">Simha</span>
+            <span class="text-white/60 text-xs uppercase tracking-[0.3em]">Interactive</span>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-gray-500 text-sm font-body leading-relaxed max-w-xs">
+          © 2026 Simha Interactive. All Rights Reserved.
+        </p>
+
+      </div>
+
+      <!-- MIDDLE: Quick Links -->
+      <div class="flex flex-col gap-6">
+
+        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">
+          Quick Links
+        </h4>
+
+        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
+
+          <a href="#" class="nav-link hover:text-white transition">Home</a>
+          <a href="#" class="nav-link hover:text-white transition">About</a>
+          <a href="#" class="nav-link hover:text-white transition">Services</a>
+          <a href="#" class="nav-link hover:text-white transition">Portfolio</a>
+          <a href="#" class="nav-link hover:text-white transition">Contact</a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Services -->
+      <div class="flex flex-col gap-6">
+
+        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">
+          Services
+        </h4>
+
+        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
+
+          <a href="#" class="nav-link hover:text-white transition">Design</a>
+          <a href="#" class="nav-link hover:text-white transition">Visualization</a>
+          <a href="#" class="nav-link hover:text-white transition">Marketing</a>
+          <a href="#" class="nav-link hover:text-white transition">Engagement Content</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Divider Line -->
+    <div class="relative z-10 mt-12 border-t border-brand-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs font-body">
+
+      <span>
+        Built with precision and creativity.
+      </span>
+
+      <span class="tracking-widest uppercase text-gray-600">
+        Simha Interactive
+      </span>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
