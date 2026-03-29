@@ -125,28 +125,55 @@
     .word-inner {
       display: inline-block;
       opacity: 0;
-      transform: translateY(100%);
-      animation: wordReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transform: translateX(-40px);
+      animation: wordReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     @keyframes wordReveal {
-      to { opacity: 1; transform: translateY(0); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     /* Delay utilities */
     .delay-100 { animation-delay: 0.1s; }
+    .delay-150 { animation-delay: 0.15s; }
     .delay-200 { animation-delay: 0.2s; }
+    .delay-250 { animation-delay: 0.25s; }
     .delay-300 { animation-delay: 0.3s; }
+    .delay-350 { animation-delay: 0.35s; }
     .delay-400 { animation-delay: 0.4s; }
+    .delay-450 { animation-delay: 0.45s; }
     .delay-500 { animation-delay: 0.5s; }
+    .delay-550 { animation-delay: 0.55s; }
     .delay-600 { animation-delay: 0.6s; }
+    .delay-650 { animation-delay: 0.65s; }
     .delay-700 { animation-delay: 0.7s; }
+    .delay-750 { animation-delay: 0.75s; }
     .delay-800 { animation-delay: 0.8s; }
+    .delay-850 { animation-delay: 0.85s; }
     .delay-900 { animation-delay: 0.9s; }
+    .delay-950 { animation-delay: 0.95s; }
     .delay-1000 { animation-delay: 1.0s; }
+    .delay-1050 { animation-delay: 1.05s; }
     .delay-1100 { animation-delay: 1.1s; }
+    .delay-1150 { animation-delay: 1.15s; }
     .delay-1200 { animation-delay: 1.2s; }
+    .delay-1250 { animation-delay: 1.25s; }
+    .delay-1300 { animation-delay: 1.3s; }
+    .delay-1350 { animation-delay: 1.35s; }
     .delay-1400 { animation-delay: 1.4s; }
+    .delay-1450 { animation-delay: 1.45s; }
+    .delay-1500 { animation-delay: 1.5s; }
+    .delay-1550 { animation-delay: 1.55s; }
     .delay-1600 { animation-delay: 1.6s; }
+    .delay-1650 { animation-delay: 1.65s; }
+    .delay-1700 { animation-delay: 1.7s; }
+    .delay-1750 { animation-delay: 1.75s; }
+    .delay-1800 { animation-delay: 1.8s; }
+    .delay-1850 { animation-delay: 1.85s; }
+    .delay-1900 { animation-delay: 1.9s; }
+    .delay-1950 { animation-delay: 1.95s; }
+    .delay-2000 { animation-delay: 2.0s; }
+    .delay-2100 { animation-delay: 2.1s; }
+    .delay-2200 { animation-delay: 2.2s; }
 
     /* Navbar link hover */
     .nav-link {
@@ -262,7 +289,7 @@
   
   <!-- Icon box -->
   <div class="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden">
-    <img src="./images/Simha Logo Web Black Icon.png" 
+    <img src="./images/Simha Logo Web White Icon.png" 
          alt="Simha Interactive Icon"
          class="w-full h-full object-cover">
   </div>
@@ -284,10 +311,10 @@
     <!-- Nav links -->
     <div class="hidden md:flex items-center gap-10 opacity-0 animate-fade-in delay-300"
          style="animation-fill-mode: forwards;">
-      <a href="#" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Work</a>
-      <a href="#" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
-      <a href="#" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">About</a>
-      <a href="#" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
+      <a href="index.html" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Work</a>
+      <a href="services.html" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
+      <a href="about.html" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">About</a>
+      <a href="portfolio.html" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
     </div>
 
     <!-- CTA -->
@@ -324,10 +351,10 @@
         ✕
       </button>
 
-      <a href="#" class="nav-link text-gray-400 hover:text-white uppercase">Work</a>
-      <a href="#" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
-      <a href="#" class="nav-link text-gray-400 hover:text-white uppercase">About</a>
-      <a href="#" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
+      <a href="index.html" class="nav-link text-gray-400 hover:text-white uppercase">Work</a>
+      <a href="services.html" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
+      <a href="about.html" class="nav-link text-gray-400 hover:text-white uppercase">About</a>
+      <a href="portfolio.html" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
 
     
       <div>
@@ -359,31 +386,47 @@
       </div>
 
       <!-- BIG headline -->
-      <h1 class="hero-headline font-display text-white leading-none mb-8 max-w-5xl"
+      <h1 class="hero-headline font-display text-white leading-tight md:leading-none mb-8 max-w-5xl"
           style="font-size: clamp(3.5rem, 8vw, 8rem); letter-spacing: -0.01em;">
 
         <!-- Line 1 -->
-        <div class="flex flex-wrap gap-x-4 mb-1">
-          <div class="word"><div class="word-inner delay-100" style="animation-fill-mode:forwards;">We</div></div>
-          <div class="word"><div class="word-inner delay-200 " style="animation-fill-mode:forwards;color:#FF5C1A;">Design.</div></div>
+        <div class="flex flex-wrap gap-x-3 md:gap-x-4 mb-1 md:mb-2">
+          <div class="word">
+            <span class="word-inner delay-100" style="animation-fill-mode:forwards;">W</span><span class="word-inner delay-150" style="animation-fill-mode:forwards;">e</span>
+          </div>
+          <div class="word text-[#FF5C1A]">
+            <span class="word-inner delay-250" style="animation-fill-mode:forwards;">D</span><span class="word-inner delay-300" style="animation-fill-mode:forwards;">e</span><span class="word-inner delay-350" style="animation-fill-mode:forwards;">s</span><span class="word-inner delay-400" style="animation-fill-mode:forwards;">i</span><span class="word-inner delay-450" style="animation-fill-mode:forwards;">g</span><span class="word-inner delay-500" style="animation-fill-mode:forwards;">n</span><span class="word-inner delay-550" style="animation-fill-mode:forwards;">.</span>
+          </div>
         </div>
 
         <!-- Line 2 -->
-        <div class="flex flex-wrap gap-x-4 mb-1">
-          <div class="word"><div class="word-inner delay-300" style="animation-fill-mode:forwards;">We</div></div>
-          <div class="word"><div class="word-inner delay-400" style="animation-fill-mode:forwards;">Visualize.</div></div>
+        <div class="flex flex-wrap gap-x-3 md:gap-x-4 mb-1 md:mb-2">
+          <div class="word">
+            <span class="word-inner delay-650" style="animation-fill-mode:forwards;">W</span><span class="word-inner delay-700" style="animation-fill-mode:forwards;">e</span>
+          </div>
+          <div class="word">
+            <span class="word-inner delay-800" style="animation-fill-mode:forwards;">V</span><span class="word-inner delay-850" style="animation-fill-mode:forwards;">i</span><span class="word-inner delay-900" style="animation-fill-mode:forwards;">s</span><span class="word-inner delay-950" style="animation-fill-mode:forwards;">u</span><span class="word-inner delay-1000" style="animation-fill-mode:forwards;">a</span><span class="word-inner delay-1050" style="animation-fill-mode:forwards;">l</span><span class="word-inner delay-1100" style="animation-fill-mode:forwards;">i</span><span class="word-inner delay-1150" style="animation-fill-mode:forwards;">z</span><span class="word-inner delay-1200" style="animation-fill-mode:forwards;">e</span><span class="word-inner delay-1250" style="animation-fill-mode:forwards;">.</span>
+          </div>
         </div>
 
         <!-- Line 3 -->
-        <div class="flex flex-wrap gap-x-4 mb-1">
-          <div class="word"><div class="word-inner delay-500" style="animation-fill-mode:forwards;">We</div></div>
-          <div class="word"><div class="word-inner delay-600" style="animation-fill-mode:forwards;">Market.</div></div>
+        <div class="flex flex-wrap gap-x-3 md:gap-x-4 mb-1 md:mb-2">
+          <div class="word">
+            <span class="word-inner delay-1350" style="animation-fill-mode:forwards;">W</span><span class="word-inner delay-1400" style="animation-fill-mode:forwards;">e</span>
+          </div>
+          <div class="word">
+            <span class="word-inner delay-1500" style="animation-fill-mode:forwards;">M</span><span class="word-inner delay-1550" style="animation-fill-mode:forwards;">a</span><span class="word-inner delay-1600" style="animation-fill-mode:forwards;">r</span><span class="word-inner delay-1650" style="animation-fill-mode:forwards;">k</span><span class="word-inner delay-1700" style="animation-fill-mode:forwards;">e</span><span class="word-inner delay-1750" style="animation-fill-mode:forwards;">t</span><span class="word-inner delay-1800" style="animation-fill-mode:forwards;">.</span>
+          </div>
         </div>
 
         <!-- Line 4 -->
-        <div class="flex flex-wrap gap-x-4">
-          <div class="word"><div class="word-inner delay-700" style="animation-fill-mode:forwards;">We Create</div></div>
-          <div class="word"><div class="word-inner delay-800" style="animation-fill-mode:forwards;">Experiences.</div></div>
+        <div class="flex flex-wrap gap-x-3 md:gap-x-4">
+          <div class="word">
+            <span class="word-inner delay-1900" style="animation-fill-mode:forwards;">W</span><span class="word-inner delay-1950" style="animation-fill-mode:forwards;">e</span><span class="word-inner delay-2000" style="animation-fill-mode:forwards;">&nbsp;</span><span class="word-inner delay-2000" style="animation-fill-mode:forwards;">C</span><span class="word-inner delay-2000" style="animation-fill-mode:forwards;">r</span><span class="word-inner delay-2000" style="animation-fill-mode:forwards;">e</span><span class="word-inner delay-2000" style="animation-fill-mode:forwards;">a</span><span class="word-inner delay-2000" style="animation-fill-mode:forwards;">t</span><span class="word-inner delay-2000" style="animation-fill-mode:forwards;">e</span>
+          </div>
+          <div class="word">
+            <span class="word-inner delay-2100" style="animation-fill-mode:forwards;">E</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">x</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">p</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">e</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">r</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">i</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">e</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">n</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">c</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">e</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">s</span><span class="word-inner delay-2100" style="animation-fill-mode:forwards;">.</span>
+          </div>
         </div>
       </h1>
 
@@ -725,152 +768,128 @@
 
     </div>
   </section>
+  
+  <!-- ============================================================ -->
+  <!--  CALL TO ACTION SECTION                                       -->
+  <!-- ============================================================ -->
+  <section class="relative bg-brand-dark overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border text-center flex flex-col items-center justify-center min-h-[50vh]">
+    
+    <!-- Background subtle gradient -->
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at center, rgba(255,92,26,0.05) 0%, transparent 60%);"></div>
 
-  <!-- ============================================================ -->
-  <!--  SERVICES SECTION                                             -->
-  <!-- ============================================================ -->
-  <section id="services-section" class="relative bg-brand-dark overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 min-h-screen">
-    <div class="relative z-10 max-w-7xl mx-auto">
+    <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6">
       
-      <!-- HEADER BLOCK -->
-      <div class="header-block flex flex-col items-start gap-4">
-        <!-- Accent Label -->
-        <div class="reveal-item flex items-center gap-3">
-          <div class="w-[36px] h-[2px] bg-[#FF5C1A]"></div>
-          <span class="font-body text-xs text-[#FF5C1A] tracking-[0.4em] uppercase font-medium">
-            Our Services
-          </span>
-        </div>
-        
-        <!-- Heading -->
-        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 8vw, 7rem);">
-          What We Do
-        </h2>
-        
-        <!-- Description -->
-        <p class="reveal-item font-body text-gray-400 max-w-2xl text-base lg:text-lg leading-relaxed">
-          We offer four core verticals designed to cover the complete creative and digital ecosystem — from brand creation to immersive experiences.
-        </p>
-
-        <!-- Static Watch Tutorial Button -->
-        <div class="reveal-item mt-6 relative inline-flex">
-          <button id="openModalBtn" class="flex items-center gap-3 border border-[#FF5C1A] text-white px-6 py-3 rounded-full backdrop-blur-sm bg-black/60 hover:bg-[#FF5C1A]/10 transition-colors duration-300 relative shadow-[0_0_20px_rgba(255,92,26,0.3)] pulse-ring cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#FF5C1A]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-            <span class="font-body text-sm font-medium tracking-wide whitespace-nowrap">Watch Tutorial</span>
-          </button>
-        </div>
+      <!-- Small label -->
+      <div class="reveal-item flex items-center justify-center gap-3">
+        <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+        <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">
+          Ready to Start?
+        </span>
+        <div class="w-[36px] h-[2px] bg-brand-orange"></div>
       </div>
 
-      <!-- SERVICES CARDS ROW -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-8 mt-12 w-full">
-        
-        <!-- Card 1: Design -->
-        <div class="card-item reveal-item group relative bg-[#0e0e0e] border border-[#1f1f1f] hover:border-white transition-all duration-300 pt-8 pb-10 px-8 flex flex-col gap-4 w-full min-h-[420px]" 
-             style="transition-delay: 0ms;">
-          <div class="font-display text-white text-5xl opacity-40 group-hover:opacity-100 transition-opacity duration-300">01</div>
-          <h3 class="font-body text-white font-medium text-2xl uppercase tracking-wider mt-4">Design</h3>
-          <span class="font-body text-[#FF5C1A] text-sm uppercase tracking-widest font-semibold border-b border-[#333] pb-4 block">Branding & Digital</span>
-          <ul class="font-body text-gray-400 text-sm leading-loose mt-4 space-y-2">
-            <li>• Brand Strategy</li>
-            <li>• Logo Design</li>
-            <li>• Visual Identity</li>
-            <li>• UI/UX Design</li>
-            <li>• Web Development</li>
-          </ul>
-          <!-- Hover corner accent -->
-          <div class="absolute bottom-2 right-2 w-0 h-0 
-                      group-hover:w-6 group-hover:h-6 
-                      transition-all duration-300 pointer-events-none"
-               style="border-right: 2px solid #FF5C1A; border-bottom: 2px solid #FF5C1A;"></div>
-        </div>
+      <!-- Headline -->
+      <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 8vw, 6rem); transition-delay: 100ms;">
+        Let’s Build Something <br/>Extraordinary Together.
+      </h2>
 
-        <!-- Card 2: Visualization -->
-        <div class="card-item reveal-item group relative bg-[#0e0e0e] border border-[#1f1f1f] hover:border-white transition-all duration-300 pt-8 pb-10 px-8 flex flex-col gap-4 w-full min-h-[420px]" 
-             style="transition-delay: 150ms;">
-          <div class="font-display text-white text-5xl opacity-40 group-hover:opacity-100 transition-opacity duration-300">02</div>
-          <h3 class="font-body text-white font-medium text-2xl uppercase tracking-wider mt-4">Visualization</h3>
-          <span class="font-body text-[#FF5C1A] text-sm uppercase tracking-widest font-semibold border-b border-[#333] pb-4 block">3D & Motion</span>
-          <ul class="font-body text-gray-400 text-sm leading-loose mt-4 space-y-2">
-            <li>• Interior Rendering</li>
-            <li>• Exterior Rendering</li>
-            <li>• 3D Floor Plans</li>
-            <li>• Walkthrough Animations</li>
-            <li>• Product Rendering</li>
-          </ul>
-          <!-- Hover corner accent -->
-          <div class="absolute bottom-2 right-2 w-0 h-0 
-                      group-hover:w-6 group-hover:h-6 
-                      transition-all duration-300 pointer-events-none"
-               style="border-right: 2px solid #FF5C1A; border-bottom: 2px solid #FF5C1A;"></div>
-        </div>
+      <!-- Description -->
+      <p class="reveal-item font-body text-gray-400 text-base md:text-lg max-w-2xl mt-2" style="transition-delay: 200ms;">
+        Tell us about your vision, and we’ll turn it into reality.
+      </p>
 
-        <!-- Card 3: Marketing -->
-        <div class="card-item reveal-item group relative bg-[#0e0e0e] border border-[#1f1f1f] hover:border-white transition-all duration-300 pt-8 pb-10 px-8 flex flex-col gap-4 w-full min-h-[420px]" 
-             style="transition-delay: 300ms;">
-          <div class="font-display text-white text-5xl opacity-40 group-hover:opacity-100 transition-opacity duration-300">03</div>
-          <h3 class="font-body text-white font-medium text-2xl uppercase tracking-wider mt-4">Marketing</h3>
-          <span class="font-body text-[#FF5C1A] text-sm uppercase tracking-widest font-semibold border-b border-[#333] pb-4 block">SEO & Growth</span>
-          <ul class="font-body text-gray-400 text-sm leading-loose mt-4 space-y-2">
-            <li>• Search Engine Optimization</li>
-            <li>• Google Ads & PPC</li>
-            <li>• Social Media Marketing</li>
-            <li>• Performance Marketing</li>
-            <li>• Content Marketing</li>
-          </ul>
-          <!-- Hover corner accent -->
-          <div class="absolute bottom-2 right-2 w-0 h-0 
-                      group-hover:w-6 group-hover:h-6 
-                      transition-all duration-300 pointer-events-none"
-               style="border-right: 2px solid #FF5C1A; border-bottom: 2px solid #FF5C1A;"></div>
-        </div>
-
-        <!-- Card 4: Engagement Content -->
-        <div class="card-item reveal-item group relative bg-[#0e0e0e] border border-[#1f1f1f] hover:border-white transition-all duration-300 pt-8 pb-10 px-8 flex flex-col gap-4 w-full min-h-[420px]" 
-             style="transition-delay: 450ms;">
-          <div class="font-display text-white text-5xl opacity-40 group-hover:opacity-100 transition-opacity duration-300">04</div>
-          <h3 class="font-body text-white font-medium text-2xl uppercase tracking-wider mt-4">Engagement</h3>
-          <span class="font-body text-[#FF5C1A] text-sm uppercase tracking-widest font-semibold border-b border-[#333] pb-4 block">Immersive Tech</span>
-          <ul class="font-body text-gray-400 text-sm leading-loose mt-4 space-y-2">
-            <li>• Augmented Reality (AR)</li>
-            <li>• Virtual Reality (VR)</li>
-            <li>• Holographic Content</li>
-            <li>• Anamorphic 3D Illusions</li>
-            <li>• Giant Screen AR</li>
-          </ul>
-          <!-- Hover corner accent -->
-          <div class="absolute bottom-2 right-2 w-0 h-0 
-                      group-hover:w-6 group-hover:h-6 
-                      transition-all duration-300 pointer-events-none"
-               style="border-right: 2px solid #FF5C1A; border-bottom: 2px solid #FF5C1A;"></div>
-        </div>
-        
+      <!-- CTA Button -->
+      <div class="reveal-item mt-8" style="transition-delay: 300ms;">
+        <a href="#" class="btn-ghost border border-white text-white px-10 py-4 font-body text-sm tracking-widest uppercase text-center inline-block hover:border-brand-orange">
+          <span>Contact Us</span>
+        </a>
       </div>
+      
     </div>
   </section>
 
   <!-- ============================================================ -->
-  <!--  VIDEO MODAL                                                  -->
+  <!--  FOOTER                                                       -->
   <!-- ============================================================ -->
-  <div id="videoModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/85 backdrop-blur-md opacity-0 transition-opacity duration-300">
-    <div class="relative w-full max-w-4xl mx-auto px-4">
-      <!-- Close Button -->
-      <button id="closeModalBtn" class="absolute -top-12 right-4 text-white hover:text-[#FF5C1A] transition-colors p-2 text-3xl leading-none">
-        &times;
-      </button>
-      
-      <!-- Video Container -->
-      <div class="bg-black border border-white/10 rounded-xl overflow-hidden aspect-video shadow-2xl">
-        <video controls class="w-full h-full object-cover">
-          <source src="#" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </div>
+  <footer class="relative bg-brand-dark border-t border-brand-border px-8 md:px-16 lg:px-24 py-16 md:py-20 overflow-hidden">
 
-  <!-- Scripts -->
+    <!-- Main Footer Grid -->
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+
+      <!-- LEFT: Brand Info -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl overflow-hidden">
+            <img src="./images/Simha Logo Web Black Icon.png" alt="Simha Logo" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-white text-sm uppercase tracking-widest font-medium">Simha</span>
+            <span class="text-white/60 text-xs uppercase tracking-[0.3em]">Interactive</span>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <p class="text-gray-500 text-sm font-body leading-relaxed max-w-xs">
+          © 2026 Simha Interactive. All Rights Reserved.
+        </p>
+
+      </div>
+
+      <!-- MIDDLE: Quick Links -->
+      <div class="flex flex-col gap-6">
+
+        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">
+          Quick Links
+        </h4>
+
+        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
+
+          <a href="#" class="nav-link hover:text-white transition">Home</a>
+          <a href="about.html" class="nav-link hover:text-white transition">About</a>
+          <a href="services.html" class="nav-link hover:text-white transition">Services</a>
+          <a href="portfolio.html" class="nav-link hover:text-white transition">Portfolio</a>
+          <a href="#" class="nav-link hover:text-white transition">Contact</a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Services -->
+      <div class="flex flex-col gap-6">
+
+        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">
+          Services
+        </h4>
+
+        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
+
+          <a href="#" class="nav-link hover:text-white transition">Design</a>
+          <a href="#" class="nav-link hover:text-white transition">Visualization</a>
+          <a href="#" class="nav-link hover:text-white transition">Marketing</a>
+          <a href="#" class="nav-link hover:text-white transition">Engagement Content</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Divider Line -->
+    <div class="relative z-10 mt-12 border-t border-brand-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs font-body">
+
+      <span>
+        Built with precision and creativity.
+      </span>
+
+      <span class="tracking-widest uppercase text-gray-600">
+        Simha Interactive
+      </span>
+
+    </div>
+
+  </footer>
   <script>
     // Intersection Observer for scroll reveal animations
     document.addEventListener("DOMContentLoaded", function() {
@@ -947,93 +966,7 @@
         }
       });
     });
-  </script>
-  
-  
 
-  <!-- ============================================================ -->
-  <!--  FOOTER                                                       -->
-  <!-- ============================================================ -->
-  <footer class="relative bg-brand-dark border-t border-brand-border px-8 md:px-16 lg:px-24 py-16 md:py-20 overflow-hidden">
-
-    <!-- Main Footer Grid -->
-    <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-
-      <!-- LEFT: Brand Info -->
-      <div class="flex flex-col gap-6">
-
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl overflow-hidden">
-            <img src="./images/Simha Logo Web Black Icon.png" alt="Simha Logo" class="w-full h-full object-cover">
-          </div>
-          <div class="flex flex-col leading-none">
-            <span class="text-white text-sm uppercase tracking-widest font-medium">Simha</span>
-            <span class="text-white/60 text-xs uppercase tracking-[0.3em]">Interactive</span>
-          </div>
-        </div>
-
-        <!-- Copyright -->
-        <p class="text-gray-500 text-sm font-body leading-relaxed max-w-xs">
-          © 2026 Simha Interactive. All Rights Reserved.
-        </p>
-
-      </div>
-
-      <!-- MIDDLE: Quick Links -->
-      <div class="flex flex-col gap-6">
-
-        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">
-          Quick Links
-        </h4>
-
-        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
-
-          <a href="#" class="nav-link hover:text-white transition">Home</a>
-          <a href="#" class="nav-link hover:text-white transition">About</a>
-          <a href="#" class="nav-link hover:text-white transition">Services</a>
-          <a href="#" class="nav-link hover:text-white transition">Portfolio</a>
-          <a href="#" class="nav-link hover:text-white transition">Contact</a>
-
-        </div>
-
-      </div>
-
-      <!-- RIGHT: Services -->
-      <div class="flex flex-col gap-6">
-
-        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">
-          Services
-        </h4>
-
-        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
-
-          <a href="#" class="nav-link hover:text-white transition">Design</a>
-          <a href="#" class="nav-link hover:text-white transition">Visualization</a>
-          <a href="#" class="nav-link hover:text-white transition">Marketing</a>
-          <a href="#" class="nav-link hover:text-white transition">Engagement Content</a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Bottom Divider Line -->
-    <div class="relative z-10 mt-12 border-t border-brand-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs font-body">
-
-      <span>
-        Built with precision and creativity.
-      </span>
-
-      <span class="tracking-widest uppercase text-gray-600">
-        Simha Interactive
-      </span>
-
-    </div>
-
-  </footer>
-  <script>
     const heroCanvas = document.getElementById('hero-canvas');
     if (heroCanvas) {
       const ctx = heroCanvas.getContext('2d');
