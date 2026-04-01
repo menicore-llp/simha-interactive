@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -137,12 +137,11 @@
        style="background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent); backdrop-filter: blur(8px);">
 
     <a href="index.html" class="flex items-center gap-3 opacity-0 animate-fade-in delay-100" style="animation-fill-mode: forwards;">
-      <div class="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden">
-        <img src="./images/Simha Logo Web White Icon.png" alt="Simha Interactive Icon" class="w-full h-full object-cover">
-      </div>
-      <div class="flex flex-col leading-none">
-        <span style="font-family: 'Nexa Bold', sans-serif; letter-spacing: 0.15em;" class="text-white text-sm sm:text-base uppercase tracking-widest">Simha</span>
-        <span style="font-family: 'Nexa Bold', sans-serif; letter-spacing: 0.35em;" class="text-white text-xs uppercase tracking-[0.35em] font-light opacity-70">Interactive</span>
+      <!-- Icon box -->
+      <div class="flex h-8 sm:h-10 lg:h-12 w-auto overflow-hidden">
+        <img src="./images/Simha Logo Web White.png" 
+             alt="Simha Interactive Icon"
+             class="h-full w-auto object-contain">
       </div>
     </a>
 
@@ -168,7 +167,7 @@
 
     <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen z-[999] flex flex-col items-center justify-center gap-8 text-white font-medium backdrop-blur-md bg-black/95 transform -translate-y-full transition-transform duration-500">
       <button onclick="toggleMenu()" class="absolute top-4 right-4 text-white hover:text-brand-orange">✕</button>
-      <a href="#" class="nav-link text-gray-400 hover:text-white uppercase">Work</a>
+      <a href="index.html" class="nav-link text-gray-400 hover:text-white uppercase">Work</a>
       <a href="services.html" class="nav-link text-white uppercase">Services</a>
       <a href="about.html" class="nav-link text-gray-400 hover:text-white uppercase">About</a>
       <a href="portfolio.html" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
@@ -183,21 +182,13 @@
   <!-- ============================================================ -->
   <!--  SERVICES HERO                                                -->
   <!-- ============================================================ -->
-  <section class="relative bg-brand-dark overflow-hidden pt-40 pb-20 md:pt-48 md:pb-32 px-5 sm:px-8 md:px-16 lg:px-24 min-h-[90vh] lg:min-h-0 flex items-center">
-    <!-- Particle Logo Background on Mobile / Right Side on Desktop -->
-    <div class="absolute inset-0 flex items-center justify-center lg:relative lg:inset-auto opacity-30 lg:opacity-100 z-0 lg:z-10 w-full lg:w-1/2 lg:order-2 pointer-events-none mt-10 lg:mt-0">
-      <div class="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] mx-auto block z-10">
-        <canvas id="logo-canvas" class="absolute top-0 left-0 w-full h-full bg-transparent mx-auto pointer-events-none"></canvas>
-      </div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16 lg:gap-12 pointer-events-none">
-      <!-- Left: Hero Text -->
-      <div class="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 order-1 w-full lg:w-1/2 pointer-events-auto">
-        <div class="reveal-item flex items-center gap-3">
+  <section class="relative bg-brand-dark overflow-hidden pt-40 pb-20 md:pt-48 md:pb-32 px-5 sm:px-8 md:px-16 lg:px-24 min-h-[50vh] flex items-center">
+    <div class="relative z-10 max-w-7xl mx-auto w-full flex justify-center pointer-events-none">
+      <div class="flex flex-col items-center text-center gap-6 w-full max-w-3xl pointer-events-auto">
+        <div class="reveal-item flex items-center justify-center gap-3">
           <div class="w-[36px] h-[2px] bg-brand-orange"></div>
           <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Overview</span>
-          <div class="w-[36px] h-[2px] bg-brand-orange lg:hidden"></div>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
         </div>
         <h1 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3.5rem, 8vw, 7rem);">Our Services</h1>
         <p class="reveal-item font-body text-gray-200 lg:text-gray-400 text-base md:text-lg max-w-xl mt-4 leading-relaxed font-medium lg:font-normal">
@@ -235,11 +226,12 @@
   <!--  DESIGN                                                       -->
   <!-- ============================================================ -->
   <section id="design" class="relative bg-brand-card overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-      <div class="flex flex-col gap-6 lg:sticky lg:top-32 relative">
-        <div class="reveal-item flex items-center gap-3">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16 items-center">
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+        <div class="reveal-item flex items-center justify-center gap-3">
           <div class="w-[36px] h-[2px] bg-brand-orange"></div>
           <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Design</span>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
         </div>
         <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(2.5rem, 6vw, 5rem);">
           Strategic Design That Builds Strong Brands
@@ -247,14 +239,9 @@
         <p class="reveal-item font-body text-gray-400 leading-relaxed text-base lg:text-lg">
           We craft distinctive brand identities and digital platforms that leave lasting impressions.
         </p>
-        <div class="reveal-item mt-4">
-          <a href="#" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
-            <span>Start Your Brand Journey</span>
-          </a>
-        </div>
       </div>
-      
-      <div class="flex flex-col gap-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         <div class="reveal-item bg-brand-dark p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
           <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Branding, Strategy & Identity</h3>
           <p class="font-body text-gray-500 mb-6 leading-relaxed">
@@ -282,10 +269,16 @@
             <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Corporate Websites</li>
             <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>E-commerce Development</li>
             <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Landing Pages</li>
+            <!-- Lines added for Custom Web Development -->
             <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Custom Web Development</li>
             <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Responsive & Mobile-Optimized Design</li>
           </ul>
         </div>
+      </div>
+      <div class="reveal-item mt-4 w-full flex justify-center">
+        <a href="#" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
+          <span>Start Your Brand Journey</span>
+        </a>
       </div>
     </div>
   </section>
@@ -294,8 +287,22 @@
   <!--  VISUALIZATION                                                -->
   <!-- ============================================================ -->
   <section id="visualization" class="relative bg-brand-dark overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-      <div class="order-2 lg:order-1 flex flex-col gap-8 mt-4 lg:mt-0">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16 items-center">
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+        <div class="reveal-item flex items-center justify-center gap-3">
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Visualization</span>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+        </div>
+        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(2.5rem, 6vw, 5rem);">
+          Transforming Concepts Into Visual Reality
+        </h2>
+        <p class="reveal-item font-body text-gray-400 leading-relaxed text-base lg:text-lg">
+          We create high-end photorealistic visuals that help brands, architects, and developers present ideas with clarity and impact.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         <div class="reveal-item bg-brand-card p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
           <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Architectural Visualization</h3>
           <p class="font-body text-gray-500 mb-6 leading-relaxed">
@@ -326,23 +333,10 @@
           </ul>
         </div>
       </div>
-
-      <div class="order-1 lg:order-2 flex flex-col gap-6 lg:sticky lg:top-32 relative mb-8 lg:mb-0">
-        <div class="reveal-item flex items-center gap-3">
-          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
-          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Visualization</span>
-        </div>
-        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(2.5rem, 6vw, 5rem);">
-          Transforming Concepts Into Visual Reality
-        </h2>
-        <p class="reveal-item font-body text-gray-400 leading-relaxed text-base lg:text-lg">
-          We create high-end photorealistic visuals that help brands, architects, and developers present ideas with clarity and impact.
-        </p>
-        <div class="reveal-item mt-4">
-          <a href="#" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
-            <span>Visualize Your Project</span>
-          </a>
-        </div>
+      <div class="reveal-item mt-4 w-full flex justify-center">
+        <a href="#" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
+          <span>Visualize Your Project</span>
+        </a>
       </div>
     </div>
   </section>
@@ -351,11 +345,12 @@
   <!--  MARKETING                                                    -->
   <!-- ============================================================ -->
   <section id="marketing" class="relative bg-brand-card overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-      <div class="flex flex-col gap-6 lg:sticky lg:top-32 relative">
-        <div class="reveal-item flex items-center gap-3">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16 items-center">
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+        <div class="reveal-item flex items-center justify-center gap-3">
           <div class="w-[36px] h-[2px] bg-brand-orange"></div>
           <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Marketing</span>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
         </div>
         <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(2.5rem, 6vw, 5rem);">
           Data-Driven Marketing That Delivers Results
@@ -363,29 +358,42 @@
         <p class="reveal-item font-body text-gray-400 leading-relaxed text-base lg:text-lg">
           We create strategic digital marketing campaigns focused on visibility, engagement, and measurable growth.
         </p>
-        <div class="reveal-item mt-4">
-          <a href="#" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
-            <span>Grow Your Business</span>
-          </a>
-        </div>
       </div>
-      
-      <div class="flex flex-col gap-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         <div class="reveal-item bg-brand-dark p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
-          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">SEO & Digital Marketing</h3>
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Search Engine Optimization (SEO)</h3>
           <p class="font-body text-gray-500 mb-6 leading-relaxed">
-            Our marketing solutions are designed to increase traffic, improve rankings, and generate quality leads.
+            Enhance your online visibility and drive organic traffic through proven SEO strategies tailored to your industry.
           </p>
           <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
           <ul class="font-body text-gray-400 space-y-3">
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Search Engine Optimization (SEO)</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Google Ads & PPC Campaigns</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Social Media Marketing</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Performance Marketing</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Content Marketing</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Analytics & Reporting</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>On-Page & Off-Page SEO</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Technical SEO Audits</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Keyword Strategy & Research</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Content Marketing & Optimization</li>
           </ul>
         </div>
+
+        <div class="reveal-item bg-brand-dark p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Digital & Performance Marketing</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Maximize your ROI with targeted ad campaigns and engaging social media strategies that connect with your audience.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Google Ads & PPC Campaigns</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Social Media Marketing</li>
+            <!-- Line edit -->
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Performance Marketing</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Analytics & Campaign Reporting</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal-item mt-4 w-full flex justify-center">
+        <a href="#" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
+          <span>Grow Your Business</span>
+        </a>
       </div>
     </div>
   </section>
@@ -394,29 +402,12 @@
   <!--  ENGAGEMENT CONTENT                                           -->
   <!-- ============================================================ -->
   <section id="engagement" class="relative bg-brand-dark overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-      <div class="order-2 lg:order-1 flex flex-col gap-8">
-        <div class="reveal-item bg-brand-card p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
-          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-6">Our Engagement Solutions</h3>
-          <ul class="font-body text-gray-400 space-y-4 mb-8">
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Augmented Reality (AR)</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Virtual Reality (VR)</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Giant Screen AR Experiences</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>VR 360 Degree Experiences</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Interactive Digital Solutions</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Holographic Content</li>
-            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Anamorphic 3D Illusion Content</li>
-          </ul>
-          <p class="font-body text-gray-500 pt-6 border-t border-brand-border leading-relaxed">
-            Whether it’s an exhibition, real estate launch, brand activation, or experiential marketing campaign — we design immersive solutions that leave lasting impressions.
-          </p>
-        </div>
-      </div>
-
-      <div class="order-1 lg:order-2 flex flex-col gap-6 lg:sticky lg:top-32 relative mb-8 lg:mb-0">
-        <div class="reveal-item flex items-center gap-3">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16 items-center">
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+        <div class="reveal-item flex items-center justify-center gap-3">
           <div class="w-[36px] h-[2px] bg-brand-orange"></div>
           <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Engagement</span>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
         </div>
         <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(2.5rem, 6vw, 5rem);">
           Immersive Experiences That Captivate Audiences
@@ -424,37 +415,83 @@
         <p class="reveal-item font-body text-gray-400 leading-relaxed text-base lg:text-lg">
           We create next-generation engagement content using advanced immersive technologies that transform how brands interact with their audience.
         </p>
-        <div class="reveal-item mt-4">
-          <a href="#" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
-            <span>Create Immersive Experiences</span>
-          </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        <div class="reveal-item bg-brand-card p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">AR & VR Experiences</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Transport your audience to entirely new worlds with engaging AR and VR content suited for brand activations, real estate, and more.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Augmented Reality (AR) Applications</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Virtual Reality (VR) Environments</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Giant Screen AR Experiences</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>VR 360 Degree Virtual Tours</li>
+          </ul>
         </div>
+
+        <div class="reveal-item bg-brand-card p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Interactive & Display Solutions</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Whether for an exhibition or real estate launch, our interactive and display technologies ensure your brand makes a powerful impact.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Interactive Digital Touch Experiences</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Holographic Content & Installations</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Anamorphic 3D Illusion Content</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Experiential Marketing Displays</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal-item mt-4 w-full flex justify-center">
+        <a href="#" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
+          <span>Create Immersive Experiences</span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ============================================================ -->
-  <!--  CALL TO ACTION SECTION (From Index)                          -->
+  <!--  CALL TO ACTION SECTION                                       -->
   <!-- ============================================================ -->
-  <section class="relative bg-brand-dark overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border text-center flex flex-col items-center justify-center min-h-[50vh]">
-    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at center, rgba(255,92,26,0.05) 0%, transparent 60%);"></div>
-    <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6">
+  <section class="relative bg-black overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border flex flex-col items-center justify-center">
+
+    <!-- Floating White Card Container -->
+    <div class="relative z-10 w-full max-w-5xl mx-auto rounded-[2.5rem] bg-white backdrop-blur-2xl border border-gray-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05),_0_0_40px_rgba(255,92,26,0.05)] py-16 md:py-24 px-6 sm:px-12 flex flex-col items-center justify-center text-center gap-6 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05),_0_0_60px_rgba(255,92,26,0.15)] transition-all duration-700">
+
+      <!-- Small label -->
       <div class="reveal-item flex items-center justify-center gap-3">
-        <div class="w-[36px] h-[2px] bg-brand-orange"></div>
-        <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Ready to Start?</span>
-        <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+        <div class="w-8 h-px bg-brand-orange"></div>
+        <span class="font-body text-xs text-brand-orange tracking-[0.4em] font-medium uppercase">
+          Ready to Start?
+        </span>
+        <div class="w-8 h-px bg-brand-orange"></div>
       </div>
-      <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 8vw, 6rem); transition-delay: 100ms;">
-        Let’s Build Something <br/>Extraordinary Together.
+
+      <!-- Headline -->
+      <h2 class="reveal-item font-display text-brand-dark leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem); transition-delay: 100ms;">
+        Let’s Build Something <br/>Extraordinary.
       </h2>
-      <p class="reveal-item font-body text-gray-400 text-base md:text-lg max-w-2xl mt-2" style="transition-delay: 200ms;">
-        Tell us about your vision, and we’ll turn it into reality.
+
+      <!-- Description -->
+      <p class="reveal-item font-body text-gray-500 text-sm sm:text-base md:text-lg max-w-2xl mt-2 mx-auto leading-relaxed" style="transition-delay: 200ms;">
+        Tell us about your vision, and we’ll turn it into reality. Partner with us to scale your brand through strategy, high-end visuals, and deep engagement.
       </p>
+
+      <!-- CTA Button -->
       <div class="reveal-item mt-8" style="transition-delay: 300ms;">
-        <a href="#" class="btn-ghost border border-white text-white px-10 py-4 font-body text-sm tracking-widest uppercase text-center inline-block hover:border-brand-orange">
-          <span>Contact Us</span>
+        <a href="#" class="relative overflow-hidden group bg-white text-black border border-gray-300 px-10 py-5 rounded-full font-body text-sm tracking-widest uppercase text-center inline-flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-black">
+          <div class="absolute inset-0 bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
+          <span class="relative z-10 font-medium group-hover:text-white transition-colors duration-300">Contact Us</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="relative z-10 w-4 h-4 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
         </a>
       </div>
+
     </div>
   </section>
 
@@ -464,13 +501,10 @@
   <footer class="relative bg-brand-dark border-t border-brand-border px-8 md:px-16 lg:px-24 py-16 md:py-20 overflow-hidden">
     <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
       <div class="flex flex-col gap-6">
+        <!-- Logo -->
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl overflow-hidden">
-            <img src="./images/Simha Logo Web Black Icon.png" alt="Simha Logo" class="w-full h-full object-cover">
-          </div>
-          <div class="flex flex-col leading-none">
-            <span class="text-white text-sm uppercase tracking-widest font-medium">Simha</span>
-            <span class="text-white/60 text-xs uppercase tracking-[0.3em]">Interactive</span>
+          <div class="h-10 w-auto overflow-hidden">
+            <img src="./images/Simha Logo Web White.png" alt="Simha Logo" class="h-full w-auto object-contain">
           </div>
         </div>
         <p class="text-gray-500 text-sm font-body leading-relaxed max-w-xs">
@@ -505,185 +539,5 @@
       <span class="tracking-widest uppercase text-gray-600">Simha Interactive</span>
     </div>
   </footer>
-
-  <!-- ============================================================ -->
-  <!--  PARTICLE LOGO ANIMATION SCRIPT                               -->
-  <!-- ============================================================ -->
-  <script>
-    (function initParticleLogo() {
-      const canvas = document.getElementById('logo-canvas');
-      if (!canvas) return;
-      
-      const ctx = canvas.getContext('2d');
-      let dots = [];
-      
-      // Fixed canvas internal size to guarantee rendering space
-      const renderSize = 600; 
-      
-      function resizeCanvas() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        // Scale for high dpi
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
-        ctx.scale(dpr, dpr);
-        return { w: rect.width, h: rect.height };
-      }
-      
-      class Dot {
-        constructor(originX, originY, cw, ch, index) {
-          // Adjust origins to be perfectly centered in the new coordinate space
-          this.originX = originX;
-          this.originY = originY;
-          
-          this.x = Math.random() * cw;
-          this.y = Math.random() * ch;
-          this.vx = 0;
-          this.vy = 0;
-          
-          this.size = 1.8;
-          this.baseColor = 'rgba(255, 255, 255, 0.8)';
-          this.accentColor = 'rgba(255, 92, 26, 1)'; 
-          
-          this.delayStart = Date.now() + (index * 1.5);
-        }
-        
-        update() {
-          if (Date.now() < this.delayStart) return false;
-          
-          this.vx += (this.originX - this.x) * 0.08;
-          this.vy += (this.originY - this.y) * 0.08;
-          
-          this.vx *= 0.82;
-          this.vy *= 0.82;
-          
-          this.x += this.vx;
-          this.y += this.vy;
-          
-          return false;
-        }
-        
-        draw() {
-          if (Date.now() < this.delayStart) return;
-          this.update();
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fillStyle = this.baseColor;
-          ctx.fill();
-        }
-      }
-      
-      function buildFallbackLogo(w, h) {
-        // If image loading fails or CORS blocks it, fallback to drawing the logo analytically
-        dots = [];
-        const cx = w / 2;
-        const cy = h / 2;
-        let index = 0;
-
-        // Top dot
-        for (let a = 0; a < Math.PI * 2; a += 0.5) {
-          for (let r = 0; r <= 18; r += 4) {
-            dots.push(new Dot(cx + Math.cos(a)*r, cy - 80 + Math.sin(a)*r, w, h, index++));
-          }
-        }
-        
-        // Left C shape (thick band, not a full half-circle)
-        for (let a = Math.PI / 2; a < Math.PI * 1.5; a += 0.08) {
-          for (let r = 40; r <= 70; r += 4) {
-            dots.push(new Dot(cx - 10 + Math.cos(a)*r, cy + Math.sin(a)*r, w, h, index++));
-          }
-        }
-
-        // Right D shape (thick band)
-        for (let a = -Math.PI / 2; a < Math.PI / 2; a += 0.08) {
-          for (let r = 40; r <= 70; r += 4) {
-            dots.push(new Dot(cx + 10 + Math.cos(a)*r, cy + 20 + Math.sin(a)*r, w, h, index++));
-          }
-        }
-      }
-
-      function sampleImage() {
-        let dims = resizeCanvas();
-        let w = dims.w;
-        let h = dims.h;
-
-        const img = new Image();
-        // Use base64 embedded image to avoid any CORS issues on local execution and ensure it ALWAYS renders the exact logo
-        img.src = 'data:image/png;base64,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';
-        
-        img.onload = () => {
-          const offCvs = document.createElement('canvas');
-          offCvs.width = w;
-          offCvs.height = h;
-          const offCtx = offCvs.getContext('2d');
-          
-          const imgSize = Math.min(w, h) * 0.7; 
-          const offsetX = (w - imgSize) / 2;
-          const offsetY = (h - imgSize) / 2;
-          
-          offCtx.drawImage(img, offsetX, offsetY, imgSize, imgSize);
-          
-          try {
-            const imgData = offCtx.getImageData(0, 0, w, h).data;
-            dots = [];
-            const step = window.innerWidth < 768 ? 5 : 7; // optimal spacing for particle look
-            let index = 0;
-            
-            for (let y = 0; y < h; y += step) {
-              for (let x = 0; x < w; x += step) {
-                const pIdx = (y * w + x) * 4;
-                const r = imgData[pIdx];
-                const g = imgData[pIdx + 1];
-                const b = imgData[pIdx + 2];
-                const a = imgData[pIdx + 3];
-                
-                // The logo itself is actually the white cutout shape inside the dark circle!
-                // So we reverse it: we only place particles where the image is LIGHT (the white cutouts).
-                const isLight = r > 150 && g > 150 && b > 150;
-                
-                if (a > 50 && isLight) {
-                  // Add a tiny bit of random scatter to the origin for a more organic particle feel
-                  const ox = x + (Math.random() - 0.5) * 3;
-                  const oy = y + (Math.random() - 0.5) * 3;
-                  dots.push(new Dot(ox, oy, w, h, index));
-                  index++;
-                }
-              }
-            }
-            
-            if(dots.length === 0) buildFallbackLogo(w, h);
-            
-          } catch(e) {
-            console.error("Canvas CORS restriction. Using fallback logo.", e);
-            buildFallbackLogo(w, h);
-          }
-        };
-
-        img.onerror = () => {
-          buildFallbackLogo(w, h);
-        };
-      }
-      
-      function animate() {
-        const rect = canvas.parentElement.getBoundingClientRect();
-        ctx.clearRect(0, 0, rect.width, rect.height);
-        
-        for (let i = 0; i < dots.length; i++) {
-          dots[i].draw();
-        }
-        
-        requestAnimationFrame(animate);
-      }
-      
-      window.addEventListener('resize', () => {
-         clearTimeout(window.resizeTimer);
-         window.resizeTimer = setTimeout(sampleImage, 200);
-      }); 
-      
-      // Delay initialization slightly to let fonts/layout settle
-      setTimeout(sampleImage, 100);
-      animate();
-    })();
-  </script>
 </body>
 </html>
