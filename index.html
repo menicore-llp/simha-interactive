@@ -231,23 +231,14 @@
       transform: translateY(0);
     }
 
-    /* Infinite word reveal */
-    @keyframes wordCycle {
-      0%, 5% { opacity: 0; transform: translateY(20px); filter: blur(4px); }
-      10%, 20% { opacity: 1; transform: translateY(0); filter: blur(0); }
-      25%, 100% { opacity: 0; transform: translateY(-20px); filter: blur(4px); }
+    /* Blinking typing cursor */
+    .typing-cursor::after {
+      content: '|';
+      animation: blink 1s step-start infinite;
+      color: #ffffff;
+      margin-left: 4px;
     }
-    .animate-word-1 { animation: wordCycle 8s infinite 0s; }
-    .animate-word-2 { animation: wordCycle 8s infinite 2s; }
-    .animate-word-3 { animation: wordCycle 8s infinite 4s; }
-    .animate-word-4 { animation: wordCycle 8s infinite 6s; }
-
-    @keyframes steadyWe {
-      0%, 5% { opacity: 0; transform: translateY(20px); filter: blur(4px); }
-      10%, 70% { opacity: 1; transform: translateY(0); filter: blur(0); }
-      75%, 100% { opacity: 0; transform: translateY(-20px); filter: blur(4px); }
-    }
-    .animate-we-steady { animation: steadyWe 8s infinite 0s; }
+    @keyframes blink { 50% { opacity: 0; } }
   </style>
   <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
 </head>
@@ -353,24 +344,10 @@
       </div>
 
       <!-- BIG headline -->
-      <h1 class="hero-headline font-display text-white font-normal text-center leading-tight md:leading-none mb-6 max-w-7xl mx-auto flex justify-center items-center"
+      <h1 class="hero-headline font-display text-white font-normal text-center leading-tight md:leading-none mb-6 max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center md:items-baseline"
           style="font-size: clamp(4rem, 9vw, 8.5rem); letter-spacing: 0.02em; font-weight: 300;">
-        <span class="relative inline-grid [grid-template-areas:'word'] w-full place-items-center">
-          
-          <span class="[grid-area:word] animate-we-steady flex justify-center items-center gap-x-3 md:gap-x-5 w-full opacity-0">
-             <span>We</span>
-             <span class="relative inline-grid [grid-template-areas:'verb'] place-items-start text-left">
-                <span class="[grid-area:verb] animate-word-1 opacity-0">Design.</span>
-                <span class="[grid-area:verb] animate-word-2 opacity-0">Visualize.</span>
-                <span class="[grid-area:verb] animate-word-3 opacity-0">Market.</span>
-             </span>
-          </span>
-
-          <span class="[grid-area:word] animate-word-4 flex flex-col md:flex-row justify-center items-center md:gap-x-5 leading-tight opacity-0 w-full text-center">
-            <span>We</span><span class="md:mt-0 mt-1">Create Experiences.</span>
-          </span>
-          
-        </span>
+        <span class="md:mr-5">We</span>
+        <span id="typewriter-text" class="text-left typing-cursor"></span>
       </h1>
 
       <!-- Subheadline -->
@@ -995,6 +972,102 @@
       resize();
       animate();
     }
+
+    // ==========================================
+    // JS Typewriter Effect (Letter by Letter Reveal)
+    // ==========================================
+    document.addEventListener("DOMContentLoaded", () => {
+      const texts = ["Design.", "Visualize.", "Market.", "Create Experiences."];
+      const typeSpeed = 35;      // Speed of typing each letter (ms)
+      const deleteSpeed = 20;     // Speed of deleting each letter (ms)
+      const delayBetweenWords = 1200; // Pause after word is fully typed (ms)
+
+      const element = document.getElementById("typewriter-text");
+      if (!element) return;
+
+      let textIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let currentWordSpans = [];
+
+      function createLetterSpans(word) {
+        element.innerHTML = "";
+        currentWordSpans = [];
+
+        // Split by word (by spaces)
+        const words = word.split(" ");
+        
+        words.forEach((w, wordIdx) => {
+          // Word container
+          const wordSpan = document.createElement("span");
+          wordSpan.setAttribute("aria-hidden", "true");
+
+          // Letters
+          for (let i = 0; i < w.length; i++) {
+            const letterSpan = document.createElement("span");
+            letterSpan.setAttribute("aria-hidden", "true");
+            letterSpan.style.opacity = "0";
+            letterSpan.innerText = w[i];
+
+            wordSpan.appendChild(letterSpan);
+            currentWordSpans.push(letterSpan);
+          }
+
+          element.appendChild(wordSpan);
+
+          // Add space between words if not the last word
+          if (wordIdx < words.length - 1) {
+            const spaceSpan = document.createElement("span");
+            spaceSpan.setAttribute("aria-hidden", "true");
+            spaceSpan.style.opacity = "0";
+            spaceSpan.innerHTML = "&nbsp;";
+            element.appendChild(spaceSpan);
+            currentWordSpans.push(spaceSpan);
+          }
+        });
+      }
+
+      function typeWriter() {
+        const currentText = texts[textIndex];
+        
+        // If starting a new word, prepare the DOM
+        if (charIndex === 0 && !isDeleting) {
+          createLetterSpans(currentText);
+        }
+
+        let speed = isDeleting ? deleteSpeed : typeSpeed;
+
+        if (isDeleting) {
+          // Remove a character by setting opacity to 0
+          if (charIndex > 0) {
+            charIndex--;
+            currentWordSpans[charIndex].style.opacity = "0";
+          }
+        } else {
+          // Add a character by setting opacity to 1
+          if (charIndex < currentWordSpans.length) {
+            currentWordSpans[charIndex].style.opacity = "1";
+            charIndex++;
+          }
+        }
+
+        if (!isDeleting && charIndex === currentText.length) {
+          // Finished typing word
+          speed = delayBetweenWords;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          // Finished deleting word
+          isDeleting = false;
+          textIndex = (textIndex + 1) % texts.length;
+          speed = 300; // small pause before next word
+        }
+
+        setTimeout(typeWriter, speed);
+      }
+
+      // Start the loop
+      setTimeout(typeWriter, 1000);
+    });
   </script>
 
 </body>
