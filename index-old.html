@@ -348,7 +348,8 @@
 
       <!-- BIG headline -->
       <h1 class="hero-headline font-display text-white font-normal text-center leading-tight md:leading-none mb-6 max-w-7xl mx-auto"
-          style="font-size: clamp(2.5rem, 6vw, 6.5rem); letter-spacing: 0.02em; font-weight: 300;">
+          style="font-size: clamp(3rem, 11vw, 8.5rem); letter-spacing: 0.02em; font-weight: 300;">
+        <span class="mr-2 md:mr-4">We</span>
         <span id="typewriter-text" class="typing-cursor"></span>
       </h1>
 
@@ -387,40 +388,63 @@
     <!-- Diagonal stripes (same as hero) -->
     <div class="diagonal-stripes"></div>
 
-    <!-- Main container -->
-    <div class="relative z-10 flex flex-col items-center text-center gap-16 max-w-7xl mx-auto">
+    <!-- Main grid -->
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-      <!-- TOP HEADER -->
-      <div class="flex flex-col items-center gap-6 max-w-3xl mx-auto text-center">
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col gap-8">
 
         <!-- Small label -->
-        <div class="flex items-center justify-center gap-3 w-full">
+        <div class="flex items-center gap-3">
           <div class="w-8 h-px bg-brand-orange"></div>
           <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">
             Who We Are
           </span>
-          <div class="w-8 h-px bg-brand-orange"></div>
         </div>
 
         <!-- Heading -->
         <h2 class="font-display text-white leading-none"
-            style="font-size: clamp(3rem, 7vw, 5.5rem);">
+            style="font-size: clamp(2.8rem, 6vw, 5.5rem);">
           A Creative Force <br/>
-          <span class="text-brand-white">Driven By Strategy</span>
+          <span class="text-brand-white">Driven By</span> <br/>
+          Strategy
         </h2>
 
-        <!-- Paragraph -->
-        <p class="font-body text-gray-400 leading-relaxed text-base lg:text-lg max-w-2xl mt-4 mx-auto">
-          We are a multidisciplinary creative agency driven by design excellence,
-          and cutting-edge technology. From building powerful brand identities to crafting
-          immersive AR/VR experiences, we help businesses stand out, scale faster, and
-          connect deeper with their audience.
-        </p>
+        <!-- Paragraph with left orange border -->
+        <div class="border-l-2 border-brand-orange pl-6">
+          <p class="font-body text-gray-400 leading-relaxed text-base lg:text-lg">
+            We are a multidisciplinary creative agency driven by strategy, design excellence,
+            and cutting-edge technology. From building powerful brand identities to crafting
+            immersive AR/VR experiences, we help businesses stand out, scale faster, and
+            connect deeper with their audience.
+          </p>
+        </div>
+
+        <!-- CTA text link -->
+        <a href="about.html"
+          class="group inline-flex items-center gap-4 w-fit mt-2"
+          style="text-decoration: none;">
+          <span class="font-body text-sm text-white tracking-[0.3em] uppercase
+                      border-b border-white/20 pb-1
+                      group-hover:border-brand-orange group-hover:text-brand-orange
+                      transition-all duration-300">
+            Learn More About Us
+          </span>
+          <span class="w-8 h-px bg-white/30 group-hover:w-14 group-hover:bg-brand-orange
+                      transition-all duration-500 inline-block"></span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4 text-white/30 group-hover:text-brand-orange
+                      group-hover:translate-x-1 transition-all duration-300"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
 
       </div>
 
-      <!-- CARDS ROW -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full text-left">
+      <!-- RIGHT COLUMN — 4 highlight cards -->
+      <div class="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
 
         <!-- Card 1 — Design -->
         <div class="group relative border border-brand-border p-4 sm:p-5 md:p-6 flex flex-col gap-4 w-full min-h-[160px] sm:min-h-[180px] md:min-h-[220px]
@@ -517,28 +541,7 @@
         </div>
 
       </div>
-      <!-- end cards row -->
-
-      <!-- CTA text link -->
-      <a href="about.html"
-         class="group inline-flex items-center gap-4 mt-6"
-         style="text-decoration: none;">
-        <span class="font-body text-sm text-white tracking-[0.3em] uppercase
-                    border-b border-white/20 pb-1
-                    group-hover:border-brand-orange group-hover:text-brand-orange
-                    transition-all duration-300">
-          Learn More About Us
-        </span>
-        <span class="w-8 h-px bg-white/30 group-hover:w-14 group-hover:bg-brand-orange
-                    transition-all duration-500 inline-block"></span>
-        <svg xmlns="http://www.w3.org/2000/svg"
-            class="w-4 h-4 text-white/30 group-hover:text-brand-orange
-                    group-hover:translate-x-1 transition-all duration-300"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </a>
+      <!-- end right column -->
 
     </div>
     <!-- end main grid -->
@@ -551,46 +554,61 @@
     <!-- Diagonal stripes -->
     <div class="diagonal-stripes"></div>
 
-    <!-- Main Container -->
-    <div class="relative z-10 flex flex-col items-center gap-16 mt-16 max-w-7xl mx-auto">
+    <!-- Main Grid -->
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-start mt-16 max-w-7xl mx-auto">
       
-      <!-- HEADER BLOCK -->
-      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+      <!-- LEFT COLUMN -->
+      <div class="flex flex-col gap-8">
         
-        <!-- Small label -->
-        <div class="reveal-item flex items-center justify-center gap-3 w-full">
-          <div class="w-10 h-[2px] bg-brand-orange"></div>
-          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">
-            Why Choose Us
-          </span>
-          <div class="w-10 h-[2px] bg-brand-orange"></div>
-        </div>
+        <!-- Header Block -->
+        <div class="reveal-item flex flex-col gap-4">
+          <!-- Small label -->
+          <div class="flex items-center gap-3">
+            <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+            <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">
+              Why Choose Us
+            </span>
+          </div>
 
-        <!-- Big Heading -->
-        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
-          The Simha <br/>
-          <span class="text-brand-white">Difference</span>
-        </h2>
+          <!-- Big Heading -->
+          <h2 class="font-display text-white leading-none" style="font-size: clamp(3rem, 8vw, 7rem);">
+            The Simha <br/>
+            <span class="text-brand-white">Difference</span>
+          </h2>
+        </div>
 
         <!-- Description Paragraph -->
         <div class="reveal-item" style="transition-delay: 100ms;">
-          <p class="font-body text-gray-400 text-sm sm:text-base leading-relaxed max-w-2xl">
+          <p class="font-body text-gray-400 text-sm sm:text-base leading-relaxed max-w-md bg-transparent">
             We don't just deliver projects — we become your creative partner. Every solution we build is rooted in strategy, powered by technology, and measured by results.
           </p>
         </div>
 
+        <!-- Text CTA Link -->
+        <div class="reveal-item" style="transition-delay: 200ms;">
+          <a href="contact.html" class="group inline-flex items-center w-fit gap-4 mt-2" style="text-decoration: none;">
+            <span class="font-body text-sm text-white tracking-[0.3em] uppercase border-b border-white/20 pb-1 group-hover:border-brand-orange group-hover:text-brand-orange transition-all duration-300">
+              Start Your Project
+            </span>
+            <span class="w-8 h-px bg-white/30 group-hover:w-14 group-hover:bg-brand-orange transition-all duration-500 inline-block"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white/30 group-hover:text-brand-orange group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+
       </div>
       
-      <!-- FEATURES GRID (6 points, 2 columns) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 w-full">
+      <!-- RIGHT COLUMN: Features List -->
+      <div class="flex flex-col border-t border-brand-border w-full mt-4 lg:mt-0">
         
         <!-- Item 1 -->
-        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-brand-border hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-4" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 0ms;">
+        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-brand-border hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-2" style="opacity: 0; transform: translateX(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 0ms;">
           <div class="font-display text-white text-2xl sm:text-3xl min-w-[3rem] opacity-50 group-hover:opacity-100 transition-opacity duration-300">01</div>
           <div class="flex flex-col flex-1 pb-1">
             <h3 class="font-body font-medium text-white text-sm sm:text-base tracking-wider uppercase mb-1">Strategic + Creative Approach</h3>
-            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mt-1">
-              We combine sharp creative thinking with data-backed Strategyto deliver work that looks exceptional and performs even better.
+            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed hidden sm:block max-w-sm mt-1">
+              We combine sharp creative thinking with data-backed strategy to deliver work that looks exceptional and performs even better.
             </p>
           </div>
           <div class="ml-auto text-gray-700 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 self-center">
@@ -601,11 +619,11 @@
         </div>
 
         <!-- Item 2 -->
-        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-brand-border hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-4" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 100ms;">
+        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-brand-border hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-2" style="opacity: 0; transform: translateX(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 100ms;">
           <div class="font-display text-white text-2xl sm:text-3xl min-w-[3rem] opacity-50 group-hover:opacity-100 transition-opacity duration-300">02</div>
           <div class="flex flex-col flex-1 pb-1">
             <h3 class="font-body font-medium text-white text-sm sm:text-base tracking-wider uppercase mb-1">Technology-Driven Execution</h3>
-            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mt-1">
+            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed hidden sm:block max-w-sm mt-1">
               From AR/VR to real-time 3D and AI-powered workflows — we use cutting-edge technology to give your brand an unfair advantage.
             </p>
           </div>
@@ -617,11 +635,11 @@
         </div>
 
         <!-- Item 3 -->
-        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-brand-border hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-4" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 200ms;">
+        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-brand-border hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-2" style="opacity: 0; transform: translateX(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 200ms;">
           <div class="font-display text-white text-2xl sm:text-3xl min-w-[3rem] opacity-50 group-hover:opacity-100 transition-opacity duration-300">03</div>
           <div class="flex flex-col flex-1 pb-1">
             <h3 class="font-body font-medium text-white text-sm sm:text-base tracking-wider uppercase mb-1">Industry Expertise</h3>
-            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mt-1">
+            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed hidden sm:block max-w-sm mt-1">
               15+ years across real estate, hospitality, retail, and F&B — we understand your industry and know what moves your audience.
             </p>
           </div>
@@ -633,12 +651,12 @@
         </div>
 
         <!-- Item 4 -->
-        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-brand-border hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-4" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 300ms;">
+        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-brand-border hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-2" style="opacity: 0; transform: translateX(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 300ms;">
           <div class="font-display text-white text-2xl sm:text-3xl min-w-[3rem] opacity-50 group-hover:opacity-100 transition-opacity duration-300">04</div>
           <div class="flex flex-col flex-1 pb-1">
             <h3 class="font-body font-medium text-white text-sm sm:text-base tracking-wider uppercase mb-1">End-to-End Project Management</h3>
-            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mt-1">
-              From brief to delivery, we handle every stage — Strategy, design, production, and activation — so you don't have to juggle vendors.
+            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed hidden sm:block max-w-sm mt-1">
+              From brief to delivery, we handle every stage — strategy, design, production, and activation — so you don't have to juggle vendors.
             </p>
           </div>
           <div class="ml-auto text-gray-700 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 self-center">
@@ -649,11 +667,11 @@
         </div>
 
         <!-- Item 5 -->
-        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-brand-border hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-4 md:border-transparent" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 400ms;">
+        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-transparent hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-2" style="opacity: 0; transform: translateX(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 400ms;">
           <div class="font-display text-white text-2xl sm:text-3xl min-w-[3rem] opacity-50 group-hover:opacity-100 transition-opacity duration-300">05</div>
           <div class="flex flex-col flex-1 pb-1">
             <h3 class="font-body font-medium text-white text-sm sm:text-base tracking-wider uppercase mb-1">Results-Focused Solutions</h3>
-            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mt-1">
+            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed hidden sm:block max-w-sm mt-1">
               Every project is tied to a measurable outcome — whether that's brand recall, lead generation, or audience engagement.
             </p>
           </div>
@@ -664,37 +682,8 @@
           </div>
         </div>
 
-        <!-- Item 6 (New) -->
-        <div class="feature-item group flex items-start gap-4 sm:gap-6 py-5 sm:py-6 border-b border-transparent hover:bg-white/[0.02] transition-colors duration-300 cursor-default px-4" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); transition-delay: 500ms;">
-          <div class="font-display text-white text-2xl sm:text-3xl min-w-[3rem] opacity-50 group-hover:opacity-100 transition-opacity duration-300">06</div>
-          <div class="flex flex-col flex-1 pb-1">
-            <h3 class="font-body font-medium text-white text-sm sm:text-base tracking-wider uppercase mb-1">Uncompromising Quality</h3>
-            <p class="font-body text-gray-600 text-xs sm:text-sm leading-relaxed max-w-sm mt-1">
-              We never settle for good enough. Our dedication to craftsmanship ensures every detail aligns with premium standards.
-            </p>
-          </div>
-          <div class="ml-auto text-gray-700 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 self-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-            </svg>
-          </div>
-        </div>
-
       </div>
-      <!-- End Features Grid -->
-
-      <!-- CTA LINK -->
-      <div class="reveal-item flex justify-center mt-6" style="transition-delay: 200ms;">
-        <a href="contact.html" class="group inline-flex items-center gap-4" style="text-decoration: none;">
-          <span class="font-body text-sm text-white tracking-[0.3em] uppercase border-b border-white/20 pb-1 group-hover:border-brand-orange group-hover:text-brand-orange transition-all duration-300">
-            Start Your Project
-          </span>
-          <span class="w-8 h-px bg-white/30 group-hover:w-14 group-hover:bg-brand-orange transition-all duration-500 inline-block"></span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white/30 group-hover:text-brand-orange group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </a>
-      </div>
+      <!-- End Right Column -->
 
     </div>
   </section>
@@ -702,9 +691,13 @@
   <!-- ============================================================ -->
   <!--  CALL TO ACTION SECTION                                       -->
   <!-- ============================================================ -->
-  <section class="relative bg-white overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 flex flex-col items-center justify-center">
+  <section class="relative bg-black overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border flex flex-col items-center justify-center">
 
-    <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-center text-center gap-6">
+    <!-- Floating White Card Container -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto rounded-[2.5rem] bg-white backdrop-blur-2xl border border-gray-100 
+        shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05),_0_0_40px_rgba(255,92,26,0.05)] py-16 md:py-24 px-6 sm:px-12 flex flex-col 
+        items-center justify-center text-center gap-6 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05),_0_0_60px_rgba(255,92,26,0.15)] 
+        transition-all duration-700">
       <!-- Small label -->
       <div class="reveal-item flex items-center justify-center gap-3">
         <div class="w-8 h-px bg-brand-orange"></div>
@@ -945,26 +938,22 @@
         ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
         ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
 
-        const isMobile = window.innerWidth <= 768;
-
         dots.forEach(dot => {
-          if (!isMobile) {
-            // Interaction only for desktop
-            const dx = mouse.x - dot.x;
-            const dy = mouse.y - dot.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
+          // Interaction
+          const dx = mouse.x - dot.x;
+          const dy = mouse.y - dot.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance > 0 && distance < repulsionRadius) {
-              const force = (repulsionRadius - distance) / repulsionRadius;
-              const directionX = -(dx / distance);
-              const directionY = -(dy / distance);
+          if (distance > 0 && distance < repulsionRadius) {
+            const force = (repulsionRadius - distance) / repulsionRadius;
+            const directionX = -(dx / distance);
+            const directionY = -(dy / distance);
 
-              dot.vx += directionX * force * 4;
-              dot.vy += directionY * force * 4;
-            }
+            dot.vx += directionX * force * 4;
+            dot.vy += directionY * force * 4;
           }
 
-          // Spring return (applies to both, ensuring mobile stays at origin)
+          // Spring return
           dot.vx += (dot.originX - dot.x) * 0.08;
           dot.vy += (dot.originY - dot.y) * 0.08;
 
@@ -993,50 +982,95 @@
     // JS Typewriter Effect (Letter by Letter Reveal)
     // ==========================================
     document.addEventListener("DOMContentLoaded", () => {
-      const text = "WE DESIGN. WE VISUALIZE. WE MARKET.<br/>WE CREATE EXPERIENCES";
-      const typeSpeed = 50;
+      const texts = ["Design.", "Visualize.", "Market.", "Create Experiences."];
+      const typeSpeed = 35;      // Speed of typing each letter (ms)
+      const deleteSpeed = 20;     // Speed of deleting each letter (ms)
+      const delayBetweenWords = 1200; // Pause after word is fully typed (ms)
 
       const element = document.getElementById("typewriter-text");
       if (!element) return;
 
-      element.innerHTML = "";
+      let textIndex = 0;
       let charIndex = 0;
+      let isDeleting = false;
+      let currentWordSpans = [];
 
-      // Create a temporary element to parse the HTML so we can type it out including the <br/>
-      const tempDiv = document.createElement("div");
-      tempDiv.innerHTML = text;
-      const nodes = Array.from(tempDiv.childNodes);
-      let currentNodeIndex = 0;
-      let currentTextNodeCharIndex = 0;
+      function createLetterSpans(word) {
+        element.innerHTML = "";
+        currentWordSpans = [];
 
-      let hasTyped = false;
-
-      function typeWriter() {
-        if (hasTyped) return;
+        // Split by word (by spaces)
+        const words = word.split(" ");
         
-        if (currentNodeIndex < nodes.length) {
-          const node = nodes[currentNodeIndex];
-          if (node.nodeType === Node.TEXT_NODE) {
-            if (currentTextNodeCharIndex < node.textContent.length) {
-              element.innerHTML += node.textContent[currentTextNodeCharIndex];
-              currentTextNodeCharIndex++;
-              setTimeout(typeWriter, typeSpeed);
-            } else {
-              currentNodeIndex++;
-              currentTextNodeCharIndex = 0;
-              setTimeout(typeWriter, typeSpeed);
-            }
-          } else if (node.nodeName === "BR") {
-            element.appendChild(document.createElement("br"));
-            currentNodeIndex++;
-            setTimeout(typeWriter, typeSpeed);
+        words.forEach((w, wordIdx) => {
+          // Word container
+          const wordSpan = document.createElement("span");
+          wordSpan.setAttribute("aria-hidden", "true");
+
+          // Letters
+          for (let i = 0; i < w.length; i++) {
+            const letterSpan = document.createElement("span");
+            letterSpan.setAttribute("aria-hidden", "true");
+            letterSpan.style.opacity = "0";
+            letterSpan.innerText = w[i];
+
+            wordSpan.appendChild(letterSpan);
+            currentWordSpans.push(letterSpan);
           }
-        } else {
-          // Finished typing
-          hasTyped = true;
-        }
+
+          element.appendChild(wordSpan);
+
+          // Add space between words if not the last word
+          if (wordIdx < words.length - 1) {
+            const spaceSpan = document.createElement("span");
+            spaceSpan.setAttribute("aria-hidden", "true");
+            spaceSpan.style.opacity = "0";
+            spaceSpan.innerHTML = "&nbsp;";
+            element.appendChild(spaceSpan);
+            currentWordSpans.push(spaceSpan);
+          }
+        });
       }
 
+      function typeWriter() {
+        const currentText = texts[textIndex];
+        
+        // If starting a new word, prepare the DOM
+        if (charIndex === 0 && !isDeleting) {
+          createLetterSpans(currentText);
+        }
+
+        let speed = isDeleting ? deleteSpeed : typeSpeed;
+
+        if (isDeleting) {
+          // Remove a character by setting opacity to 0
+          if (charIndex > 0) {
+            charIndex--;
+            currentWordSpans[charIndex].style.opacity = "0";
+          }
+        } else {
+          // Add a character by setting opacity to 1
+          if (charIndex < currentWordSpans.length) {
+            currentWordSpans[charIndex].style.opacity = "1";
+            charIndex++;
+          }
+        }
+
+        if (!isDeleting && charIndex === currentText.length) {
+          // Finished typing word
+          speed = delayBetweenWords;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          // Finished deleting word
+          isDeleting = false;
+          textIndex = (textIndex + 1) % texts.length;
+          speed = 300; // small pause before next word
+        }
+
+        setTimeout(typeWriter, speed);
+      }
+
+      // Start the loop
       setTimeout(typeWriter, 1000);
     });
   </script>
