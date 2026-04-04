@@ -29,6 +29,7 @@
             'fade-in': 'fadeIn 1.2s ease forwards',
             'scroll-bounce': 'scrollBounce 2s ease-in-out infinite',
             'marquee': 'marquee 20s linear infinite',
+            'marquee-reverse': 'marqueeReverse 20s linear infinite',
             'grain': 'grain 0.5s steps(2) infinite',
           },
           keyframes: {
@@ -47,6 +48,10 @@
             marquee: {
               '0%': { transform: 'translateX(0%)' },
               '100%': { transform: 'translateX(-50%)' },
+            },
+            marqueeReverse: {
+              '0%': { transform: 'translateX(-50%)' },
+              '100%': { transform: 'translateX(0%)' },
             },
             grain: {
               '0%, 100%': { backgroundPosition: '0% 0%' },
@@ -249,7 +254,6 @@
 <body>
 
   
-
   <!-- ============================================================ -->
   <!--  NAVBAR                                                       -->
   <!-- ============================================================ -->
@@ -262,7 +266,7 @@
   
   <!-- Icon box -->
   <div class="flex h-8 sm:h-10 lg:h-12 w-auto overflow-hidden">
-    <img src="./images/Simha Logo Web White.png" 
+    <img src="./assets/Simha Logo Web White.png" 
          alt="Simha Interactive Icon"
          class="h-full w-auto object-contain">
   </div>
@@ -507,7 +511,7 @@
               Engagement
             </h3>
             <p class="font-body text-gray-600 text-[11px] sm:text-xs md:text-sm leading-relaxed break-words">
-              Immersive AR, VR & holographic experiences that captivate audiences.
+              Immersive AR, VR, holographic & anamorphic experiences that captivate audiences.
             </p>
           </div>
           <div class="absolute bottom-2 right-2 w-0 h-0 
@@ -700,6 +704,90 @@
   </section>
   
   <!-- ============================================================ -->
+  <!--  OUR CLIENTS SECTION                                          -->
+  <!-- ============================================================ -->
+  <section class="relative bg-brand-dark overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 border-b border-brand-border h-full">
+    <div class="relative z-10 flex flex-col items-center gap-12 mt-8 max-w-7xl mx-auto">
+      
+      <!-- HEADER BLOCK -->
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+        <div class="reveal-item flex items-center justify-center gap-3 w-full">
+          <div class="w-10 h-[2px] bg-brand-orange"></div>
+          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">
+            Our Clients
+          </span>
+          <div class="w-10 h-[2px] bg-brand-orange"></div>
+        </div>
+        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 4.5rem);">
+          Brands We Partner With
+        </h2>
+      </div>
+
+      <!-- LOGOS TICKER -->
+      <div class="reveal-item w-full flex flex-col gap-12 mt-12 overflow-hidden" style="transition-delay: 200ms; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+        
+        <!-- ROW 1: Logos 1-9 -->
+        <div class="flex w-max animate-marquee hover:[animation-play-state:paused]" style="animation-duration: 40s;">
+          <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
+            <img src="./assets/Client Logo/Piramal Reality.webp" alt="Piramal Reality" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/DDECORHOMEFABRICS.jpg" alt="D Decor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Hafiz Contractor.jpg" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Trident Group.png" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Delta-Group.webp" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Nirvana.jpg" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Cellecor.webp" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/THOE.png" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Suraksha Smart City.jpg" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
+            <img src="./assets/Client Logo/Piramal Reality.webp" alt="Piramal Reality" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/DDECORHOMEFABRICS.jpg" alt="D Decor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Hafiz Contractor.jpg" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Trident Group.png" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Delta-Group.webp" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Nirvana.jpg" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Cellecor.webp" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/THOE.png" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Suraksha Smart City.jpg" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+          </div>
+        </div>
+
+        <!-- ROW 2: Logos 10-18 (Moves opposite direction) -->
+        <div class="flex w-max animate-marquee-reverse hover:[animation-play-state:paused]" style="animation-duration: 40s;">
+          <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
+            <img src="./assets/Client Logo/Risland Icon.webp" alt="Rislan The Icon" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Labdhi Lifestylle.jpg" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/RenderThat.jpg" alt="RenderThat Creative" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Oli Studio.jpg" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Command Collective.webp" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Zebra Idealab.png" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Kanak Export.png" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Kanak Naturals.png" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/R for Rabbit.jpg" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
+            <img src="./assets/Client Logo/Risland Icon.webp" alt="Rislan The Icon" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Labdhi Lifestylle.jpg" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/RenderThat.jpg" alt="RenderThat Creative" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Oli Studio.jpg" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Command Collective.webp" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Zebra Idealab.png" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Kanak Export.png" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Kanak Naturals.png" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/R for Rabbit.jpg" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
   <!--  CALL TO ACTION SECTION                                       -->
   <!-- ============================================================ -->
   <section class="relative bg-white overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 flex flex-col items-center justify-center">
@@ -752,7 +840,7 @@
         <!-- Logo -->
         <div class="flex items-center gap-3">
           <div class="h-10 w-auto overflow-hidden">
-            <img src="./images/Simha Logo Web White.png" alt="Simha Logo" class="h-full w-auto object-contain">
+            <img src="./assets/Simha Logo Web White.png" alt="Simha Logo" class="h-full w-auto object-contain">
           </div>
         </div>
 
@@ -993,50 +1081,95 @@
     // JS Typewriter Effect (Letter by Letter Reveal)
     // ==========================================
     document.addEventListener("DOMContentLoaded", () => {
-      const text = "WE DESIGN. WE VISUALIZE. WE MARKET.<br/>WE CREATE EXPERIENCES";
-      const typeSpeed = 50;
+      const texts = ["We Design.", "We Visualize.", "We Market.", "We Create Experiences."];
+      const typeSpeed = 35;      // Speed of typing each letter (ms)
+      const deleteSpeed = 20;     // Speed of deleting each letter (ms)
+      const delayBetweenWords = 1200; // Pause after word is fully typed (ms)
 
       const element = document.getElementById("typewriter-text");
       if (!element) return;
 
-      element.innerHTML = "";
+      let textIndex = 0;
       let charIndex = 0;
+      let isDeleting = false;
+      let currentWordSpans = [];
 
-      // Create a temporary element to parse the HTML so we can type it out including the <br/>
-      const tempDiv = document.createElement("div");
-      tempDiv.innerHTML = text;
-      const nodes = Array.from(tempDiv.childNodes);
-      let currentNodeIndex = 0;
-      let currentTextNodeCharIndex = 0;
+      function createLetterSpans(word) {
+        element.innerHTML = "";
+        currentWordSpans = [];
 
-      let hasTyped = false;
+        // Split by word (by spaces)
+        const words = word.split(" ");
 
-      function typeWriter() {
-        if (hasTyped) return;
-        
-        if (currentNodeIndex < nodes.length) {
-          const node = nodes[currentNodeIndex];
-          if (node.nodeType === Node.TEXT_NODE) {
-            if (currentTextNodeCharIndex < node.textContent.length) {
-              element.innerHTML += node.textContent[currentTextNodeCharIndex];
-              currentTextNodeCharIndex++;
-              setTimeout(typeWriter, typeSpeed);
-            } else {
-              currentNodeIndex++;
-              currentTextNodeCharIndex = 0;
-              setTimeout(typeWriter, typeSpeed);
-            }
-          } else if (node.nodeName === "BR") {
-            element.appendChild(document.createElement("br"));
-            currentNodeIndex++;
-            setTimeout(typeWriter, typeSpeed);
+        words.forEach((w, wordIdx) => {
+          // Word container
+          const wordSpan = document.createElement("span");
+          wordSpan.setAttribute("aria-hidden", "true");
+
+          // Letters
+          for (let i = 0; i < w.length; i++) {
+            const letterSpan = document.createElement("span");
+            letterSpan.setAttribute("aria-hidden", "true");
+            letterSpan.style.opacity = "0";
+            letterSpan.innerText = w[i];
+
+            wordSpan.appendChild(letterSpan);
+            currentWordSpans.push(letterSpan);
           }
-        } else {
-          // Finished typing
-          hasTyped = true;
-        }
+
+          element.appendChild(wordSpan);
+
+          // Add space between words if not the last word
+          if (wordIdx < words.length - 1) {
+            const spaceSpan = document.createElement("span");
+            spaceSpan.setAttribute("aria-hidden", "true");
+            spaceSpan.style.opacity = "0";
+            spaceSpan.innerHTML = "&nbsp;";
+            element.appendChild(spaceSpan);
+            currentWordSpans.push(spaceSpan);
+          }
+        });
       }
 
+      function typeWriter() {
+        const currentText = texts[textIndex];
+        
+        // If starting a new word, prepare the DOM
+        if (charIndex === 0 && !isDeleting) {
+          createLetterSpans(currentText);
+        }
+
+        let speed = isDeleting ? deleteSpeed : typeSpeed;
+
+        if (isDeleting) {
+          // Remove a character by setting opacity to 0
+          if (charIndex > 0) {
+            charIndex--;
+            currentWordSpans[charIndex].style.opacity = "0";
+          }
+        } else {
+          // Add a character by setting opacity to 1
+          if (charIndex < currentWordSpans.length) {
+            currentWordSpans[charIndex].style.opacity = "1";
+            charIndex++;
+          }
+        }
+
+        if (!isDeleting && charIndex === currentText.length) {
+          // Finished typing word
+          speed = delayBetweenWords;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          // Finished deleting word
+          isDeleting = false;
+          textIndex = (textIndex + 1) % texts.length;
+          speed = 300; // small pause before next word
+        }
+
+        setTimeout(typeWriter, speed);
+      }
+
+      // Start the loop
       setTimeout(typeWriter, 1000);
     });
   </script>
