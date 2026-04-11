@@ -385,11 +385,34 @@
   </section>  
 
   <!-- ============================================================ -->
+  <!--  HERO VIDEO SECTION -->
+  <!-- ============================================================ -->
+  <section class="relative bg-brand-dark overflow-hidden w-full flex justify-center items-center">
+    <div class="reveal-item w-full relative flex justify-center items-center overflow-hidden mix-blend-lighten"
+         style="transition-duration: 1.2s; transition-delay: 100ms;">
+      
+      <!-- Delicate overlay to blend the video horizontally and vertically into the dark background -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-[#080808] z-10 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#080808] via-transparent to-[#080808] z-10 pointer-events-none opacity-50"></div>
+      <div class="absolute inset-0 bg-black/10 z-10 pointer-events-none"></div>
+
+      <!-- Video element properly styled for responsiveness -->
+      <video src="./assets/landing_page_video.mp4" 
+             autoplay 
+             loop 
+             muted 
+             playsinline 
+             class="w-full h-auto aspect-video md:aspect-[21/9] object-cover object-center transform hover:scale-[1.03] transition-transform duration-[3s] ease-out">
+      </video>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
   <!--  ABOUT PREVIEW SECTION                                        -->
   <!-- ============================================================ -->
   <section class="relative bg-brand-dark overflow-hidden py-24 md:py-36 px-8 md:px-16 lg:px-24">
 
-    <!-- Diagonal stripes (same as hero) -->
+    <!-- Diagonal stripes -->
     <div class="diagonal-stripes"></div>
 
     <!-- Main container -->
@@ -706,11 +729,11 @@
   <!-- ============================================================ -->
   <!--  OUR CLIENTS SECTION                                          -->
   <!-- ============================================================ -->
-  <section class="relative bg-brand-dark overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 border-b border-brand-border h-full">
-    <div class="relative z-10 flex flex-col items-center gap-12 mt-8 max-w-7xl mx-auto">
+  <section class="relative bg-brand-dark py-16 md:py-24 border-b border-brand-border overflow-hidden w-full">
+    <div class="relative z-10 flex flex-col items-center gap-12 mt-8 w-full">
       
       <!-- HEADER BLOCK -->
-      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl mx-auto px-5 sm:px-8 md:px-16 lg:px-24">
         <div class="reveal-item flex items-center justify-center gap-3 w-full">
           <div class="w-10 h-[2px] bg-brand-orange"></div>
           <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">
@@ -724,63 +747,61 @@
       </div>
 
       <!-- LOGOS TICKER -->
-      <div class="reveal-item w-full flex flex-col gap-12 mt-12 overflow-hidden" style="transition-delay: 200ms; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+      <div class="reveal-item w-full flex flex-col gap-12 mt-12 overflow-hidden" style="transition-delay: 200ms;">
         
         <!-- ROW 1: Logos 1-9 -->
-        <div class="flex w-max animate-marquee hover:[animation-play-state:paused]" style="animation-duration: 40s;">
+        <div class="flex w-max animate-marquee" style="animation-duration: 40s;">
           <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
-            <img src="./assets/Client Logo/Piramal Reality.webp" alt="Piramal Reality" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/DDECORHOMEFABRICS.jpg" alt="D Decor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Hafiz Contractor.jpg" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Trident Group.png" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Delta-Group.webp" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Nirvana.jpg" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Cellecor.webp" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/THOE.png" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Suraksha Smart City.jpg" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Piramal Reality.webp" alt="Piramal Reality" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/DDECORHOMEFABRICS.jpg" alt="D Decor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Hafiz Contractor.jpg" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Trident Group.png" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Delta-Group.webp" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Nirvana.jpg" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Cellecor.webp" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/THOE.png" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Suraksha Smart City.jpg" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain">
           </div>
           <!-- Duplicate for seamless loop -->
           <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
-            <img src="./assets/Client Logo/Piramal Reality.webp" alt="Piramal Reality" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/DDECORHOMEFABRICS.jpg" alt="D Decor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Hafiz Contractor.jpg" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Trident Group.png" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Delta-Group.webp" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Nirvana.jpg" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Cellecor.webp" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/THOE.png" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Suraksha Smart City.jpg" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Piramal Reality.webp" alt="Piramal Reality" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/DDECORHOMEFABRICS.jpg" alt="D Decor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Hafiz Contractor.jpg" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Trident Group.png" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Delta-Group.webp" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Nirvana.jpg" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Cellecor.webp" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/THOE.png" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Suraksha Smart City.jpg" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain">
           </div>
         </div>
 
         <!-- ROW 2: Logos 10-18 (Moves opposite direction) -->
-        <div class="flex w-max animate-marquee-reverse hover:[animation-play-state:paused]" style="animation-duration: 40s;">
+        <div class="flex w-max animate-marquee-reverse" style="animation-duration: 40s;">
           <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
-            <img src="./assets/Client Logo/Risland Icon.webp" alt="Rislan The Icon" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Labdhi Lifestylle.jpg" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/RenderThat.jpg" alt="RenderThat Creative" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Oli Studio.jpg" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Command Collective.webp" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Zebra Idealab.png" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Kanak Export.png" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Kanak Naturals.png" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/R for Rabbit.jpg" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Risland Icon.webp" alt="Rislan The Icon" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Labdhi Lifestylle.jpg" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/RenderThat.jpg" alt="RenderThat Creative" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Oli Studio.jpg" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Command Collective.webp" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Zebra Idealab.png" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Kanak Export.png" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Kanak Naturals.png" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/R for Rabbit.jpg" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain">
           </div>
           <!-- Duplicate for seamless loop -->
           <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
-            <img src="./assets/Client Logo/Risland Icon.webp" alt="Rislan The Icon" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Labdhi Lifestylle.jpg" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/RenderThat.jpg" alt="RenderThat Creative" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Oli Studio.jpg" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Command Collective.webp" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Zebra Idealab.png" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Kanak Export.png" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/Kanak Naturals.png" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
-            <img src="./assets/Client Logo/R for Rabbit.jpg" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain opacity-40 mix-blend-luminosity hover:opacity-100 hover:scale-110 hover:brightness-125 transition-all duration-500 ease-out cursor-pointer">
+            <img src="./assets/Client Logo/Risland Icon.webp" alt="Rislan The Icon" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Labdhi Lifestylle.jpg" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/RenderThat.jpg" alt="RenderThat Creative" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Oli Studio.jpg" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Command Collective.webp" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Zebra Idealab.png" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Kanak Export.png" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/Kanak Naturals.png" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain">
+            <img src="./assets/Client Logo/R for Rabbit.jpg" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain">
           </div>
         </div>
-
-      </div>
 
       </div>
 
