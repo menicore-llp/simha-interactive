@@ -335,12 +335,19 @@
   </nav>
 
   <!-- ============================================================ -->
-  <!--  HERO SECTION (TEXT)                                          -->
+  <!--  HERO SECTION                                                -->
   <!-- ============================================================ -->
   <section id="hero-text-section" class="relative min-h-screen flex flex-col justify-center overflow-hidden z-0"
            style="background-color: #080808;">
-    <canvas id="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
     
+    <!-- Background Video -->
+    <video src="./assets/landing_page_video.mp4" 
+           autoplay loop muted playsinline 
+           class="absolute inset-0 w-full h-full object-cover z-0 blur-[8px] opacity-70 pointer-events-none"></video>
+    
+    <!-- Dark overlay to ensure text readability -->
+    <div class="absolute inset-0 bg-black/40 z-0 pointer-events-none"></div>
+
     <!-- Main hero content -->
     <div class="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-32 pb-16 relative z-10">
 
@@ -383,28 +390,6 @@
 
       </div>
 
-    </section>  
-
-  <!-- ============================================================ -->
-  <!--  HERO VIDEO SECTION -->
-  <!-- ============================================================ -->
-  <section id="hero-video-section" class="relative bg-brand-dark overflow-hidden w-full flex justify-center items-center shadow-[0_-20px_50px_rgba(0,0,0,0.8)] z-10 transition-transform duration-[800ms] ease-in-out">
-    <div class="reveal-item w-full relative flex justify-center items-center overflow-hidden mix-blend-lighten"
-         style="transition-duration: 1.2s; transition-delay: 100ms;">
-      
-      <!-- Delicate overlay to blend the video horizontally and vertically into the dark background -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-[#080808] z-10 pointer-events-none"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-[#080808] via-transparent to-[#080808] z-10 pointer-events-none opacity-50"></div>
-      <div class="absolute inset-0 bg-black/10 z-10 pointer-events-none"></div>
-
-      <!-- Video element properly styled for responsiveness -->
-      <video src="./assets/landing_page_video.mp4" 
-             autoplay 
-             loop 
-             muted 
-             playsinline 
-             class="w-full h-auto aspect-video lg:h-screen object-cover object-center transform hover:scale-[1.03] transition-transform duration-[3s] ease-out">
-      </video>
     </div>
   </section>
 
@@ -1045,102 +1030,6 @@
         }
       });
     });
-
-    const heroCanvas = document.getElementById('hero-canvas');
-    if (heroCanvas) {
-      const ctx = heroCanvas.getContext('2d');
-      let dots = [];
-      const spacing = 35;
-      const dotRadius = 1.5;
-      const repulsionRadius = 130;
-      let mouse = { x: -1000, y: -1000 };
-
-      // Make canvas resize with window
-      function resize() {
-        const rect = heroCanvas.parentElement.getBoundingClientRect();
-        heroCanvas.width = rect.width;
-        heroCanvas.height = rect.height;
-        createDots();
-      }
-
-      function createDots() {
-        dots = [];
-        for (let x = 0; x <= heroCanvas.width; x += spacing) {
-          for (let y = 0; y <= heroCanvas.height; y += spacing) {
-            dots.push({
-              originX: x,
-              originY: y,
-              x: x,
-              y: y,
-              vx: 0,
-              vy: 0
-            });
-          }
-        }
-      }
-
-      window.addEventListener('resize', resize);
-
-      // Track mouse position
-      window.addEventListener('mousemove', (e) => {
-        const rect = heroCanvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-      });
-
-      // Reset on leave so dots return to origin
-      window.addEventListener('mouseleave', () => {
-        mouse.x = -1000;
-        mouse.y = -1000;
-      });
-
-      function animate() {
-        ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
-
-        const isMobile = window.innerWidth <= 768;
-
-        dots.forEach(dot => {
-          if (!isMobile) {
-            // Interaction only for desktop
-            const dx = mouse.x - dot.x;
-            const dy = mouse.y - dot.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance > 0 && distance < repulsionRadius) {
-              const force = (repulsionRadius - distance) / repulsionRadius;
-              const directionX = -(dx / distance);
-              const directionY = -(dy / distance);
-
-              dot.vx += directionX * force * 4;
-              dot.vy += directionY * force * 4;
-            }
-          }
-
-          // Spring return (applies to both, ensuring mobile stays at origin)
-          dot.vx += (dot.originX - dot.x) * 0.08;
-          dot.vy += (dot.originY - dot.y) * 0.08;
-
-          // Damping
-          dot.vx *= 0.85;
-          dot.vy *= 0.85;
-
-          // Update position
-          dot.x += dot.vx;
-          dot.y += dot.vy;
-
-          // Draw
-          ctx.beginPath();
-          ctx.arc(dot.x, dot.y, dotRadius, 0, Math.PI * 2);
-          ctx.fill();
-        });
-
-        requestAnimationFrame(animate);
-      }
-
-      resize();
-      animate();
-    }
 
     // ==========================================
     // JS Typewriter Effect (Letter by Letter Reveal)
