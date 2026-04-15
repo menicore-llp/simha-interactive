@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - Simha Interactive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=DM+Sans:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Outfit', 'sans-serif'],
+            accent: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            'brand-orange': '#FF5C1A',
+            'brand-dark': '#080808',
+            'brand-card': '#111111',
+            'brand-border': '#1f1f1f',
+            'brand-muted': '#5a5a5a',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'fade-in': 'fadeIn 1.2s ease forwards',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("-translate-y-full");
+      if (!menu.classList.contains("-translate-y-full")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    }
+
+    // Intersection Observer for scroll reveal animations
+    document.addEventListener("DOMContentLoaded", function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.reveal-item').forEach((item) => {
+        observer.observe(item);
+      });
+    });
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #080808;
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    .btn-ghost {
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s ease;
+    }
+    .btn-ghost::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 0;
+    }
+    .btn-ghost:hover::before { transform: translateX(0); }
+    .btn-ghost span { position: relative; z-index: 1; }
+    .btn-ghost:hover { color: #080808; border-color: #ffffff !important; }
+
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #ffffff;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-300 { animation-delay: 0.3s; }
+    
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================ -->
+  <!--  NAVBAR                                                       -->
+  <!-- ============================================================ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-5"
+       style="background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent); backdrop-filter: blur(8px);">
+
+    <a href="{{ route('home') }}" class="flex items-center gap-3 opacity-0 animate-fade-in delay-100" style="animation-fill-mode: forwards;">
+      <div class="flex h-8 sm:h-10 lg:h-12 w-auto overflow-hidden">
+        <img src="{{ asset('assets/Simha Logo Web White.png') }}" alt="Simha Interactive Icon" class="h-full w-auto object-contain">
+      </div>
+    </a>
+
+    <div class="hidden md:flex items-center gap-10 opacity-0 animate-fade-in delay-300" style="animation-fill-mode: forwards;">
+      <a href="{{ route('home') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Do</a>
+      <a href="{{ route('about') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Are</a>
+      <a href="{{ route('services') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
+      <a href="{{ route('portfolio') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
+      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Journal</a>
+      <a href="{{ route('contact') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Contact us</a>
+    </div>
+
+    <a href="{{ route('contact') }}" class="btn-ghost hidden md:inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase opacity-0 animate-fade-in" style="animation-fill-mode: forwards;">
+      <span>Start Project</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+
+    <button onclick="toggleMenu()" class="md:hidden text-white" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen z-[999] flex flex-col items-center justify-center gap-8 text-white font-medium backdrop-blur-md bg-black/95 transform -translate-y-full transition-transform duration-500">
+      <button onclick="toggleMenu()" class="absolute top-4 right-4 text-white hover:text-brand-orange">✕</button>
+      <a href="{{ route('home') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Do</a>
+      <a href="{{ route('about') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Are</a>
+      <a href="{{ route('services') }}" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
+      <a href="{{ route('portfolio') }}" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
+      <a href="{{ route('blogs') }}" class="nav-link text-gray-400 hover:text-white uppercase">Journal</a>
+      <a href="{{ route('contact') }}" class="nav-link text-gray-400 hover:text-white uppercase">Contact us</a>
+      <div>
+        <a href="{{ route('contact') }}" class="btn-ghost inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase">
+          <span>Start Project</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!--  SERVICES HERO                                                -->
+  <!-- ============================================================ -->
+  <section class="relative bg-brand-dark overflow-hidden pt-40 pb-20 md:pt-48 md:pb-32 px-5 sm:px-8 md:px-16 lg:px-24 min-h-[50vh] flex items-center">
+    <div class="relative z-10 max-w-7xl mx-auto w-full flex justify-center pointer-events-none">
+      <div class="flex flex-col items-center text-center gap-6 w-full max-w-3xl pointer-events-auto">
+        <div class="reveal-item flex items-center justify-center gap-3">
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Overview</span>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+        </div>
+        <h1 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">Our Services</h1>
+        <p class="reveal-item font-body text-gray-200 lg:text-gray-400 text-base md:text-lg max-w-xl mt-4 leading-relaxed font-medium lg:font-normal">
+          We offer four core verticals designed to cover the complete creative and digital ecosystem from brand creation to immersive experiences.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  SERVICES SHOWREEL / VIDEO                                    -->
+  <!-- ============================================================ -->
+  <section class="relative bg-brand-dark overflow-hidden pb-24 md:pb-36 px-5 sm:px-8 md:px-16 lg:px-24">
+    <div class="relative z-10 max-w-7xl mx-auto reveal-item">
+      <!-- Video Container -->
+      <div class="relative w-full aspect-video overflow-hidden border border-brand-border bg-white shadow-2xl group flex items-center justify-center cursor-pointer cursor-glow-target">
+        <video class="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-700 group-hover:opacity-100" autoplay muted playsinline loop>
+          <!-- Please add the actual video source here -->
+          <source src="{{ asset('assets/architecture_3d_walkthrough.mp4') }}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <!-- Subtle inner shadow overlay -->
+        <div class="absolute inset-0 pointer-events-none border border-white/10" style="box-shadow: inset 0 0 40px rgba(0,0,0,0.5);"></div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  DESIGN                                                       -->
+  <!-- ============================================================ -->
+  <section id="design" class="relative bg-brand-card overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16 items-center">
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+        <div class="reveal-item flex items-center justify-center gap-3">
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Design</span>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+        </div>
+        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
+          Strategic Design That Builds Strong Brands
+        </h2>
+        <p class="reveal-item font-body text-gray-400 leading-relaxed text-base lg:text-lg">
+          We craft distinctive brand identities and digital platforms that leave lasting impressions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        <div class="reveal-item bg-brand-dark p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Branding, Strategy& Identity</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Your brand is more than a logo — it’s your identity. We build strategic brand systems that communicate clarity, consistency, and confidence.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Brand Strategy Development</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Brand Positioning</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Logo Design</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Visual Identity Systems</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Brand Guidelines</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Corporate Identity Design</li>
+          </ul>
+        </div>
+
+        <div class="reveal-item bg-brand-dark p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Website Design & Development</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            We design and develop modern, responsive, and user-focused websites that drive engagement and conversions.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>UI/UX Design</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Corporate Websites</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>E-commerce Development</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Landing Pages</li>
+            <!-- Lines added for Custom Web Development -->
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Custom Web Development</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Responsive & Mobile-Optimized Design</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal-item mt-4 w-full flex justify-center">
+        <a href="{{ route('contact') }}" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
+          <span>Start Your Brand Journey</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  VISUALIZATION                                                -->
+  <!-- ============================================================ -->
+  <section id="visualization" class="relative bg-brand-dark overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16 items-center">
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+        <div class="reveal-item flex items-center justify-center gap-3">
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Visualization</span>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+        </div>
+        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
+          Transforming Concepts Into Visual Reality
+        </h2>
+        <p class="reveal-item font-body text-gray-400 leading-relaxed text-base lg:text-lg">
+          We create high-end photorealistic visuals that help brands, architects, and developers present ideas with clarity and impact.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        <div class="reveal-item bg-brand-card p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Architectural Visualization</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Bring your architectural concepts to life with stunning visual storytelling.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Interior Rendering</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Exterior Rendering</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>3D Floor Plans</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Walkthrough Animations</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Real Estate Marketing Visuals</li>
+          </ul>
+        </div>
+
+        <div class="reveal-item bg-brand-card p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Product Visualization</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Showcase your products with precision and realism that drives customer confidence.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>3D Product Rendering</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Product Animations</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Explainer Videos</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Lifestyle Visual Scenes</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>E-commerce Visual Assets</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal-item mt-4 w-full flex justify-center">
+        <a href="{{ route('contact') }}" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
+          <span>Visualize Your Project</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  MARKETING                                                    -->
+  <!-- ============================================================ -->
+  <section id="marketing" class="relative bg-brand-card overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16 items-center">
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+        <div class="reveal-item flex items-center justify-center gap-3">
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Marketing</span>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+        </div>
+        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
+          Data-Driven Marketing That Delivers Results
+        </h2>
+        <p class="reveal-item font-body text-gray-400 leading-relaxed text-base lg:text-lg">
+          We create strategic digital marketing campaigns focused on visibility, engagement, and measurable growth.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        <div class="reveal-item bg-brand-dark p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Search Engine Optimization (SEO)</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Enhance your online visibility and drive organic traffic through proven SEO strategies tailored to your industry.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>On-Page & Off-Page SEO</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Technical SEO Audits</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Keyword Strategy & Research</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Content Marketing & Optimization</li>
+          </ul>
+        </div>
+
+        <div class="reveal-item bg-brand-dark p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Digital & Performance Marketing</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Maximize your ROI with targeted ad campaigns and engaging social media strategies that connect with your audience.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Google Ads & PPC Campaigns</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Social Media Marketing</li>
+            <!-- Line edit -->
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Performance Marketing</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Analytics & Campaign Reporting</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal-item mt-4 w-full flex justify-center">
+        <a href="{{ route('contact') }}" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
+          <span>Grow Your Business</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  ENGAGEMENT CONTENT                                           -->
+  <!-- ============================================================ -->
+  <section id="engagement" class="relative bg-brand-dark overflow-hidden py-24 md:py-36 px-5 sm:px-8 md:px-16 lg:px-24 border-t border-brand-border">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16 items-center">
+      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
+        <div class="reveal-item flex items-center justify-center gap-3">
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Engagement</span>
+          <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+        </div>
+        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">
+          Immersive Experiences That Captivate Audiences
+        </h2>
+        <p class="reveal-item font-body text-gray-400 leading-relaxed text-base lg:text-lg">
+          We create next-generation engagement content using advanced immersive technologies that transform how brands interact with their audience.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        <div class="reveal-item bg-brand-card p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">AR & VR Experiences</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Transport your audience to entirely new worlds with engaging AR and VR content suited for brand activations, real estate, and more.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Augmented Reality (AR) Applications</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Virtual Reality (VR) Environments</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Giant Screen AR Experiences</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>VR 360 Degree Virtual Tours</li>
+          </ul>
+        </div>
+
+        <div class="reveal-item bg-brand-card p-8 md:p-10 border border-brand-border hover:border-white transition-colors duration-500">
+          <h3 class="font-body text-white text-2xl font-medium tracking-wide uppercase mb-4">Interactive & Display Solutions</h3>
+          <p class="font-body text-gray-500 mb-6 leading-relaxed">
+            Whether for an exhibition or real estate launch, our interactive and display technologies ensure your brand makes a powerful impact.
+          </p>
+          <div class="font-body text-brand-orange text-xs tracking-[0.2em] uppercase font-medium mb-4">Our services include:</div>
+          <ul class="font-body text-gray-400 space-y-3">
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Interactive Digital Touch Experiences</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Holographic Content & Installations</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Anamorphic 3D Illusion Content</li>
+            <li class="flex items-start gap-3"><span class="text-brand-orange mt-1">•</span>Experiential Marketing Displays</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal-item mt-4 w-full flex justify-center">
+        <a href="{{ route('contact') }}" class="btn-ghost border border-white text-white px-8 py-3.5 font-body text-sm tracking-widest uppercase inline-flex hover:border-brand-orange">
+          <span>Create Immersive Experiences</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  CALL TO ACTION SECTION                                       -->
+  <!-- ============================================================ -->
+  <section class="relative bg-white overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 flex flex-col items-center justify-center">
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-center text-center gap-6">
+      <!-- Small label -->
+      <div class="reveal-item flex items-center justify-center gap-3">
+        <div class="w-8 h-px bg-brand-orange"></div>
+        <span class="font-body text-xs text-brand-orange tracking-[0.4em] font-medium uppercase">
+          Ready to Start?
+        </span>
+        <div class="w-8 h-px bg-brand-orange"></div>
+      </div>
+
+      <!-- Headline -->
+      <h2 class="reveal-item font-display text-brand-dark leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem); transition-delay: 100ms;">
+        Let’s Build Something <br/>Extraordinary
+      </h2>
+
+      <!-- Description -->
+      <p class="reveal-item font-body text-gray-500 text-sm sm:text-base md:text-lg max-w-2xl mt-2 mx-auto leading-relaxed" style="transition-delay: 200ms;">
+        Tell us about your vision, and we’ll turn it into reality. Partner with us to scale your brand through strategy, high-end visuals, and deep engagement.
+      </p>
+
+      <!-- CTA Button -->
+      <div class="reveal-item mt-8" style="transition-delay: 300ms;">
+        <a href="{{ route('contact') }}" class="relative overflow-hidden group bg-white text-black border border-gray-300 px-10 py-5 rounded-full font-body text-sm tracking-widest uppercase text-center inline-flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-black">
+          <div class="absolute inset-0 bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
+          <span class="relative z-10 font-medium group-hover:text-white transition-colors duration-300">Contact Us</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="relative z-10 w-4 h-4 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="relative bg-brand-dark border-t border-brand-border px-8 md:px-16 lg:px-24 py-16 md:py-20 overflow-hidden">
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+      <div class="flex flex-col gap-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-auto overflow-hidden">
+            <img src="{{ asset('assets/Simha Logo Web White.png') }}" alt="Simha Logo" class="h-full w-auto object-contain">
+          </div>
+        </div>
+        <p class="text-gray-500 text-sm font-body leading-relaxed max-w-xs">
+          © 2026 Simha Interactive. All Rights Reserved.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">Quick Links</h4>
+        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
+          <a href="{{ route('home') }}" class="nav-link hover:text-white transition">Home</a>
+          <a href="{{ route('about') }}" class="nav-link hover:text-white transition">About</a>
+          <a href="{{ route('services') }}" class="nav-link text-white transition">Services</a>
+          <a href="{{ route('portfolio') }}" class="nav-link hover:text-white transition">Portfolio</a>
+          <a href="{{ route('blogs') }}" class="nav-link hover:text-white transition">Journal</a>
+          <a href="{{ route('contact') }}" class="nav-link hover:text-white transition">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">Services</h4>
+        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
+          <a href="#design" class="nav-link hover:text-white transition">Design</a>
+          <a href="#visualization" class="nav-link hover:text-white transition">Visualization</a>
+          <a href="#marketing" class="nav-link hover:text-white transition">Marketing</a>
+          <a href="#engagement" class="nav-link hover:text-white transition">Engagement Content</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-10 mt-12 border-t border-brand-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs font-body">
+      <span>Built with precision and creativity.</span>
+      <span class="tracking-widest uppercase text-gray-600">Simha Interactive</span>
+    </div>
+  </footer>
+</body>
+</html>
+

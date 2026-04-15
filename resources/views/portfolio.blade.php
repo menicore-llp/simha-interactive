@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Simha Interactive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=DM+Sans:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Outfit', 'sans-serif'],
+            accent: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            'brand-orange': '#FF5C1A',
+            'brand-dark': '#080808',
+            'brand-card': '#111111',
+            'brand-border': '#1f1f1f',
+            'brand-muted': '#5a5a5a',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'fade-in': 'fadeIn 1.2s ease forwards',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(40px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("-translate-y-full");
+      if (!menu.classList.contains("-translate-y-full")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    }
+
+    // Intersection Observer for scroll reveal animations
+    document.addEventListener("DOMContentLoaded", function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.reveal-item').forEach((item) => {
+        observer.observe(item);
+      });
+    });
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    body {
+      background-color: #080808;
+      color: #ffffff;
+      font-family: 'Outfit', sans-serif;
+    }
+    
+    .btn-ghost {
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s ease;
+    }
+    .btn-ghost::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 0;
+    }
+    .btn-ghost:hover::before { transform: translateX(0); }
+    .btn-ghost span { position: relative; z-index: 1; }
+    .btn-ghost:hover { color: #080808; border-color: #ffffff !important; }
+
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #ffffff;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================ -->
+  <!--  NAVBAR                                                       -->
+  <!-- ============================================================ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-5"
+       style="background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent); backdrop-filter: blur(8px);">
+
+    <a href="{{ route('home') }}" class="flex items-center gap-3 opacity-0 animate-fade-in delay-100" style="animation-fill-mode: forwards;">
+      <div class="flex h-8 sm:h-10 lg:h-12 w-auto overflow-hidden">
+        <img src="{{ asset('assets/Simha Logo Web White.png') }}" alt="Simha Interactive Icon" class="h-full w-auto object-contain">
+      </div>
+    </a>
+
+    <div class="hidden md:flex items-center gap-10 opacity-0 animate-fade-in delay-300" style="animation-fill-mode: forwards;">
+      <a href="{{ route('home') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Do</a>
+      <a href="{{ route('about') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Are</a>
+      <a href="{{ route('services') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
+      <a href="{{ route('portfolio') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
+      <a href="{{ route('contact') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Contact us</a>
+    </div>
+
+    <a href="{{ route('contact') }}" class="btn-ghost hidden md:inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase opacity-0 animate-fade-in" style="animation-fill-mode: forwards;">
+      <span>Start Project</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+
+    <button onclick="toggleMenu()" class="md:hidden text-white" aria-label="Toggle menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen z-[999] flex flex-col items-center justify-center gap-8 text-white font-medium backdrop-blur-md bg-black/95 transform -translate-y-full transition-transform duration-500">
+      <button onclick="toggleMenu()" class="absolute top-4 right-4 text-white hover:text-brand-orange">✕</button>
+      <a href="{{ route('home') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Do</a>
+      <a href="{{ route('about') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Are</a>
+      <a href="{{ route('services') }}" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
+      <a href="{{ route('portfolio') }}" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
+      <a href="{{ route('contact') }}" class="nav-link text-gray-400 hover:text-white uppercase">Contact us</a>
+      <div>
+        <a href="{{ route('contact') }}" class="btn-ghost inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase">
+          <span>Start Project</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!--  PORTFOLIO HERO                                               -->
+  <!-- ============================================================ -->
+  <section class="relative bg-brand-dark overflow-hidden pt-40 pb-20 md:pt-48 md:pb-32 px-5 sm:px-8 md:px-16 lg:px-24">
+    <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center gap-6">
+      <div class="reveal-item flex items-center justify-center gap-3">
+        <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+        <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Portfolio</span>
+        <div class="w-[36px] h-[2px] bg-brand-orange"></div>
+      </div>
+      <h1 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem);">Our Work Speaks for Itself</h1>
+      <p class="reveal-item font-body text-gray-400 text-base md:text-lg max-w-2xl mt-4 leading-relaxed font-medium lg:font-normal">
+        Explore our projects across design, visualization, marketing, and immersive content. Each case study showcases our strategic approach and the impact of our solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  PORTFOLIO PROJECTS                                           -->
+  <!-- ============================================================ -->
+  <section class="relative bg-brand-dark pb-24 md:pb-36 px-5 sm:px-8 md:px-16 lg:px-24 space-y-24 md:space-y-36">
+
+    <!-- Project 1: Design -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">3D Architectural Exterior Rendering</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Exterior Architectural Visualizations</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/13.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 1">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/14.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 2">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/15.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 3">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/16.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 4">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/17.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 5">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/1708469964381.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 6">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/18.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 7">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/1b9fa2a1-57dd-4dc2-8461-abe5f069a7b0.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 8">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/867f9a4a-a96c-4395-b86f-9b77d3876fd6.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 9">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/985b4db8-f777-48d6-8b03-fb49bbe65871.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 10">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/a8405e81-906b-4921-b744-c0627dd8395e.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 11">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/parq-1.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 12">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/parq-2.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 13">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Photorealistic 3D external perspectives for various luxury residential, commercial, and landscape architecture developments.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We produced breathtaking, high-fidelity 3D exterior renderings showcasing landscaping, material finishes, and atmospheric lighting conditions.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Capture the environmental integration and aesthetic of building exteriors to facilitate quicker off-plan sales and marketing.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Autodesk 3ds Max, Corona Renderer, V-Ray, Adobe Photoshop</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Accelerated pre-sales process • Boosted investor confidence • Eye-catching marketing collateral.</p>
+      </div>
+    </article>
+
+    <!-- Project 2: Visualization -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Interior Rendering</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">3D Architectural Interior Rendering</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/06.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 1">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/09.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 2">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/10.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 3">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/12.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 4">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/1726551890035.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 5">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/1726551891405.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 6">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/5e16a4d9-f15a-49f9-b389-831c39bc81dc.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 7">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/75215733-fa9a-428e-9fd6-422ea9af5d1b.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 8">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/e1027d37-4ab3-4945-ad4f-9d44b4eaf828.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 9">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Photorealistic 3D architectural interior rendering bringing luxury residential and commercial spaces to life with stunning detail, lighting, and textures.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We meticulously crafted visually striking interior environments, focusing on natural light physics, high-end materials, and spatial harmony to create compelling visualizations.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Produce compelling, hyper-realistic imagery that enables clients to envision spaces accurately before construction and drives presales.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">3ds Max, V-Ray, Corona Renderer, Unreal Engine, Adobe Photoshop</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Accelerated client sign-offs • High-impact marketing collateral • Enhanced design validation.</p>
+      </div>
+    </article>
+
+    <!-- Project 3: 3D Product Animation -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">3D Product Animation</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Dynamic Product Visualization</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/3D Product Animation/Atomberg Ver-10.mp4') }}"></video>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/3D Product Animation/Buds.mp4') }}"></video>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/3D Product Animation/Smart Watch.mp4') }}"></video>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/3D Product Animation/Spotlight Stand.mp4') }}"></video>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">High-fidelity 3D product animations to showcase product functions, details, and features dynamically for various consumer tech and industrial brands.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We created continuous, engaging video loops highlighting the strengths of each product using advanced shading, lighting, and camera techniques.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Boost visual engagement, replace static photography overheads with flexible CG assets, and drive higher click-through rates on digital campaigns.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Cinema 4D, Redshift, After Effects, Premiere Pro</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Immersive product demonstrations • Flexible and reusable video assets • Elevated brand perception.</p>
+      </div>
+    </article>
+
+    <!-- Project 4: Immersive Content -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Product Visualization</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">3D Product Rendering</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/10.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 1">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/2.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 2">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/4.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 3">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/5.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 4">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/6.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 5">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/Ear Pod.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 7">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/Lakme.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 8">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/R for Rabbit_01.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 9">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/R for Rabbit_02.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 10">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/R for Rabbit_03.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 11">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/Smart Watch.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 12">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Product Rendering/Solo Ear Pod.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 13">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">High-end product visualization for marketing campaigns, e-commerce stores, and product launches to enhance digital presence and user engagement.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We created detailed and photorealistic 3D renders showcasing product features, different angles, and contextual settings to enrich visual communication.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Elevate brand perception and increase conversion rates by substituting traditional photography with perfect, adaptable 3D product imagery.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Autodesk Maya, Keyshot, V-Ray, Adobe Substance 3D Painter</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Increased sales conversions • Reduced cost to produce marketing assets • Stunning high-resolution assets.</p>
+      </div>
+    </article>
+
+    <!-- Project 5: Website Design and Development -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Website Design and Development</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Responsive Digital Experiences</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Website Design and Development/Cyblink.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Cyblink Website Design">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Website Design and Development/Meena.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Meena Website Design">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Website Design and Development/Shahi.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Shahi Website Design">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Custom, comprehensive modern website architectures focusing on intuitive user experience, brand representation, and reliable performance across all platforms.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We engineered fully responsive, dynamic interfaces paired with robust back-end systems. By prioritizing clean layouts and seamless navigation, we ensure a world-class user journey.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Establish a powerful digital footprint, deliver highly accessible content to diverse audiences, and reliably scale their online operations to drive engagement.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Figma, HTML5, Tailwind CSS, JavaScript, React, Node.js</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Enhanced mobile responsiveness • Substantial increase in page retention • Streamlined customer conversions.</p>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  CALL TO ACTION SECTION                                       -->
+  <!-- ============================================================ -->
+  <section class="relative bg-white overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 flex flex-col items-center justify-center">
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-center text-center gap-6">
+      <!-- Small label -->
+      <div class="reveal-item flex items-center justify-center gap-3">
+        <div class="w-8 h-px bg-brand-orange"></div>
+        <span class="font-body text-xs text-brand-orange tracking-[0.4em] font-medium uppercase">
+          Ready to Start?
+        </span>
+        <div class="w-8 h-px bg-brand-orange"></div>
+      </div>
+
+      <!-- Headline -->
+      <h2 class="reveal-item font-display text-brand-dark leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem); transition-delay: 100ms;">
+        Let’s Build Something <br/>Extraordinary
+      </h2>
+
+      <!-- Description -->
+      <p class="reveal-item font-body text-gray-500 text-sm sm:text-base md:text-lg max-w-2xl mt-2 mx-auto leading-relaxed" style="transition-delay: 200ms;">
+        Tell us about your vision, and we’ll turn it into reality. Partner with us to scale your brand through strategy, high-end visuals, and deep engagement.
+      </p>
+
+      <!-- CTA Button -->
+      <div class="reveal-item mt-8" style="transition-delay: 300ms;">
+        <a href="{{ route('contact') }}" class="relative overflow-hidden group bg-white text-black border border-gray-300 px-10 py-5 rounded-full font-body text-sm tracking-widest uppercase text-center inline-flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-black">
+          <div class="absolute inset-0 bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
+          <span class="relative z-10 font-medium group-hover:text-white transition-colors duration-300">Contact Us</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="relative z-10 w-4 h-4 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!--  FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="relative bg-brand-dark border-t border-brand-border px-8 md:px-16 lg:px-24 py-16 md:py-20 overflow-hidden">
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+      <div class="flex flex-col gap-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-auto overflow-hidden">
+            <img src="{{ asset('assets/Simha Logo Web White.png') }}" alt="Simha Logo" class="h-full w-auto object-contain">
+          </div>
+        </div>
+        <p class="text-gray-500 text-sm font-body leading-relaxed max-w-xs">
+          © 2026 Simha Interactive. All Rights Reserved.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">Quick Links</h4>
+        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
+          <a href="{{ route('home') }}" class="nav-link hover:text-white transition">Home</a>
+          <a href="{{ route('about') }}" class="nav-link hover:text-white transition">About</a>
+          <a href="{{ route('services') }}" class="nav-link hover:text-white transition">Services</a>
+          <a href="{{ route('portfolio') }}" class="nav-link text-white transition">Portfolio</a>
+          <a href="{{ route('blogs') }}" class="nav-link hover:text-white transition">Journal</a>
+          <a href="{{ route('contact') }}" class="nav-link hover:text-white transition">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h4 class="text-white text-sm tracking-[0.3em] uppercase font-body">Services</h4>
+        <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
+          <a href="services.html#design" class="nav-link hover:text-white transition">Design</a>
+          <a href="services.html#visualization" class="nav-link hover:text-white transition">Visualization</a>
+          <a href="services.html#marketing" class="nav-link hover:text-white transition">Marketing</a>
+          <a href="services.html#engagement" class="nav-link hover:text-white transition">Engagement Content</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-10 mt-12 border-t border-brand-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-xs font-body">
+      <span>Built with precision and creativity.</span>
+      <span class="tracking-widest uppercase text-gray-600">Simha Interactive</span>
+    </div>
+  </footer>
+
+  <script>
+    class StackCarousel {
+      constructor(wrapper) {
+        this.wrapper = wrapper;
+        this.cards = Array.from(wrapper.querySelectorAll('.stack-card'));
+        this.prevBtn = wrapper.querySelector('.stack-prev');
+        this.nextBtn = wrapper.querySelector('.stack-next');
+        this.counter = wrapper.querySelector('.stack-counter');
+        this.progress = wrapper.querySelector('.stack-progress');
+        this.currentIndex = 0;
+        this.total = this.cards.length;
+        this.autoPlayInterval = null;
+
+        this.init();
+      }
+
+      init() {
+        if (this.prevBtn) this.prevBtn.addEventListener('click', () => { this.prev(); this.resetAutoPlay(); });
+        if (this.nextBtn) this.nextBtn.addEventListener('click', () => { this.next(); this.resetAutoPlay(); });
+        this.goTo(this.currentIndex);
+        this.startAutoPlay();
+      }
+
+      startAutoPlay() {
+        this.autoPlayInterval = setInterval(() => this.next(), 3500);
+      }
+
+      resetAutoPlay() {
+        clearInterval(this.autoPlayInterval);
+        this.startAutoPlay();
+      }
+
+      goTo(index) {
+        this.currentIndex = index;
+        
+        this.cards.forEach((card, i) => {
+          let offset = i - this.currentIndex;
+          
+          if (offset < -1) offset += this.total;
+          if (offset > 1) offset -= this.total;
+          
+          if (offset === 0) {
+            // Active
+            card.style.transform = 'scale(1) translateX(0)';
+            card.style.opacity = '1';
+            card.style.zIndex = '3';
+            card.style.filter = 'brightness(1)';
+          } else if (offset === -1 || offset === this.total - 1) {
+            // Previous
+            card.style.transform = 'scale(0.95) translateX(-50px)';
+            card.style.opacity = '0';
+            card.style.zIndex = '2';
+            card.style.filter = 'brightness(0.5)';
+          } else if (offset === 1 || offset === -(this.total - 1)) {
+            // Next
+            card.style.transform = 'scale(0.95) translateX(50px)';
+            card.style.opacity = '0';
+            card.style.zIndex = '2';
+            card.style.filter = 'brightness(0.5)';
+          } else {
+            // Other
+            card.style.transform = 'scale(0.9) translateX(0)';
+            card.style.opacity = '0';
+            card.style.zIndex = '1';
+            card.style.filter = 'brightness(0.2)';
+          }
+        });
+
+        if (this.counter) {
+          this.counter.textContent = String(this.currentIndex + 1).padStart(2, '0');
+        }
+
+        if (this.progress) {
+          const percentage = ((this.currentIndex + 1) / this.total) * 100;
+          this.progress.style.width = percentage + '%';
+        }
+      }
+
+      next() {
+        const nextIndex = (this.currentIndex + 1) % this.total;
+        this.goTo(nextIndex);
+      }
+
+      prev() {
+        const prevIndex = (this.currentIndex - 1 + this.total) % this.total;
+        this.goTo(prevIndex);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const carousels = document.querySelectorAll('[data-carousel]');
+      carousels.forEach(carouselWrapper => {
+        new StackCarousel(carouselWrapper);
+      });
+    });
+  </script>
+</body>
+</html>
