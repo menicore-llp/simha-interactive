@@ -151,6 +151,7 @@
       <a href="{{ route('about') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
+      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Contact us</a>
     </div>
 
@@ -173,6 +174,7 @@
       <a href="{{ route('about') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
+      <a href="{{ route('blogs') }}" class="nav-link text-gray-400 hover:text-white uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link text-gray-400 hover:text-white uppercase">Contact us</a>
       <div>
         <a href="{{ route('contact') }}" class="btn-ghost inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase">
@@ -203,12 +205,109 @@
   <!--  PORTFOLIO PROJECTS                                           -->
   <!-- ============================================================ -->
   <section class="relative bg-brand-dark pb-24 md:pb-36 px-5 sm:px-8 md:px-16 lg:px-24 space-y-24 md:space-y-36">
-
-    <!-- Project 1: Design -->
+    
+    <!-- Project 1: Visualization (Interior Rendering) -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
-        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">3D Architectural Exterior Rendering</span>
-        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Exterior Architectural Visualizations</h2>
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Interior Rendering</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">3D Architectural Interior Rendering</h2>
+      </div>
+  
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/06.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 1">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/09.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 2">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/10.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 3">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/12.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 4">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/1726551890035.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 5">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/1726551891405.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 6">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/5e16a4d9-f15a-49f9-b389-831c39bc81dc.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 7">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/75215733-fa9a-428e-9fd6-422ea9af5d1b.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 8">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/e1027d37-4ab3-4945-ad4f-9d44b4eaf828.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 9">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+  
+        <div class="mt-6 flex items-center justify-between">
+          
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+  
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Photorealistic 3D architectural interior rendering bringing luxury residential and commercial spaces to life with stunning detail, lighting, and textures.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We meticulously crafted visually striking interior environments, focusing on natural light physics, high-end materials, and spatial harmony to create compelling visualizations.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Produce compelling, hyper-realistic imagery that enables clients to envision spaces accurately before construction and drives presales.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">3ds Max, V-Ray, Corona Renderer, Unreal Engine, Adobe Photoshop</p>
+            </div>
+         </div>
+      </div>
+  
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Accelerated client sign-offs • High-impact marketing collateral • Enhanced design validation.</p>
+      </div>
+    </article>
+
+    <!-- Project 2: Visualization (Exterior Rendering) -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Exterior Rendering</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">3D Exterior Architectural Visualizations</h2>
       </div>
 
       <div class="w-full relative" data-carousel>
@@ -317,69 +416,31 @@
       </div>
     </article>
 
-    <!-- Project 2: Visualization -->
+    <!-- Project 3: Visualization (3D Floor Plans) -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
-        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Interior Rendering</span>
-        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">3D Architectural Interior Rendering</h2>
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">3D Floor Plans</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Spatial Layouts</h2>
       </div>
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
           <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/06.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 1">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/09.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 2">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/10.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 3">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/12.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 4">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/1726551890035.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 5">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/1726551891405.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 6">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/5e16a4d9-f15a-49f9-b389-831c39bc81dc.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 7">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/75215733-fa9a-428e-9fd6-422ea9af5d1b.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 8">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/e1027d37-4ab3-4945-ad4f-9d44b4eaf828.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 9">
+            <img src="{{ asset('assets/portfolio-images/3D Floor Plans/3DFloorPlan.webp') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Floor Plan">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
         </div>
 
         <div class="mt-6 flex items-center justify-between">
-          
           <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
             <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
           </div>
-
           <div class="flex items-center gap-3">
             <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
             </button>
             <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
             </button>
           </div>
         </div>
@@ -389,32 +450,151 @@
          <div class="space-y-6">
             <div>
               <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
-              <p class="font-body text-gray-400 text-sm leading-relaxed">Photorealistic 3D architectural interior rendering bringing luxury residential and commercial spaces to life with stunning detail, lighting, and textures.</p>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Detailed top-down 3D floor plan visualizations displaying spatial arrangements, furniture layouts, and structural flow.</p>
             </div>
             <div>
               <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
-              <p class="font-body text-gray-400 text-sm leading-relaxed">We meticulously crafted visually striking interior environments, focusing on natural light physics, high-end materials, and spatial harmony to create compelling visualizations.</p>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Transformed basic 2D blueprints into highly legible, beautifully rendered 3D floor plans with realistic shadows, textures, and scaled room proportions.</p>
             </div>
          </div>
          <div class="space-y-6">
             <div>
               <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
-              <p class="font-body text-gray-400 text-sm leading-relaxed">Produce compelling, hyper-realistic imagery that enables clients to envision spaces accurately before construction and drives presales.</p>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Help prospective buyers and tenants easily understand property layouts, dimensions, and potential space utilization at a glance.</p>
             </div>
             <div>
               <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
-              <p class="font-body text-gray-400 text-sm leading-relaxed">3ds Max, V-Ray, Corona Renderer, Unreal Engine, Adobe Photoshop</p>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">AutoCAD, SketchUp, 3ds Max, V-Ray</p>
             </div>
          </div>
       </div>
 
       <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
         <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
-        <p class="font-body text-brand-orange text-sm font-medium">Accelerated client sign-offs • High-impact marketing collateral • Enhanced design validation.</p>
+        <p class="font-body text-brand-orange text-sm font-medium">Faster comprehension of space • Higher lease conversion rates • Engaging digital brochures.</p>
       </div>
     </article>
 
-    <!-- Project 3: 3D Product Animation -->
+    <!-- Project 4: Visualization (Walkthrough Animations) -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Walkthrough Animations</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Architectural Animation</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/Walkthrough Animations/architecture_3d_walkthrough.mp4') }}"></video>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Cinematic 3D walkthrough animations guiding viewers through highly detailed architectural spaces, revealing the design narrative and flow.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We sequenced dynamic camera movements, ambient lighting changes, and high-fidelity rendering to deliver a seamless and engaging tour of the property before it was built.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Elevate project presentations and secure early investments by offering a lifelike preview that static images alone could not convey.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Unreal Engine 5, Lumion, After Effects, Premiere Pro</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Immersive project previews • Stronger emotional connection with buyers • Rapid sales cycles.</p>
+      </div>
+    </article>
+
+    <!-- Project 5: Visualization (Real Estate Marketing Visuals) -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Real Estate Marketing Visuals</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none"> Real Estate Branding</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Real Estate Marketing Visual/Architectural Model Maker.webp') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Real Estate Marketing">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Comprehensive visual campaigns designed specifically for high-end real estate developments, including scale models and promotional graphics.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We produced a suite of top-tier visual marketing assets that bridge the gap between technical architecture and lifestyle aspirations.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Establish a dominant market presence, encapsulate the lifestyle promised by the development, and supply sales teams with persuasive storytelling assets.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Photoshop, Illustrator, 3ds Max, InDesign</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Premium brand positioning • Highly cohesive marketing materials • Exceptional pre-launch buzz.</p>
+      </div>
+    </article>
+
+
+    <!-- Project 6: 3D Product Animation -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">3D Product Animation</span>
@@ -491,7 +671,7 @@
       </div>
     </article>
 
-    <!-- Project 4: Immersive Content -->
+    <!-- Project 7: Immersive Content -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Product Visualization</span>
@@ -600,7 +780,7 @@
       </div>
     </article>
 
-    <!-- Project 5: Website Design and Development -->
+    <!-- Project 8: Website Design and Development -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Website Design and Development</span>
@@ -673,6 +853,156 @@
       </div>
     </article>
 
+    <!-- Project 9: AR & VR Experiences -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">AR & VR Experiences</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Immersive Digital Realities</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/AR & VR Experiences/_0000_Virtual Reality (VR) Environments.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="VR Environments">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/AR & VR Experiences/_0001_Giant Screen AR Experiences.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Giant Screen AR">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/AR & VR Experiences/_0002_Augmented Reality (AR) Applications.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="AR Applications">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/AR & VR Experiences/_0003_VR 360 Degree Virtual Tours.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="VR 360 Virtual Tours">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Developing cutting-edge Augmented and Virtual Reality applications that transport users into highly detailed, interactive virtual environments.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We created realistic 360-degree virtual tours and interactive AR experiences. The approach ensures users can deeply engage with the spaces and products without the limits of physical reality.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Pioneer a futuristic digital presence, drive user engagement through immersive technologies, and provide inaccessible physical journeys digitally.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Unreal Engine, Unity, ARKit, ARCore, WebXR</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Unprecedented engagement times • Immersive brand storytelling • High adoption in virtual showrooms.</p>
+      </div>
+    </article>
+
+    <!-- Project 10: Interactive & Display Solutions -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Interactive & Display Solutions</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Next-Gen Experiential Marketing</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Interactive & Display Solutions/Anamorphic 3D Illusion Content.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Anamorphic 3D Illusion">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Interactive & Display Solutions/Experiential Marketing Displays.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Experiential Marketing Displays">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Interactive & Display Solutions/Holographic Content & Installations.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Holographic Content">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Interactive & Display Solutions/Interactive Digital Touch Experiences.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interactive Digital Touch">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Redefining offline customer interactions through holographic contents, anamorphic 3D illusions, and experiential touch displays tailored for physical venues.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We engineered state-of-the-art interactive installations. Blending tactile systems out of screens with eye-catching 3D illusion contents to captivate audiences passing by.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Stand out at events, retail environments, and exhibitions by establishing memorable physical touchpoints and interactive visual marvels.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">TouchDesigner, Cinema 4D, Holographic Displays, Kinect Sensors, WebGL</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Massive crowd engagement • Viral social media impact via anamorphic content • Higher offline dwell times.</p>
+      </div>
+    </article>
+
   </section>
 
   <!-- ============================================================ -->
@@ -738,7 +1068,7 @@
           <a href="{{ route('about') }}" class="nav-link hover:text-white transition">About</a>
           <a href="{{ route('services') }}" class="nav-link hover:text-white transition">Services</a>
           <a href="{{ route('portfolio') }}" class="nav-link text-white transition">Portfolio</a>
-          <a href="{{ route('blogs') }}" class="nav-link hover:text-white transition">Journal</a>
+          <a href="{{ route('blogs') }}" class="nav-link hover:text-white transition">Blogs</a>
           <a href="{{ route('contact') }}" class="nav-link hover:text-white transition">Contact Us</a>
         </div>
       </div>

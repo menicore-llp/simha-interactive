@@ -282,7 +282,7 @@
       <a href="{{ route('about') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
-      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Journal</a>
+      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Contact us</a>
     </div>
 
@@ -324,7 +324,7 @@
       <a href="{{ route('about') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
-      <a href="{{ route('blogs') }}" class="nav-link text-gray-400 hover:text-white uppercase">Journal</a>
+      <a href="{{ route('blogs') }}" class="nav-link text-gray-400 hover:text-white uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link text-gray-400 hover:text-white uppercase">Contact us</a>
     
       <div>
@@ -739,57 +739,59 @@
       <!-- LOGOS TICKER -->
       <div class="reveal-item w-full flex flex-col gap-12 mt-12 overflow-hidden" style="transition-delay: 200ms;">
         
-        <!-- ROW 1: Logos 1-9 -->
+        <!-- ROW 1: Logos 1-10 -->
         <div class="flex w-max animate-marquee" style="animation-duration: 40s;">
           <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
-            <img src="{{ asset('assets/Client Logo/Piramal Reality.webp') }}" alt="Piramal Reality" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/DDECORHOMEFABRICS.jpg') }}" alt="D Decor" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Hafiz Contractor.jpg') }}" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Trident Group.png') }}" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Delta-Group.webp') }}" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Nirvana.jpg') }}" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Cellecor.webp') }}" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/THOE.png') }}" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Suraksha Smart City.jpg') }}" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0000_Parimal REALTY.jpg') }}" alt="Parimal Realty" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0001_Delta-Group.jpg') }}" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0002_Command Collective.jpg') }}" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0003_Cellecor.jpg') }}" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0004_Risland Icon.jpg') }}" alt="Risland Icon" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0005_Zebra Idealab.jpg') }}" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0006_Trident Group.jpg') }}" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0007_THOE.jpg') }}" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0008_Suraksha Smart City.jpg') }}" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0009_RenderThat.jpg') }}" alt="RenderThat" class="h-20 md:h-28 w-auto object-contain">
           </div>
           <!-- Duplicate for seamless loop -->
           <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
-            <img src="{{ asset('assets/Client Logo/Piramal Reality.webp') }}" alt="Piramal Reality" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/DDECORHOMEFABRICS.jpg') }}" alt="D Decor" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Hafiz Contractor.jpg') }}" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Trident Group.png') }}" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Delta-Group.webp') }}" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Nirvana.jpg') }}" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Cellecor.webp') }}" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/THOE.png') }}" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Suraksha Smart City.jpg') }}" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0000_Parimal REALTY.jpg') }}" alt="Parimal Realty" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0001_Delta-Group.jpg') }}" alt="Delta Group" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0002_Command Collective.jpg') }}" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0003_Cellecor.jpg') }}" alt="Cellecor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0004_Risland Icon.jpg') }}" alt="Risland Icon" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0005_Zebra Idealab.jpg') }}" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0006_Trident Group.jpg') }}" alt="Trident Group" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0007_THOE.jpg') }}" alt="The Heart of Europe" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0008_Suraksha Smart City.jpg') }}" alt="Suraksha Smart City" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0009_RenderThat.jpg') }}" alt="RenderThat" class="h-20 md:h-28 w-auto object-contain">
           </div>
         </div>
 
-        <!-- ROW 2: Logos 10-18 (Moves opposite direction) -->
+        <!-- ROW 2: Logos 11-19 (Moves opposite direction) -->
         <div class="flex w-max animate-marquee-reverse" style="animation-duration: 40s;">
           <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
-            <img src="{{ asset('assets/Client Logo/Risland Icon.webp') }}" alt="Rislan The Icon" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Labdhi Lifestylle.jpg') }}" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/RenderThat.jpg') }}" alt="RenderThat Creative" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Oli Studio.jpg') }}" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Command Collective.webp') }}" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Zebra Idealab.png') }}" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Kanak Export.png') }}" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Kanak Naturals.png') }}" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/R for Rabbit.jpg') }}" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0010_R for Rabbit.jpg') }}" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0011_Oli Studio.jpg') }}" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0012_Nirvana.jpg') }}" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0013_Labdhi Lifestylle.jpg') }}" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0014_Kanak Naturals.jpg') }}" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0015_Kanak Export.jpg') }}" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0016_Hafiz Contractor.jpg') }}" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0017_Gupta Housing.jpg') }}" alt="Gupta Housing" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0018_DDECORHOMEFABRICS.jpg') }}" alt="D Decor" class="h-20 md:h-28 w-auto object-contain">
           </div>
           <!-- Duplicate for seamless loop -->
           <div class="flex items-center justify-around gap-16 md:gap-24 px-8 md:px-12">
-            <img src="{{ asset('assets/Client Logo/Risland Icon.webp') }}" alt="Rislan The Icon" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Labdhi Lifestylle.jpg') }}" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/RenderThat.jpg') }}" alt="RenderThat Creative" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Oli Studio.jpg') }}" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Command Collective.webp') }}" alt="Command Collective" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Zebra Idealab.png') }}" alt="Zebra Idealab" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Kanak Export.png') }}" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/Kanak Naturals.png') }}" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain">
-            <img src="{{ asset('assets/Client Logo/R for Rabbit.jpg') }}" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0010_R for Rabbit.jpg') }}" alt="R for Rabbit" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0011_Oli Studio.jpg') }}" alt="Oli Studio" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0012_Nirvana.jpg') }}" alt="Nirvana" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0013_Labdhi Lifestylle.jpg') }}" alt="Labdhi Lifestyle" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0014_Kanak Naturals.jpg') }}" alt="Kanak Naturals" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0015_Kanak Export.jpg') }}" alt="Kanak Export" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0016_Hafiz Contractor.jpg') }}" alt="Architect Hafeez Contractor" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0017_Gupta Housing.jpg') }}" alt="Gupta Housing" class="h-20 md:h-28 w-auto object-contain">
+            <img src="{{ asset('assets/Client Logo/_0018_DDECORHOMEFABRICS.jpg') }}" alt="D Decor" class="h-20 md:h-28 w-auto object-contain">
           </div>
         </div>
 
@@ -797,66 +799,6 @@
 
     </div>
   </section>
-
-  <!-- ============================================================ -->
-  <!--  RECENT BLOGS SECTION                                         -->
-  <!-- ============================================================ -->
-  @if(isset($blogs) && $blogs->count() > 0)
-  <section class="relative bg-brand-dark overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 border-b border-brand-border">
-    <div class="diagonal-stripes"></div>
-    <div class="relative z-10 flex flex-col items-center gap-16 max-w-7xl mx-auto">
-      
-      <!-- HEADER BLOCK -->
-      <div class="flex flex-col items-center text-center gap-6 max-w-3xl">
-        <div class="reveal-item flex items-center justify-center gap-3 w-full">
-          <div class="w-10 h-[2px] bg-brand-orange"></div>
-          <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">
-            Latest Thoughts
-          </span>
-          <div class="w-10 h-[2px] bg-brand-orange"></div>
-        </div>
-        <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 4.5rem);">
-          Our Journal
-        </h2>
-      </div>
-
-      <!-- BLOGS GRID -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full text-left">
-        @foreach($blogs as $idx => $blog)
-        <div class="group relative border border-brand-border p-5 flex flex-col gap-4 w-full h-full hover:border-white transition-all duration-300 transform bg-[#0e0e0e]">
-          <div class="w-8 h-px bg-brand-orange"></div>
-          <div class="font-display text-white text-3xl opacity-50 group-hover:opacity-100 transition-opacity">0{{ $idx + 1 }}</div>
-          
-          @if($blog->image)
-          <div class="w-full h-40 overflow-hidden mb-2">
-             <img src="{{ asset('storage/' . $blog->image) }}" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 scale-100 group-hover:scale-105">
-          </div>
-          @endif
-
-          <div class="flex-1">
-            <p class="font-body text-brand-orange font-medium text-xs tracking-wider uppercase mb-2">{{ $blog->category }}</p>
-            <h3 class="font-body text-white font-medium text-lg leading-snug mb-3 hover:text-brand-orange cursor-pointer transition-colors max-w-full">
-              {{ $blog->title }}
-            </h3>
-            <p class="font-body text-gray-500 text-xs leading-relaxed line-clamp-3">
-              {{ $blog->short_description }}
-            </p>
-          </div>
-          
-          <div class="mt-4 pt-4 border-t border-brand-border flex justify-between items-center text-xs font-body text-gray-500 uppercase tracking-widest">
-            <span>{{ \Carbon\Carbon::parse($blog->publish_date)->format('M d, Y') }}</span>
-            <span class="group-hover:text-brand-orange transition-colors">Read</span>
-          </div>
-
-          <!-- Hover corner accent -->
-          <div class="absolute bottom-2 right-2 w-0 h-0 group-hover:w-6 group-hover:h-6 transition-all duration-300 pointer-events-none" style="border-right: 2px solid #FF5C1A; border-bottom: 2px solid #FF5C1A;"></div>
-        </div>
-        @endforeach
-      </div>
-
-    </div>
-  </section>
-  @endif
 
   <!-- ============================================================ -->
   <!--  CALL TO ACTION SECTION                                       -->
@@ -935,7 +877,7 @@
           <a href="{{ route('about') }}" class="nav-link hover:text-white transition">About</a>
           <a href="{{ route('services') }}" class="nav-link hover:text-white transition">Services</a>
           <a href="{{ route('portfolio') }}" class="nav-link hover:text-white transition">Portfolio</a>
-          <a href="{{ route('blogs') }}" class="nav-link hover:text-white transition">Journal</a>
+          <a href="{{ route('blogs') }}" class="nav-link hover:text-white transition">Blogs</a>
           <a href="{{ route('contact') }}" class="nav-link hover:text-white transition">Contact Us</a>
 
         </div>

@@ -151,7 +151,7 @@
       <a href="{{ route('about') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
-      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Journal</a>
+      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Contact us</a>
     </div>
 
@@ -174,7 +174,7 @@
       <a href="{{ route('about') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
-      <a href="{{ route('blogs') }}" class="nav-link text-gray-400 hover:text-white uppercase">Journal</a>
+      <a href="{{ route('blogs') }}" class="nav-link text-gray-400 hover:text-white uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link text-gray-400 hover:text-white uppercase">Contact us</a>
       <div>
         <a href="{{ route('contact') }}" class="btn-ghost inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase">
@@ -345,7 +345,7 @@
           <a href="{{ route('about') }}" class="nav-link text-white transition">About</a>
           <a href="{{ route('services') }}" class="nav-link hover:text-white transition">Services</a>
           <a href="{{ route('portfolio') }}" class="nav-link hover:text-white transition">Portfolio</a>
-          <a href="{{ route('blogs') }}" class="nav-link hover:text-white transition">Journal</a>
+          <a href="{{ route('blogs') }}" class="nav-link hover:text-white transition">Blogs</a>
           <a href="{{ route('contact') }}" class="nav-link hover:text-white transition">Contact Us</a>
         </div>
       </div>
