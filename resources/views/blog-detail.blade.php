@@ -134,15 +134,25 @@
     ::-webkit-scrollbar-thumb:hover { background: #FF5C1A; }
 
     /* Blog Content Styles */
+    .prose-dark {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
     .prose-dark p { margin-bottom: 1.5em; line-height: 1.8; color: #a1a1aa; }
     .prose-dark h1, .prose-dark h2, .prose-dark h3 { font-family: 'Bebas Neue', sans-serif; color: #ffffff; margin-bottom: 1rem; margin-top: 2rem; letter-spacing: 0.05em; }
-    .prose-dark h2 { font-size: 2.5rem; }
-    .prose-dark h3 { font-size: 1.8rem; }
-    .prose-dark a { color: #FF5C1A; text-decoration: none; border-bottom: 1px solid #FF5C1A; padding-bottom: 1px; transition: color 0.3s, border-color 0.3s; }
+    .prose-dark h1 { font-size: clamp(2.5rem, 5vw, 3rem); line-height: 1.1; }
+    .prose-dark h2 { font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.2; }
+    .prose-dark h3 { font-size: clamp(1.5rem, 3vw, 1.8rem); line-height: 1.3; }
+    .prose-dark a { color: #FF5C1A; text-decoration: none; border-bottom: 1px solid #FF5C1A; padding-bottom: 1px; transition: color 0.3s, border-color 0.3s; word-break: break-all; }
     .prose-dark a:hover { color: #ffffff; border-color: #ffffff; }
     .prose-dark ul, .prose-dark ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: #a1a1aa; }
     .prose-dark li { margin-bottom: 0.5rem; }
     .prose-dark blockquote { border-left: 3px solid #FF5C1A; padding-left: 1.5rem; font-style: italic; color: #d4d4d8; margin: 2rem 0; }
+    
+    /* Make inline assets responsive */
+    .prose-dark img { max-width: 100%; height: auto; border-radius: 4px; margin: 2rem 0; display: block; }
+    .prose-dark iframe, .prose-dark video { max-width: 100%; margin: 2rem 0; }
+    .prose-dark pre, .prose-dark code { max-width: 100%; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
   </style>
 </head>
 
@@ -168,7 +178,7 @@
       <a href="{{ route('about') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
-      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-white border-b border-white transition-colors tracking-wider uppercase">Journal</a>
+      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-white transition-colors tracking-wider uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Contact us</a>
     </div>
 
@@ -191,7 +201,7 @@
       <a href="{{ route('about') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
-      <a href="{{ route('blogs') }}" class="nav-link text-white uppercase">Journal</a>
+      <a href="{{ route('blogs') }}" class="nav-link text-white uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link text-gray-400 hover:text-white uppercase">Contact us</a>
       <div>
         <a href="{{ route('contact') }}" class="btn-ghost inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase">
@@ -217,6 +227,12 @@
         {{ $blog->title }}
       </h1>
       
+      @if($blog->short_description)
+      <p class="reveal-item font-body text-gray-300 text-base md:text-lg max-w-3xl leading-relaxed mt-2" style="transition-delay: 50ms;">
+        {{ $blog->short_description }}
+      </p>
+      @endif
+      
       <div class="reveal-item flex items-center gap-6 mt-4 opacity-80" style="transition-delay: 100ms;">
         <div class="flex items-center gap-2 font-body text-sm text-gray-400 tracking-wider uppercase">
           <span>By {{ $blog->author ?? 'Simha Editiorial' }}</span>
@@ -238,7 +254,7 @@
       
       @if($blog->image)
       <div class="reveal-item w-full mb-16 border border-brand-border bg-[#0e0e0e] flex items-center justify-center overflow-hidden" style="min-h: 300px; max-height: 600px;">
-         <img src="{{ asset('storage/' . $blog->image) }}" class="w-full h-auto object-cover max-h-[600px] grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700" alt="{{ $blog->title }}">
+         <img src="{{ asset('storage/' . $blog->image) }}" class="w-full h-auto object-cover max-h-[600px] transition-all duration-700" alt="{{ $blog->title }}">
       </div>
       @endif
 
@@ -268,7 +284,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
           <span class="font-body text-sm text-white tracking-[0.3em] uppercase border-b border-white/20 pb-1 group-hover:border-brand-orange group-hover:text-brand-orange transition-all duration-300">
-            Back to Journal
+            Back to Blogs
           </span>
         </a>
       </div>
@@ -335,7 +351,7 @@
           <a href="{{ route('about') }}" class="nav-link hover:text-white transition">About</a>
           <a href="{{ route('services') }}" class="nav-link hover:text-white transition">Services</a>
           <a href="{{ route('portfolio') }}" class="nav-link hover:text-white transition">Portfolio</a>
-          <a href="{{ route('blogs') }}" class="nav-link text-white transition">Journal</a>
+          <a href="{{ route('blogs') }}" class="nav-link text-white transition">Blogs</a>
           <a href="{{ route('contact') }}" class="nav-link hover:text-white transition">Contact Us</a>
         </div>
       </div>

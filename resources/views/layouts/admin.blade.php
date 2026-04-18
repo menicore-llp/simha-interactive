@@ -102,7 +102,7 @@
             
             <div class="hidden sm:flex sm:space-x-8 mt-2">
                 <a href="{{ route('admin.blogs.index') }}"
-                   class="font-body text-sm tracking-widest uppercase border-b-2 {{ request()->routeIs('admin.blogs.*') ? 'border-brand-orange text-brand-orange' : 'border-transparent text-gray-400 hover:text-white hover:border-white transition-colors' }}">
+                   class="font-body text-sm tracking-widest uppercase border-b-2 {{ request()->routeIs('admin.blogs.*') ? 'border-brand-orange text-white' : 'border-transparent text-gray-400 hover:text-white hover:border-white transition-colors' }}">
                     Manage Blogs
                 </a>
             </div>

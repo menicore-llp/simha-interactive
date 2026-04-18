@@ -51,10 +51,16 @@
                 <label class="font-body text-xs text-gray-500 uppercase tracking-widest block">Category <span class="text-brand-orange">*</span></label>
                 <select name="category" required class="w-full bg-[#080808] border border-brand-border text-white px-4 py-3 font-body text-sm focus:outline-none focus:border-brand-orange transition-colors appearance-none">
                     <option value="" disabled {{ old('category', $blog->category ?? '') == '' ? 'selected' : '' }}>Select Category</option>
-                    <option value="strategy" {{ old('category', $blog->category ?? '') == 'strategy' ? 'selected' : '' }}>Strategy</option>
-                    <option value="design" {{ old('category', $blog->category ?? '') == 'design' ? 'selected' : '' }}>Design</option>
-                    <option value="marketing" {{ old('category', $blog->category ?? '') == 'marketing' ? 'selected' : '' }}>Marketing</option>
-                    <option value="technology" {{ old('category', $blog->category ?? '') == 'technology' ? 'selected' : '' }}>Technology</option>
+                    <option value="Visualization" {{ old('category', $blog->category ?? '') == 'Visualization' ? 'selected' : '' }}>3D Architectural Interior Rendering</option>
+                    <option value="Visualization" {{ old('category', $blog->category ?? '') == 'Visualization' ? 'selected' : '' }}>3D Architectural Exterior Rendering</option>
+                    <option value="Visualization" {{ old('category', $blog->category ?? '') == 'Visualization' ? 'selected' : '' }}>3D Floor Plans</option>
+                    <option value="Visualization" {{ old('category', $blog->category ?? '') == 'Visualization' ? 'selected' : '' }}>Walkthrough Animations</option>
+                    <option value="Visualization" {{ old('category', $blog->category ?? '') == 'Visualization' ? 'selected' : '' }}>Real Estate Marketing Visuals</option>
+                    <option value="Visualization" {{ old('category', $blog->category ?? '') == 'Visualization' ? 'selected' : '' }}>3D Product Animation</option>
+                    <option value="Visualization" {{ old('category', $blog->category ?? '') == 'Visualization' ? 'selected' : '' }}>3D Product Rendering</option>
+                    <option value="Design" {{ old('category', $blog->category ?? '') == 'Design' ? 'selected' : '' }}>Website Design and Development</option>
+                    <option value="Engagement" {{ old('category', $blog->category ?? '') == 'Engagement' ? 'selected' : '' }}>AR & VR Experiences</option>
+                    <option value="Engagement" {{ old('category', $blog->category ?? '') == 'Engagement' ? 'selected' : '' }}>Interactive & Display Solutions</option>
                 </select>
             </div>
 
@@ -106,8 +112,12 @@
 
         <div class="space-y-2 border border-brand-border bg-[#0e0e0e] p-1 pb-0">
             <label class="font-body text-xs text-brand-orange uppercase tracking-widest block px-4 pt-3 pb-2 border-b border-brand-border">Content Editor</label>
-            <textarea name="content" rows="12"
-                      class="w-full bg-transparent text-white px-4 py-4 font-body text-sm focus:outline-none">{{ old('content', $blog->content ?? '') }}</textarea>
+            
+            <!-- Editor Container -->
+            <div id="editor-container" class="w-full bg-transparent text-white font-body text-sm focus:outline-none" style="min-height: 350px;">{!! old('content', $blog->content ?? '') !!}</div>
+            
+            <!-- Hidden input to hold quill data for form submission -->
+            <input type="hidden" name="content" id="hidden-content" value="{{ old('content', $blog->content ?? '') }}">
         </div>
 
         <div class="pt-6 border-t border-brand-border flex items-center justify-end gap-4">
@@ -122,4 +132,85 @@
 
     </form>
 </div>
+
+<!-- Rich Text Editor (Quill.js) -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<style>
+    /* Quill Dark Theme Overrides */
+    .ql-toolbar.ql-snow {
+        border: none;
+        border-bottom: 1px solid #1f1f1f;
+        background-color: transparent;
+        padding: 12px 16px;
+    }
+    .ql-container.ql-snow {
+        border: none;
+    }
+    .ql-editor {
+        min-height: 350px;
+        color: #ffffff;
+        font-family: 'Outfit', sans-serif;
+        font-size: 1rem;
+        padding: 16px;
+    }
+    /* Ensure content renders nicely inside editor */
+    .ql-editor h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; color: #ffffff; }
+    .ql-editor h2 { font-size: 1.5em; font-weight: bold; margin-bottom: 0.5em; color: #ffffff; }
+    .ql-editor a { color: #FF5C1A; text-decoration: underline; }
+    
+    /* Toolbar Icons colors overrides to match dark theme */
+    .ql-snow .ql-stroke { stroke: #cccccc; }
+    .ql-snow .ql-fill { fill: #cccccc; }
+    .ql-snow .ql-picker { color: #cccccc; }
+    
+    .ql-snow.ql-toolbar button:hover .ql-stroke, 
+    .ql-snow .ql-toolbar button:hover .ql-stroke, 
+    .ql-snow.ql-toolbar button.ql-active .ql-stroke, 
+    .ql-snow .ql-toolbar button.ql-active .ql-stroke {
+        stroke: #FF5C1A;
+    }
+    .ql-snow.ql-toolbar button:hover .ql-fill, 
+    .ql-snow .ql-toolbar button:hover .ql-fill, 
+    .ql-snow.ql-toolbar button.ql-active .ql-fill, 
+    .ql-snow .ql-toolbar button.ql-active .ql-fill {
+        fill: #FF5C1A;
+    }
+    
+    /* Make toolbar dividers subtle */
+    .ql-toolbar.ql-snow .ql-formats {
+        margin-right: 20px;
+        border-right: 1px solid #333;
+        padding-right: 20px;
+    }
+    .ql-toolbar.ql-snow .ql-formats:last-child {
+        border-right: none;
+    }
+</style>
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script>
+    var quill = new Quill('#editor-container', {
+        modules: {
+            toolbar: [
+                ['bold', 'italic', 'underline'],
+                [{ 'header': 1 }, { 'header': 2 }],
+                [{ 'list': 'bullet' }],
+                ['link', 'image']
+            ]
+        },
+        theme: 'snow' // snow is the clean, minimalist theme (mimicking the image)
+    });
+
+    var hiddenInput = document.querySelector('#hidden-content');
+    
+    // Sync the Quill content to the hidden input immediately on any change
+    quill.on('text-change', function() {
+        hiddenInput.value = quill.root.innerHTML;
+    });
+
+    // Populate hidden input on form submit (double safety)
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function() {
+        hiddenInput.value = quill.root.innerHTML;
+    });
+</script>
 @endsection

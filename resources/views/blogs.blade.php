@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Journal - Simha Interactive</title>
+  <title>Our Blogs - Simha Interactive</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=DM+Sans:ital@0;1&display=swap" rel="stylesheet">
@@ -157,7 +157,7 @@
       <a href="{{ route('about') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Portfolio</a>
-      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-white border-b border-white transition-colors tracking-wider uppercase">Journal</a>
+      <a href="{{ route('blogs') }}" class="nav-link font-body text-sm text-white transition-colors tracking-wider uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Contact us</a>
     </div>
 
@@ -180,7 +180,7 @@
       <a href="{{ route('about') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
-      <a href="{{ route('blogs') }}" class="nav-link text-white uppercase">Journal</a>
+      <a href="{{ route('blogs') }}" class="nav-link text-white uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link text-gray-400 hover:text-white uppercase">Contact us</a>
       <div>
         <a href="{{ route('contact') }}" class="btn-ghost inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase">
@@ -200,7 +200,7 @@
         <span class="font-body text-xs text-brand-orange tracking-[0.4em] uppercase font-medium">Inside Our Minds</span>
         <div class="w-[36px] h-[2px] bg-brand-orange"></div>
       </div>
-      <h1 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 6.5rem);">Our Journal</h1>
+      <h1 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 6.5rem);">Our Blogs</h1>
       <p class="reveal-item font-body text-gray-400 text-base md:text-xl max-w-2xl mt-4 leading-relaxed font-medium lg:font-normal">
         Insights, thoughts, and industry perspectives on strategy, cutting-edge design, and the future of digital engagement.
       </p>
@@ -221,7 +221,7 @@
           <!-- Image -->
           <div class="w-full h-56 overflow-hidden mb-2 bg-[#080808]">
              @if($blog->image)
-                <img src="{{ asset('storage/' . $blog->image) }}" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 scale-100 group-hover:scale-105" alt="{{ $blog->title }}">
+                <img src="{{ asset('storage/' . $blog->image) }}" class="w-full h-full object-cover group-hover:opacity-100 transition-all duration-500 scale-100 group-hover:scale-105" alt="{{ $blog->title }}">
              @else
                 <div class="w-full h-full flex items-center justify-center">
                     <svg class="w-12 h-12 text-[#1f1f1f] group-hover:text-brand-orange transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -257,7 +257,7 @@
         @empty
         <div class="col-span-full py-20 text-center flex flex-col items-center justify-center">
              <div class="w-16 h-px bg-brand-border mb-6"></div>
-             <h3 class="font-display text-2xl text-gray-500 tracking-wide uppercase">No Journal Entries Found</h3>
+             <h3 class="font-display text-2xl text-gray-500 tracking-wide uppercase">No Blog Entries Found</h3>
              <p class="font-body text-gray-600 mt-2">Check back soon for new insights and perspectives.</p>
         </div>
         @endforelse
@@ -336,7 +336,7 @@
           <a href="{{ route('about') }}" class="nav-link hover:text-white transition">About</a>
           <a href="{{ route('services') }}" class="nav-link hover:text-white transition">Services</a>
           <a href="{{ route('portfolio') }}" class="nav-link hover:text-white transition">Portfolio</a>
-          <a href="{{ route('blogs') }}" class="nav-link text-white transition">Journal</a>
+          <a href="{{ route('blogs') }}" class="nav-link text-white transition">Blogs</a>
           <a href="{{ route('contact') }}" class="nav-link hover:text-white transition">Contact Us</a>
         </div>
       </div>
