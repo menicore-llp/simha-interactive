@@ -296,10 +296,10 @@
   <!-- ============================================================ -->
   <!--  CALL TO ACTION SECTION                                       -->
   <!-- ============================================================ -->
-  <section class="relative bg-brand-card overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 flex flex-col items-center justify-center border-t border-brand-border">
+  <section class="relative bg-white overflow-hidden py-16 md:py-24 px-5 sm:px-8 md:px-16 lg:px-24 flex flex-col items-center justify-center">
 
     <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center justify-center text-center gap-6">
-      
+      <!-- Small label -->
       <div class="reveal-item flex items-center justify-center gap-3">
         <div class="w-8 h-px bg-brand-orange"></div>
         <span class="font-body text-xs text-brand-orange tracking-[0.4em] font-medium uppercase">
@@ -308,18 +308,22 @@
         <div class="w-8 h-px bg-brand-orange"></div>
       </div>
 
-      <h2 class="reveal-item font-display text-white leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem); transition-delay: 100ms;">
+      <!-- Headline -->
+      <h2 class="reveal-item font-display text-brand-dark leading-none" style="font-size: clamp(3rem, 7vw, 5.5rem); transition-delay: 100ms;">
         Let’s Build Something <br/>Extraordinary
       </h2>
 
-      <p class="reveal-item font-body text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mt-2 mx-auto leading-relaxed" style="transition-delay: 200ms;">
+      <!-- Description -->
+      <p class="reveal-item font-body text-gray-500 text-sm sm:text-base md:text-lg max-w-2xl mt-2 mx-auto leading-relaxed" style="transition-delay: 200ms;">
         Tell us about your vision, and we’ll turn it into reality. Partner with us to scale your brand through strategy, high-end visuals, and deep engagement.
       </p>
 
+      <!-- CTA Button -->
       <div class="reveal-item mt-8" style="transition-delay: 300ms;">
-        <a href="{{ route('contact') }}" class="btn-ghost border border-white text-white px-10 py-5 font-body text-sm tracking-widest uppercase inline-flex items-center gap-4 transition-all duration-300 hover:border-brand-orange">
-          <span>Start Your Project</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="relative z-10 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <a href="{{ route('contact') }}" class="relative overflow-hidden group bg-white text-black border border-gray-300 px-10 py-5 rounded-full font-body text-sm tracking-widest uppercase text-center inline-flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-black">
+          <div class="absolute inset-0 bg-black scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
+          <span class="relative z-10 font-medium group-hover:text-white transition-colors duration-300">Contact Us</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="relative z-10 w-4 h-4 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
           </svg>
         </a>
