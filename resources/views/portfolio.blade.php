@@ -207,7 +207,161 @@
   <!-- ============================================================ -->
   <section class="relative bg-brand-dark pb-24 md:pb-36 px-5 sm:px-8 md:px-16 lg:px-24 space-y-24 md:space-y-36">
     
-    <!-- Project 1: Visualization (Interior Rendering) -->
+  <!-- Project 1: Branding, Strategy& Identity -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Branding, Strategy& Identity</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Comprehensive Brand Identity</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Design/1.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 1">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Design/2.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 2">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Design/3.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 3">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Design/4.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 4">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Design/5.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 5">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Strategic brand identity creation, shaping visually immersive and memorable brand stories that align with modern consumer expectations.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We defined complete branding ecosystems from versatile logos and cohesive typography to sophisticated graphic language and marketing assets.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">To forge a distinctive brand voice and recognizable visuals that foster deep engagement and sustain long-term market trust.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Adobe Illustrator, Photoshop, InDesign, Figma</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Distinct market positioning • Cohesive visual elements • Enduring brand recognition.</p>
+      </div>
+    </article>
+
+  <!-- Project 2: Design (Website Design and Development) -->
+    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
+      <div class="flex flex-col items-center text-center gap-4">
+        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Website Design and Development</span>
+        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Responsive Digital Experiences</h2>
+      </div>
+
+      <div class="w-full relative" data-carousel>
+        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Website Design and Development/Cyblink.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Cyblink Website Design">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Website Design and Development/Meena.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Meena Website Design">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <img src="{{ asset('assets/portfolio-images/Website Design and Development/Shahi.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Shahi Website Design">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between">
+          
+          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+            </button>
+            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Custom, comprehensive modern website architectures focusing on intuitive user experience, brand representation, and reliable performance across all platforms.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">We engineered fully responsive, dynamic interfaces paired with robust back-end systems. By prioritizing clean layouts and seamless navigation, we ensure a world-class user journey.</p>
+            </div>
+         </div>
+         <div class="space-y-6">
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Establish a powerful digital footprint, deliver highly accessible content to diverse audiences, and reliably scale their online operations to drive engagement.</p>
+            </div>
+            <div>
+              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
+              <p class="font-body text-gray-400 text-sm leading-relaxed">Figma, HTML5, Tailwind CSS, JavaScript, React, Node.js</p>
+            </div>
+         </div>
+      </div>
+
+      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
+        <p class="font-body text-brand-orange text-sm font-medium">Enhanced mobile responsiveness • Substantial increase in page retention • Streamlined customer conversions.</p>
+      </div>
+    </article>  
+  
+  <!-- Project 3: Visualization (Interior Rendering) -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Interior Rendering</span>
@@ -304,7 +458,7 @@
       </div>
     </article>
 
-    <!-- Project 2: Visualization (Exterior Rendering) -->
+    <!-- Project 4: Visualization (Exterior Rendering) -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Exterior Rendering</span>
@@ -417,7 +571,7 @@
       </div>
     </article>
 
-    <!-- Project 3: Visualization (3D Floor Plans) -->
+    <!-- Project 5: Visualization (3D Floor Plans) -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">3D Floor Plans</span>
@@ -476,7 +630,7 @@
       </div>
     </article>
 
-    <!-- Project 4: Visualization (Walkthrough Animations) -->
+    <!-- Project 6: Visualization (Walkthrough Animations) -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Walkthrough Animations</span>
@@ -535,7 +689,7 @@
       </div>
     </article>
 
-    <!-- Project 5: Visualization (Real Estate Marketing Visuals) -->
+    <!-- Project 7: Visualization (Real Estate Marketing Visuals) -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Real Estate Marketing Visuals</span>
@@ -595,7 +749,7 @@
     </article>
 
 
-    <!-- Project 6: 3D Product Animation -->
+    <!-- Project 8: 3D Product Animation -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">3D Product Animation</span>
@@ -672,7 +826,7 @@
       </div>
     </article>
 
-    <!-- Project 7: Immersive Content -->
+    <!-- Project 9: Immersive Content -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Product Visualization</span>
@@ -781,80 +935,7 @@
       </div>
     </article>
 
-    <!-- Project 8: Website Design and Development -->
-    <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
-      <div class="flex flex-col items-center text-center gap-4">
-        <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Website Design and Development</span>
-        <h2 class="font-display text-white text-4xl md:text-5xl leading-none">Responsive Digital Experiences</h2>
-      </div>
-
-      <div class="w-full relative" data-carousel>
-        <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/Website Design and Development/Cyblink.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Cyblink Website Design">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/Website Design and Development/Meena.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Meena Website Design">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <img src="{{ asset('assets/portfolio-images/Website Design and Development/Shahi.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Shahi Website Design">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-        </div>
-
-        <div class="mt-6 flex items-center justify-between">
-          
-          <div class="hidden sm:block flex-1 max-w-[180px] mx-auto h-[2px] bg-[#1f1f1f] relative overflow-hidden rounded">
-            <div class="absolute top-0 left-0 h-full bg-[#FF5C1A] transition-all duration-600 ease-out stack-progress" style="width: 0%;"></div>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <button class="stack-prev w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-              </svg>
-            </button>
-            <button class="stack-next w-10 h-10 rounded-full border border-[#1f1f1f] bg-transparent text-white flex items-center justify-center cursor-pointer hover:border-[#FF5C1A] hover:text-[#FF5C1A] transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-         <div class="space-y-6">
-            <div>
-              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Project Overview</h4>
-              <p class="font-body text-gray-400 text-sm leading-relaxed">Custom, comprehensive modern website architectures focusing on intuitive user experience, brand representation, and reliable performance across all platforms.</p>
-            </div>
-            <div>
-              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Our Solution</h4>
-              <p class="font-body text-gray-400 text-sm leading-relaxed">We engineered fully responsive, dynamic interfaces paired with robust back-end systems. By prioritizing clean layouts and seamless navigation, we ensure a world-class user journey.</p>
-            </div>
-         </div>
-         <div class="space-y-6">
-            <div>
-              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Client Objectives</h4>
-              <p class="font-body text-gray-400 text-sm leading-relaxed">Establish a powerful digital footprint, deliver highly accessible content to diverse audiences, and reliably scale their online operations to drive engagement.</p>
-            </div>
-            <div>
-              <h4 class="font-body text-white text-sm tracking-widest uppercase mb-2">Technologies Used</h4>
-              <p class="font-body text-gray-400 text-sm leading-relaxed">Figma, HTML5, Tailwind CSS, JavaScript, React, Node.js</p>
-            </div>
-         </div>
-      </div>
-
-      <div class="bg-brand-card p-4 border-l-2 border-brand-orange flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-        <h4 class="font-body text-white text-sm tracking-widest uppercase whitespace-nowrap">Results Delivered:</h4>
-        <p class="font-body text-brand-orange text-sm font-medium">Enhanced mobile responsiveness • Substantial increase in page retention • Streamlined customer conversions.</p>
-      </div>
-    </article>
-
-    <!-- Project 9: AR & VR Experiences -->
+    <!-- Project 10: AR & VR Experiences -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">AR & VR Experiences</span>
@@ -929,7 +1010,7 @@
       </div>
     </article>
 
-    <!-- Project 10: Interactive & Display Solutions -->
+    <!-- Project 11: Interactive & Display Solutions -->
     <article class="reveal-item max-w-5xl mx-auto flex flex-col gap-10">
       <div class="flex flex-col items-center text-center gap-4">
         <span class="font-body text-xs text-brand-orange tracking-[0.2em] border border-brand-orange px-3 py-1 rounded-full uppercase">Interactive & Display Solutions</span>
