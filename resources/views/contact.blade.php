@@ -300,28 +300,43 @@
 
         <!-- Right Side: Form -->
         <div class="reveal-item bg-white p-6 sm:p-8 md:p-12 border border-gray-100 rounded-xl h-fit shadow-2xl" style="transition-delay: 200ms;">
-          <form class="flex flex-col gap-6" onsubmit="event.preventDefault();">
+          @if(session('success'))
+            <div class="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-md mb-6 font-body text-sm" role="alert">
+              <span class="block sm:inline">{{ session('success') }}</span>
+            </div>
+          @endif
+          @if($errors->any())
+            <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md mb-6 font-body text-sm" role="alert">
+              <ul class="list-disc ml-5">
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+          @endif
+          <form id="contactForm" class="flex flex-col gap-6" action="{{ route('contact.submit') }}" method="POST">
+            @csrf
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div class="flex flex-col gap-2">
                 <label class="font-body text-xs text-gray-600 tracking-wider uppercase">Full Name <span class="text-brand-orange">*</span></label>
-                <input type="text" required class="form-input w-full px-4 py-3.5 text-sm font-body rounded-md" placeholder="John Doe">
+                <input type="text" name="name" required class="form-input w-full px-4 py-3.5 text-sm font-body rounded-md" placeholder="John Doe">
               </div>
               <div class="flex flex-col gap-2">
                 <label class="font-body text-xs text-gray-600 tracking-wider uppercase">Email Address <span class="text-brand-orange">*</span></label>
-                <input type="email" required class="form-input w-full px-4 py-3.5 text-sm font-body rounded-md" placeholder="john@example.com">
+                <input type="email" name="email" required class="form-input w-full px-4 py-3.5 text-sm font-body rounded-md" placeholder="john@example.com">
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div class="flex flex-col gap-2">
                 <label class="font-body text-xs text-gray-600 tracking-wider uppercase">Company Name</label>
-                <input type="text" class="form-input w-full px-4 py-3.5 text-sm font-body rounded-md" placeholder="Your Company">
+                <input type="text" name="company" class="form-input w-full px-4 py-3.5 text-sm font-body rounded-md" placeholder="Your Company">
               </div>
               <div class="flex flex-col gap-2">
                 <label class="font-body text-xs text-gray-600 tracking-wider uppercase">Service Interested In</label>
                 <div class="relative">
-                  <select class="form-input w-full px-4 py-3.5 text-sm font-body appearance-none rounded-md cursor-pointer">
+                  <select name="service" class="form-input w-full px-4 py-3.5 text-sm font-body appearance-none rounded-md cursor-pointer">
                     <option value="" disabled selected>Select a Service</option>
                     <option value="design">Design & Branding</option>
                     <option value="visualization">3D Visualization</option>
@@ -339,7 +354,7 @@
             <div class="flex flex-col gap-2">
               <label class="font-body text-xs text-gray-600 tracking-wider uppercase">Estimated Budget</label>
               <div class="relative">
-                <select class="form-input w-full px-4 py-3.5 text-sm font-body appearance-none rounded-md cursor-pointer">
+                <select name="budget" class="form-input w-full px-4 py-3.5 text-sm font-body appearance-none rounded-md cursor-pointer">
                   <option value="" disabled selected>Select Budget Range</option>
                   <option value="under-5k">Under $5,000</option>
                   <option value="5k-15k">$5,000 - $15,000</option>
@@ -354,15 +369,28 @@
 
             <div class="flex flex-col gap-2">
               <label class="font-body text-xs text-gray-600 tracking-wider uppercase">Project Details <span class="text-brand-orange">*</span></label>
-              <textarea required rows="5" class="form-input w-full px-4 py-4 text-sm font-body resize-none rounded-md" placeholder="Tell us about your project..."></textarea>
+              <textarea name="message" required rows="5" class="form-input w-full px-4 py-4 text-sm font-body resize-none rounded-md" placeholder="Tell us about your project..."></textarea>
             </div>
 
-            <button type="submit" class="relative overflow-hidden group bg-black border border-black text-white mt-4 py-4 px-8 w-full font-body text-sm tracking-widest uppercase text-center inline-flex items-center justify-center gap-3 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+            <button type="submit" id="submitBtn" class="relative overflow-hidden group bg-black border border-black text-white mt-4 py-4 px-8 w-full font-body text-sm tracking-widest uppercase text-center inline-flex items-center justify-center gap-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed">
               <div class="absolute inset-0 bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></div>
-              <span class="relative z-10 group-hover:text-black font-medium transition-colors duration-300">Send Message</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4 relative z-10 group-hover:text-black group-hover:translate-x-1 transition-all duration-300">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
+              
+              <!-- Normal State -->
+              <span id="btnText" class="relative z-10 group-hover:text-black font-medium transition-colors duration-300 flex items-center gap-3">
+                <span>Send Message</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-4 h-4 relative z-10 group-hover:text-black group-hover:translate-x-1 transition-all duration-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </span>
+
+              <!-- Loading State (Hidden by default) -->
+              <span id="btnLoading" class="hidden relative z-10 group-hover:text-black font-medium transition-colors duration-300 items-center gap-3">
+                <svg class="animate-spin h-5 w-5 text-white group-hover:text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Sending...</span>
+              </span>
             </button>
             <p class="font-body text-xs text-gray-500 text-center mt-2">We typically reply within 24 hours.</p>
 
@@ -418,5 +446,18 @@
     </div>
   </footer>
 
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function() {
+      const btn = document.getElementById('submitBtn');
+      const text = document.getElementById('btnText');
+      const loading = document.getElementById('btnLoading');
+      
+      // Disable button and show loading state
+      btn.disabled = true;
+      text.classList.add('hidden');
+      loading.classList.remove('hidden');
+      loading.classList.add('flex');
+    });
+  </script>
 </body>
 </html>
