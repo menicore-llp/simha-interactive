@@ -23,6 +23,10 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'submit'])
+    ->middleware('throttle:3,1')
+    ->name('contact.submit');
+
 Route::get('/blogs', function () {
     $blogs = \App\Models\Blog::where('status', 'published')->latest('publish_date')->paginate(12);
     return view('blogs', compact('blogs'));
