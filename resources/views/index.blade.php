@@ -894,10 +894,10 @@
 
         <div class="flex flex-col gap-3 text-gray-400 text-sm font-body">
 
-          <a href="services.html#design" class="nav-link hover:text-white transition">Design</a>
-          <a href="services.html#visualization" class="nav-link hover:text-white transition">Visualization</a>
-          <a href="services.html#marketing" class="nav-link hover:text-white transition">Marketing</a>
-          <a href="services.html#engagement" class="nav-link hover:text-white transition">Engagement Content</a>
+          <a href="services#design" class="nav-link hover:text-white transition">Design</a>
+          <a href="services#visualization" class="nav-link hover:text-white transition">Visualization</a>
+          <a href="services#marketing" class="nav-link hover:text-white transition">Marketing</a>
+          <a href="services#engagement" class="nav-link hover:text-white transition">Engagement Content</a>
 
         </div>
 
