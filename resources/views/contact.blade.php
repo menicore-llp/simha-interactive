@@ -113,6 +113,25 @@
     }
     .nav-link:hover::after { width: 100%; }
 
+    .nav-desktop,
+    .nav-cta {
+      display: none;
+    }
+    .nav-toggle {
+      display: inline-flex;
+    }
+    @media (min-width: 1111px) {
+      .nav-desktop {
+        display: flex;
+      }
+      .nav-cta {
+        display: inline-flex;
+      }
+      .nav-toggle {
+        display: none;
+      }
+    }
+
     .delay-100 { animation-delay: 0.1s; }
     .delay-200 { animation-delay: 0.2s; }
     .delay-300 { animation-delay: 0.3s; }
@@ -152,13 +171,21 @@
   <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-5"
        style="background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent); backdrop-filter: blur(8px);">
 
-    <a href="{{ route('home') }}" class="flex items-center gap-3 opacity-0 animate-fade-in delay-100" style="animation-fill-mode: forwards;">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 opacity-0 animate-fade-in delay-100"
+      style="animation-fill-mode: forwards;">
+      
+      <!-- Icon box -->
       <div class="flex h-8 sm:h-10 lg:h-12 w-auto overflow-hidden">
-        <img src="{{ asset('assets/Simha Logo Web White.png') }}" alt="Simha Interactive Icon" class="h-full w-auto object-contain">
+        <img src="{{ asset('assets/Simha Logo Web White.png') }}" 
+            alt="Simha Interactive Icon"
+            class="h-full w-auto object-contain">
       </div>
     </a>
 
-    <div class="hidden md:flex items-center gap-10 opacity-0 animate-fade-in delay-300" style="animation-fill-mode: forwards;">
+    <!-- Nav links -->
+    <div class="nav-desktop items-center gap-10 opacity-0 animate-fade-in delay-300"
+         style="animation-fill-mode: forwards;">
       <a href="{{ route('home') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Do</a>
       <a href="{{ route('about') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Services</a>
@@ -167,32 +194,53 @@
       <a href="{{ route('contact') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">Contact us</a>
     </div>
 
-    <a href="{{ route('contact') }}" class="btn-ghost hidden md:inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase opacity-0 animate-fade-in" style="animation-fill-mode: forwards;">
+    <!-- CTA -->
+    <a href="{{ route('contact') }}"
+      class="btn-ghost nav-cta items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest 
+              uppercase opacity-0 animate-fade-in"
+       style="animation-fill-mode: forwards;">
       <span>Start Project</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" class="btn-ghost w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
       </svg>
     </a>
 
-    <button onclick="toggleMenu()" class="md:hidden text-white" aria-label="Toggle menu">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
+    <!-- Hamburger (Mobile Only) -->
+        <button onclick="toggleMenu()" class="nav-toggle text-white" aria-label="Toggle menu">
+          <svg xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+              class="w-6 h-6">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
 
-    <div id="mobileMenu" class="fixed top-0 left-0 w-full h-screen z-[999] flex flex-col items-center justify-center gap-8 text-white font-medium backdrop-blur-md bg-black/95 transform -translate-y-full transition-transform duration-500">
-      <button onclick="toggleMenu()" class="absolute top-4 right-4 text-white hover:text-brand-orange">✕</button>
+    <!-- Mobile hamburger -->
+    <div id="mobileMenu"
+      class="fixed top-0 left-0 w-full h-screen z-[999] flex flex-col items-center justify-center gap-8 text-white font-medium backdrop-blur-md bg-black/95 transform -translate-y-full transition-transform duration-500">
+
+      <!-- Close button -->
+      <button onclick="toggleMenu()" class="absolute top-4 right-4 text-white hover:text-brand-orange">
+        ✕
+      </button>
+
       <a href="{{ route('home') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Do</a>
       <a href="{{ route('about') }}" class="nav-link text-gray-400 hover:text-white uppercase">We Are</a>
       <a href="{{ route('services') }}" class="nav-link text-gray-400 hover:text-white uppercase">Services</a>
       <a href="{{ route('portfolio') }}" class="nav-link text-gray-400 hover:text-white uppercase">Portfolio</a>
       <a href="{{ route('blogs') }}" class="nav-link text-gray-400 hover:text-white uppercase">Blogs</a>
       <a href="{{ route('contact') }}" class="nav-link text-gray-400 hover:text-white uppercase">Contact us</a>
+    
       <div>
-        <a href="{{ route('contact') }}" class="btn-ghost inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase">
+        <a href="{{ route('contact') }}" class="btn-ghost md:hidden inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest uppercase">
           <span>Start Project</span>
         </a>
       </div>
+
     </div>
   </nav>
 

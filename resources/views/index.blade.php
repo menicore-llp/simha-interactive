@@ -163,6 +163,25 @@
     }
     .nav-link:hover::after { width: 100%; }
 
+    .nav-desktop,
+    .nav-cta {
+      display: none;
+    }
+    .nav-toggle {
+      display: inline-flex;
+    }
+    @media (min-width: 1111px) {
+      .nav-desktop {
+        display: flex;
+      }
+      .nav-cta {
+        display: inline-flex;
+      }
+      .nav-toggle {
+        display: none;
+      }
+    }
+
     /* Stats fade in */
     .stat-item {
       opacity: 0;
@@ -264,20 +283,20 @@
   <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-5"
        style="background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent); backdrop-filter: blur(8px);">
 
-    <!-- Logo -->
-    <a href="#" class="flex items-center gap-3 opacity-0 animate-fade-in delay-100"
-   style="animation-fill-mode: forwards;">
-  
-  <!-- Icon box -->
-  <div class="flex h-8 sm:h-10 lg:h-12 w-auto overflow-hidden">
-    <img src="{{ asset('assets/Simha Logo Web White.png') }}" 
-         alt="Simha Interactive Icon"
-         class="h-full w-auto object-contain">
-  </div>
-</a>
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 opacity-0 animate-fade-in delay-100"
+      style="animation-fill-mode: forwards;">
+      
+      <!-- Icon box -->
+      <div class="flex h-8 sm:h-10 lg:h-12 w-auto overflow-hidden">
+        <img src="{{ asset('assets/Simha Logo Web White.png') }}" 
+            alt="Simha Interactive Icon"
+            class="h-full w-auto object-contain">
+      </div>
+    </a>
 
     <!-- Nav links -->
-    <div class="hidden md:flex items-center gap-10 opacity-0 animate-fade-in delay-300"
+    <div class="nav-desktop items-center gap-10 opacity-0 animate-fade-in delay-300"
          style="animation-fill-mode: forwards;">
       <a href="{{ route('home') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Do</a>
       <a href="{{ route('about') }}" class="nav-link font-body text-sm text-gray-400 hover:text-white transition-colors tracking-wider uppercase">We Are</a>
@@ -289,7 +308,7 @@
 
     <!-- CTA -->
     <a href="{{ route('contact') }}"
-       class="btn-ghost hidden md:inline-flex items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest 
+      class="btn-ghost nav-cta items-center gap-2 border border-white/20 text-white px-6 py-2.5 text-sm font-body tracking-widest 
               uppercase opacity-0 animate-fade-in"
        style="animation-fill-mode: forwards;">
       <span>Start Project</span>
@@ -299,7 +318,7 @@
     </a>
 
     <!-- Hamburger (Mobile Only) -->
-        <button onclick="toggleMenu()" class="md:hidden text-white" aria-label="Toggle menu">
+        <button onclick="toggleMenu()" class="nav-toggle text-white" aria-label="Toggle menu">
           <svg xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
