@@ -284,23 +284,23 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Design/1.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 1">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Design/2.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 2">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Design/3.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 3">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Design/4.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 4">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Design/5.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Branding Image 5">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -365,15 +365,15 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Website Design and Development/Cyblink.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Cyblink Website Design">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Website Design and Development/Meena.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Meena Website Design">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Website Design and Development/Shahi.jpg.jpeg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Shahi Website Design">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -438,39 +438,39 @@
   
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/06.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 1">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/09.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 2">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/10.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 3">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/12.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 4">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/1726551890035.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 5">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/1726551891405.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 6">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/5e16a4d9-f15a-49f9-b389-831c39bc81dc.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 7">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/75215733-fa9a-428e-9fd6-422ea9af5d1b.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 8">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Interior Rendering/e1027d37-4ab3-4945-ad4f-9d44b4eaf828.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interior Rendering 9">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -535,55 +535,55 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/13.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 1">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/14.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 2">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/15.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 3">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/16.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 4">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/17.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 5">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/1708469964381.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 6">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/18.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 7">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/1b9fa2a1-57dd-4dc2-8461-abe5f069a7b0.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 8">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/867f9a4a-a96c-4395-b86f-9b77d3876fd6.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 9">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/985b4db8-f777-48d6-8b03-fb49bbe65871.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 10">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/a8405e81-906b-4921-b744-c0627dd8395e.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 11">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/parq-1.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 12">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Architectural Exterior Rendering/parq-2.jpg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Exterior Rendering 13">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -648,7 +648,7 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Floor Plans/3DFloorPlan.webp') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Floor Plan">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -707,7 +707,7 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/Walkthrough Animations/architecture_3d_walkthrough.mp4') }}"></video>
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -766,7 +766,7 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Real Estate Marketing Visual/Architectural Model Maker.webp') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Real Estate Marketing">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -826,19 +826,19 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/3D Product Animation/Atomberg Ver-10.mp4') }}"></video>
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out" src="{{ asset('assets/portfolio-images/3D Product Animation/Atomberg Ver-10.mp4') }}"></video>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500"></div>
+          </div>
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out" src="{{ asset('assets/portfolio-images/3D Product Animation/Buds.mp4') }}"></video>
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/3D Product Animation/Buds.mp4') }}"></video>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-          </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/3D Product Animation/Smart Watch.mp4') }}"></video>
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <video autoplay loop muted playsinline class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" src="{{ asset('assets/portfolio-images/3D Product Animation/Spotlight Stand.mp4') }}"></video>
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -903,51 +903,51 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/10.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 1">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/2.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 2">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/4.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 3">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/5.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 4">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/6.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 5">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/Ear Pod.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 7">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/Lakme.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 8">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/R for Rabbit_01.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 9">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/R for Rabbit_02.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 10">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/R for Rabbit_03.jpeg') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 11">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/Smart Watch.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 12">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/3D Product Rendering/Solo Ear Pod.png') }}" class="w-full h-full object-cover transition-transform duration-[3s] ease-out group-hover:scale-105" alt="3D Product Rendering 13">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -1012,19 +1012,19 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/AR & VR Experiences/_0000_Virtual Reality (VR) Environments.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="VR Environments">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/AR & VR Experiences/_0001_Giant Screen AR Experiences.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Giant Screen AR">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/AR & VR Experiences/_0002_Augmented Reality (AR) Applications.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="AR Applications">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/AR & VR Experiences/_0003_VR 360 Degree Virtual Tours.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="VR 360 Virtual Tours">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
@@ -1087,19 +1087,19 @@
 
       <div class="w-full relative" data-carousel>
         <div class="relative w-full overflow-hidden h-[400px] md:h-[600px] my-6">
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Interactive & Display Solutions/Anamorphic 3D Illusion Content.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Anamorphic 3D Illusion">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Interactive & Display Solutions/Experiential Marketing Displays.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Experiential Marketing Displays">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Interactive & Display Solutions/Holographic Content & Installations.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Holographic Content">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
-          <div class="stack-card absolute inset-0 w-full h-full group shadow-[0_30px_60px_-15px_rgba(255,92,26,0.3)] border border-white/10" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
+          <div class="stack-card absolute inset-0 w-full h-full" style="transform-origin: center center; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;">
             <img src="{{ asset('assets/portfolio-images/Interactive & Display Solutions/Interactive Digital Touch Experiences.jpg') }}" class="w-full h-full object-cover object-top transition-transform duration-[3s] ease-out group-hover:scale-105" alt="Interactive Digital Touch">
             <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
           </div>
