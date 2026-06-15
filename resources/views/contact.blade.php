@@ -10,6 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=DM+Sans:ital@0;1&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18229527475"></script> 
+   <script> 
+     window.dataLayer = window.dataLayer || []; 
+     function gtag(){
+       dataLayer.push(arguments);
+       } 
+     gtag('js', new Date()); |
+     gtag('config', 'AW-18229527475'); 
+   </script>
+
+    <script> 
+      gtag('event', 'conversion', {'send_to': 'AW-18229527475/lXrJCPb8gL8cELOHwvRD'}); 
+   </script>
+  
   <script>
     tailwind.config = {
       theme: {
