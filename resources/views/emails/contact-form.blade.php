@@ -133,10 +133,6 @@
                     <th>Service</th>
                     <td>{{ $data['service'] ?? 'N/A' }}</td>
                 </tr>
-                <tr>
-                    <th>Budget</th>
-                    <td>{{ $data['budget'] ?? 'N/A' }}</td>
-                </tr>
             </table>
 
             <div style="margin-top: 30px;">
